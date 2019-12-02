@@ -1,1 +1,1 @@
-# MN-CD
+# Multilayer Networks - Community Detection
