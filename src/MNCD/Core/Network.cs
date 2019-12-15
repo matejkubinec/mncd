@@ -7,12 +7,13 @@ namespace MNCD.Core
     {
         public IList<Layer> Layers = new List<Layer>();
         public IList<Actor> Actors = new List<Actor>();
+        public IList<InterLayerEdge> InterLayerEdges = new List<InterLayerEdge>();
 
         public int[,,] ToMatrix()
         {
-            var matrix = new int[Layers.Count, Actors.Count, Actors.Count];
+            var matrix = new int[Layers.Count(), Actors.Count, Actors.Count];
 
-            for (var l = 0; l < Layers.Count; l++)
+            for (var l = 0; l < Layers.Count(); l++)
             {
                 for (var a1 = 0; a1 < Actors.Count; a1++)
                 {
@@ -23,22 +24,22 @@ namespace MNCD.Core
                 }
             }
 
-            for (var l = 0; l < Layers.Count; l++)
+            for (var l = 0; l < Layers.Count(); l++)
             {
                 for (var a1 = 0; a1 < Actors.Count; a1++)
                 {
                     for (var a2 = 0; a2 < Actors.Count; a2++)
                     {
-                        if (Layers[l].IsDirected)
+                        if (Layers.ElementAt(l).IsDirected)
                         {
-                            if (Layers[l].Edges.Any(e => e.From == Actors[a1] && e.To == Actors[a2]))
+                            if (Layers.ElementAt(l).Edges.Any(e => e.From == Actors[a1] && e.To == Actors[a2]))
                             {
                                 matrix[l, a1, a2]++;
                             }
                         }
                         else
                         {
-                            if (Layers[l].Edges.Any(e => (e.From == Actors[a1] && e.To == Actors[a2]) || (e.From == Actors[a2] && e.To == Actors[a1])))
+                            if (Layers.ElementAt(l).Edges.Any(e => (e.From == Actors[a1] && e.To == Actors[a2]) || (e.From == Actors[a2] && e.To == Actors[a1])))
                             {
                                 matrix[l, a1, a2]++;
                                 matrix[l, a2, a1]++;
