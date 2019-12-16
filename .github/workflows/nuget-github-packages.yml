@@ -27,8 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set nuget.config password
-      - uses: cschleiden/replace-tokens@v1
-        run: ""
+        uses: cschleiden/replace-tokens@v1
         with:
           files: "./src/nuget.config"
         env:
