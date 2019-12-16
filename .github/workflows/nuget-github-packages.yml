@@ -26,6 +26,7 @@ jobs:
     # needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Set nuget.config password
         uses: cschleiden/replace-tokens@v1
         with:
@@ -34,7 +35,6 @@ jobs:
           files: "src/nuget.config"
         env:
           NUGET_ACCESS_PASSWORD: ${{ secrets.NUGET_ACCESS_PASSWORD }}
-      - uses: actions/checkout@v1
       - name: Pack nuget Package
         run: |
           cat "./src/nuget.config"
