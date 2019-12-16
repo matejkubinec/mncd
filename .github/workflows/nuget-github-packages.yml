@@ -23,7 +23,7 @@ jobs:
   #         cd src
   #         dotnet test
   deploy:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Set nuget.config password
