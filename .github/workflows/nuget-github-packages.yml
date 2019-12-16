@@ -14,20 +14,24 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.0.100
-      - name: Move into 'src' folder
-        run: cd src
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: |
+          cd src
+          dotnet build --configuration Release
       - name: Test with dotnet
-        run: dotnet test
+        run: |
+          cd src
+          dotnet test
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Move into 'src' folder
-        run: cd src
       - name: Pack nuget Package
-        run: dotnet pack --configuration Release
+        run: |
+          cd src
+          dotnet pack --configuration Release
       - name: Push package to GitHub Packages
-        run: dotnet nuget push **/*.nupkg --source "github"
+        run: |
+          cd src
+          dotnet nuget push **/*.nupkg --source "github"
