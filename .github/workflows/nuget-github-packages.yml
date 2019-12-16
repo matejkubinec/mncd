@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    working-directory: src
     steps:
       - uses: actions/checkout@v1
       - name: Setup .NET Core
@@ -16,18 +15,17 @@ jobs:
         with:
           dotnet-version: 3.0.100
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ./src/MNCD.sln --configuration Release
       - name: Test with dotnet
-        run: dotnet test
+        run: dotnet test ./src/MNCD.sln
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    working-directory: src
     steps:
       - uses: actions/checkout@v1
       - name: Pack nuget Package
-        run: dotnet pack --configuration Release
+        run: dotnet pack ./src/MNCD.sln --configuration Release
       - name: Push package to GitHub Packages
-        run: dotnet nuget push **/*.nupkg --source "github" --api-key "${github-token}"
+        run: dotnet nuget push ./src/MNCD/**/*.nupkg --source "github" --api-key "${github-token}"
         env:
           github-token: ${{ secrets.GITHUB_TOKEN }}
