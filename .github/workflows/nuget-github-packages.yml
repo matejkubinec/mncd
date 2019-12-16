@@ -27,11 +27,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set nuget.config password
-        uses: cschleiden/replace-tokens@v1
+        uses: jacobtomlinson/gha-find-replace@master
         with:
           tokenPrefix: "{{"
           tokenSuffix: "}}"
-          files: '["./src/nuget.config"]'
+          files: "src/nuget.config"
         env:
           NUGET_ACCESS_PASSWORD: ${{ secrets.NUGET_ACCESS_PASSWORD }}
       - uses: actions/checkout@v1
