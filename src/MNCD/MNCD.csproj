@@ -7,6 +7,12 @@
     <NullableReferenceTypes>true</NullableReferenceTypes>
     <TreatWarningAsErrors>true</TreatWarningAsErrors>
 
+    <!-- Package Info -->
+    <PackageId>MNCD</PackageId>
+    <Description>Multilayer Network Community Detection</Description>
+    <Version>0.0.1</Version>
+    <Authors>Matej Kubinec</Authors>
+    <PackageProjectUrl>https://github.com/matejkubinec/MN-CD</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
