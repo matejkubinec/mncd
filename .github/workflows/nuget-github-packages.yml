@@ -28,7 +28,6 @@ jobs:
     steps:
       - name: Set nuget.config password
         uses: cschleiden/replace-tokens@v1
-        run: cat "./src/nuget.config"
         with:
           files: "./src/nuget.config"
         env:
@@ -40,5 +39,6 @@ jobs:
           dotnet pack --configuration Release
       - name: Push package to GitHub Packages
         run: |
+          cat "./src/nuget.config"
           cd src
           dotnet nuget push **/*.nupkg --source "github"
