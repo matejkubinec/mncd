@@ -28,6 +28,7 @@ jobs:
     steps:
       - name: Set nuget.config password
       - uses: cschleiden/replace-tokens@v1
+        run: ""
         with:
           files: "./src/nuget.config"
         env:
