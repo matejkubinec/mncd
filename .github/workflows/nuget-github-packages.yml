@@ -16,10 +16,10 @@ jobs:
           dotnet-version: 3.0.100
       - name: Build with dotnet
         run: dotnet build ./src/MNCD.sln --configuration Release
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Test with dotnet
         run: dotnet test ./src/MNCD.sln
+    with:
+      repo-token: ${{ secrets.GITHUB_TOKEN }}
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -31,3 +31,5 @@ jobs:
         run: dotnet nuget push ./src/MNCD/**/*.nupkg --source "github" --api-key "${github-token}"
         env:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      repo-token: ${{ secrets.GITHUB_TOKEN }}
