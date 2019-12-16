@@ -29,12 +29,13 @@ jobs:
       - name: Set nuget.config password
         uses: cschleiden/replace-tokens@v1
         with:
-          files: "./src/nuget.config"
+          files: "[./src/nuget.config]"
         env:
           NUGET_ACCESS_PASSWORD: ${{ secrets.NUGET_ACCESS_PASSWORD }}
       - uses: actions/checkout@v1
       - name: Pack nuget Package
         run: |
+          cat "./src/nuget.config"
           cd src
           dotnet pack --configuration Release
       - name: Push package to GitHub Packages
