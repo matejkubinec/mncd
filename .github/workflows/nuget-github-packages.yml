@@ -1,9 +1,9 @@
 name: Nuget Package Deploy
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
 jobs:
   build:
@@ -16,6 +16,8 @@ jobs:
           dotnet-version: 3.0.100
       - name: Build with dotnet
         run: dotnet build ./src/MNCD.sln --configuration Release
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Test with dotnet
         run: dotnet test ./src/MNCD.sln
   deploy:
