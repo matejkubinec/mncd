@@ -26,6 +26,6 @@ jobs:
       - name: Pack nuget Package
         run: dotnet pack --configuration Release
       - name: Push package to GitHub Packages
-        run: dotnet nuget push src/MNCD/**/*.nupkg --source "github"
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push src/MNCD/**/*.nupkg --source "github" --api-key "${github-token}"
+        env:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
