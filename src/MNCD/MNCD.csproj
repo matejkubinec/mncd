@@ -9,6 +9,7 @@
 
     <!-- Package Info -->
     <PackageId>MNCD</PackageId>
+    <Owner>matejkubinec</Owner>
     <Description>Multilayer Network Community Detection</Description>
     <Version>0.0.1</Version>
     <Authors>Matej Kubinec</Authors>
