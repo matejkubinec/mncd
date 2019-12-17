@@ -7,6 +7,23 @@
     <NullableReferenceTypes>true</NullableReferenceTypes>
     <TreatWarningAsErrors>true</TreatWarningAsErrors>
 
+    <!-- Package Info -->
+    <PackageId>MNCD</PackageId>
+    <Owner>matejkubinec</Owner>
+    <Description>Multilayer Network Community Detection</Description>
+    <Authors>Matej Kubinec</Authors>
+    <PackageProjectUrl>https://github.com/matejkubinec/MN-CD</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/matejkubinec/MN-CD</RepositoryUrl>
+
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VersionPrefix>0.0.1</VersionPrefix>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <VersionSuffix>pre-$([System.DateTime]::UtcNow.ToString(yyyy-MM-dd-HH-mm))</VersionSuffix>
   </PropertyGroup>
 
 </Project>
