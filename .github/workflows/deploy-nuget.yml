@@ -6,6 +6,22 @@ on:
     #  - master
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.0.100
+      - name: Build with dotnet
+        run: |
+          cd src
+          dotnet build --configuration Release
+      - name: Test with dotnet
+        run: |
+          cd src
+          dotnet test
   deploy:
     needs: build
     runs-on: ubuntu-latest
