@@ -32,10 +32,9 @@ steps:
   inputs:
     command: 'pack'
     arguments: '--configuration $(buildConfiguration)'
-    packagesToPack: 'MNCD/MNCD.csproj'
+    packagesToPack: 'src/MNCD/MNCD.csproj'
     nobuild: true
     versioningScheme: 'off'
-    workingDirectory: src
 
 - task: NuGetCommand@2
   displayName: 'nuget push'
