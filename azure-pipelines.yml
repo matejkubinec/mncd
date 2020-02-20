@@ -10,7 +10,7 @@ variables:
   buildConfiguration: "Release"
 
 stages:
-- stage: build-and-test
+- stage: build_and_test
   displayName: Build & Test
   jobs:
     - job: build 
@@ -31,7 +31,7 @@ stages:
               command: "test"
               workingDirectory: src
 
-- stage: pack-and-publish
+- stage: pack_and_publish
   displayName: Pack & Publish Nuget
   jobs:
     - job: pack
