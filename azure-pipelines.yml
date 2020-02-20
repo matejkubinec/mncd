@@ -10,8 +10,8 @@ variables:
   buildConfiguration: "Release"
 
 stages:
-- stage: build_and_test
-  displayName: Build & Test
+- stage: build
+  displayName: Build
   jobs:
     - job: build 
       displayName: Build
@@ -22,6 +22,10 @@ stages:
               command: "build"
               arguments: --configuration $(buildConfiguration)
               workingDirectory: src
+              
+- stage: test
+  displayName: Test
+  jobs:
     - job: test
       displayName: Test
       steps:
@@ -31,7 +35,7 @@ stages:
               command: "test"
               workingDirectory: src
 
-- stage: pack_and_publish
+- stage: pack
   displayName: Pack & Publish Nuget
   jobs:
     - job: pack
@@ -45,6 +49,10 @@ stages:
               packagesToPack: "src/MNCD/MNCD.csproj"
               nobuild: true
               versioningScheme: "off"
+
+- stage: publish
+  displayName: Publish Nuget
+  jobs:
     - job: publish
       displayName: Publish
       steps:
