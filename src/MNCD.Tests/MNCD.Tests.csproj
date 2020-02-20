@@ -17,4 +17,19 @@
     <ProjectReference Include="..\MNCD\MNCD.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="SampleData\florentine.edgelist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SampleData\interlayer.edgelist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SampleData\invalid-edgelist.edgelist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="SampleData\invalid-weight.edgelist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -8,7 +8,7 @@ using MNCD.Core;
 namespace MNCD.Readers
 {
     // https://rdrr.io/cran/multinet/man/IO.html
-    public class MpxReader
+    public class MpxReader : IReader
     {
         public async Task<Network> FromStream(Stream stream)
         {
