@@ -25,6 +25,7 @@ stages:
               
 - stage: test
   displayName: Test
+  dependsOn: build
   jobs:
     - job: test
       displayName: Test
@@ -37,6 +38,7 @@ stages:
 
 - stage: pack
   displayName: Pack & Publish Nuget
+  dependsOn: test
   jobs:
     - job: pack
       displayName: Pack
@@ -52,6 +54,7 @@ stages:
 
 - stage: publish
   displayName: Publish Nuget
+  dependsOn: pack
   jobs:
     - job: publish
       displayName: Publish
