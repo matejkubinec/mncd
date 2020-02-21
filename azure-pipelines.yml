@@ -46,7 +46,6 @@ stages:
   jobs:
     - job: pack_and_publish
       displayName: Pack & Publish Nuget
-      dependsOn: build
       steps:
         - task: DotNetCoreCLI@2
           displayName: "dotnet build $(buildConfiguration)"
