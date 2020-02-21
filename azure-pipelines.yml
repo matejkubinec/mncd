@@ -3,6 +3,9 @@ name: "MNCD"
 trigger:
   - master
 
+pr:
+  - master
+
 pool:
   vmImage: "ubuntu-latest"
 
@@ -36,12 +39,23 @@ stages:
               command: "test"
               workingDirectory: src
 
-- stage: pack
+- stage: pack_and_publish
   displayName: Pack & Publish Nuget
   dependsOn: test
+  # condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
   jobs:
+    - job: build 
+      displayName: Build
+      steps:
+        - task: DotNetCoreCLI@2
+          displayName: "dotnet build $(buildConfiguration)"
+          inputs:
+            command: "build"
+            arguments: --configuration $(buildConfiguration)
+            workingDirectory: src
     - job: pack
       displayName: Pack
+      dependsOn: build
       steps:
           - task: DotNetCoreCLI@2
             displayName: "dotnet pack"
@@ -51,12 +65,8 @@ stages:
               packagesToPack: "src/MNCD/MNCD.csproj"
               nobuild: true
               versioningScheme: "off"
-
-- stage: publish
-  displayName: Publish Nuget
-  dependsOn: pack
-  jobs:
     - job: publish
+      dependsOn: pack
       displayName: Publish
       steps:
           - task: NuGetCommand@2
