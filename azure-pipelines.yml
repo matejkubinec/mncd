@@ -44,25 +44,9 @@ stages:
   # dependsOn: test
   # condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
   jobs:
-    - job: move
-      displayName: Move to working directory
-      steps:
-        - task: CmdLine@2
-          displayName: "cd src"
-          inputs:
-            script: "cd src"
-
-    - job: restore
-      displayName: Restore packages
-      steps:
-      - task: DotNetCoreCLI@2
-        displayName: "dotnet restore"
-        inputs:
-          command: "restore"
-          workingDirectory: src
-
-    - job: build 
-      displayName: Build
+    - job: pack_and_publish
+      displayName: Pack & Publish Nuget
+      dependsOn: build
       steps:
         - task: DotNetCoreCLI@2
           displayName: "dotnet build $(buildConfiguration)"
@@ -70,31 +54,23 @@ stages:
             command: "build"
             arguments: --configuration $(buildConfiguration)
             workingDirectory: src
-    
-    - job: pack
-      displayName: Pack
-      dependsOn: build
-      steps:
-          - task: DotNetCoreCLI@2
-            displayName: "dotnet pack"
-            inputs:
-              command: "pack"
-              arguments: "--configuration $(buildConfiguration)"
-              packagesToPack: "src/MNCD/MNCD.csproj"
-              nobuild: true
-              versioningScheme: "off"
 
-    - job: publish
-      dependsOn: pack
-      displayName: Publish
-      steps:
-          - task: NuGetCommand@2
-            displayName: "nuget push"
-            inputs:
-              command: "push"
-              feedsToUse: "select"
-              packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"
-              nuGetFeedType: "internal"
-              publishVstsFeed: "MNCD"
-              versioningScheme: "off"
-              allowPackageConflicts: true
+        - task: DotNetCoreCLI@2
+          displayName: "dotnet pack"
+          inputs:
+            command: "pack"
+            arguments: "--configuration $(buildConfiguration)"
+            packagesToPack: "src/MNCD/MNCD.csproj"
+            nobuild: true
+            versioningScheme: "off"
+
+        - task: NuGetCommand@2
+          displayName: "nuget push"
+          inputs:
+            command: "push"
+            feedsToUse: "select"
+            packagesToPush: "$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg"
+            nuGetFeedType: "internal"
+            publishVstsFeed: "MNCD"
+            versioningScheme: "off"
+            allowPackageConflicts: true
