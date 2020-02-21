@@ -44,6 +44,15 @@ stages:
   dependsOn: test
   # condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
   jobs:
+    - job: restore
+      displayName: Restore packages
+      steps:
+      - task: DotNetCoreCLI@2
+        displayName: "dotnet restore"
+        inputs:
+          command: "restore"
+          workingDirectory: src
+
     - job: build 
       displayName: Build
       steps:
@@ -53,6 +62,7 @@ stages:
             command: "build"
             arguments: --configuration $(buildConfiguration)
             workingDirectory: src
+    
     - job: pack
       displayName: Pack
       dependsOn: build
@@ -65,6 +75,7 @@ stages:
               packagesToPack: "src/MNCD/MNCD.csproj"
               nobuild: true
               versioningScheme: "off"
+              
     - job: publish
       dependsOn: pack
       displayName: Publish
