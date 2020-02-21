@@ -41,7 +41,7 @@ stages:
 
 - stage: pack_and_publish
   displayName: Pack & Publish Nuget
-  dependsOn: test
+  # dependsOn: test
   # condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
   jobs:
     - job: move
