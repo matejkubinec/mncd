@@ -13,37 +13,45 @@ variables:
   buildConfiguration: "Release"
 
 stages:
-- stage: build
-  displayName: Build
-  jobs:
-    - job: build 
-      displayName: Build
-      steps:
-          - task: DotNetCoreCLI@2
-            displayName: "dotnet build $(buildConfiguration)"
-            inputs:
-              command: "build"
-              arguments: --configuration $(buildConfiguration)
-              workingDirectory: src
+# - stage: build
+#   displayName: Build
+#   jobs:
+#     - job: build 
+#       displayName: Build
+#       steps:
+#           - task: DotNetCoreCLI@2
+#             displayName: "dotnet build $(buildConfiguration)"
+#             inputs:
+#               command: "build"
+#               arguments: --configuration $(buildConfiguration)
+#               workingDirectory: src
               
-- stage: test
-  displayName: Test
-  dependsOn: build
-  jobs:
-    - job: test
-      displayName: Test
-      steps:
-          - task: DotNetCoreCLI@2
-            displayName: "dotnet test"
-            inputs:
-              command: "test"
-              workingDirectory: src
+# - stage: test
+#   displayName: Test
+#   dependsOn: build
+#   jobs:
+#     - job: test
+#       displayName: Test
+#       steps:
+#           - task: DotNetCoreCLI@2
+#             displayName: "dotnet test"
+#             inputs:
+#               command: "test"
+#               workingDirectory: src
 
 - stage: pack_and_publish
   displayName: Pack & Publish Nuget
   dependsOn: test
   # condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
   jobs:
+    - job: move
+      displayName: Move to working directory
+      steps:
+        - task: CmdLine@2
+          displayName: "cd src"
+          inputs:
+            script: "cd src"
+
     - job: restore
       displayName: Restore packages
       steps:
@@ -75,7 +83,7 @@ stages:
               packagesToPack: "src/MNCD/MNCD.csproj"
               nobuild: true
               versioningScheme: "off"
-              
+
     - job: publish
       dependsOn: pack
       displayName: Publish
