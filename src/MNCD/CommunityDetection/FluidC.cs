@@ -11,6 +11,12 @@ namespace MNCD.CommunityDetection
     {
         private static Random random = new Random();
 
+        public IList<Community> Compute(Network network, List<Actor> initialSeed)
+        {
+            var communities = initialSeed.Select(a => new Community(a)).ToList();
+            return GetCommunties(network, communities);
+        }
+
         public IList<Community> Compute(Network network, int k)
         {
             if (k < 1 || k > network.Actors.Count)
@@ -19,6 +25,12 @@ namespace MNCD.CommunityDetection
             }
 
             var communities = Initialize(network, k);
+            return GetCommunties(network, communities);
+        }
+
+        private IList<Community> GetCommunties(Network network, IList<Community> initialCommunities)
+        {
+            var communities = initialCommunities;
             var change = false;
             do
             {

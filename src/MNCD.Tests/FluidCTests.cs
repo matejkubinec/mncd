@@ -42,21 +42,45 @@ namespace MNCD.Tests
         [Fact]
         public void Community()
         {
-            var network = TestNetwork;
-            var communities = fluidC.Compute(network, 2);
-            var totalActors = communities.Sum(c => c.Actors.Count);
+            var actors = new List<Actor>
+            {
+                new Actor("a0"),
+                new Actor("a1"),
+                new Actor("a2"),
+                new Actor("a3"),
+                new Actor("a4"),
+                new Actor("a5"),
+            };
+            var network = new Network
+            {
+                Actors = actors,
+                Layers = new List<Layer>
+                {
+                    new Layer
+                    {
+                        Edges = new List<Edge>
+                        {
+                            new Edge(actors[0], actors[2]),
+                            new Edge(actors[0], actors[1]),
+                            new Edge(actors[1], actors[2]),
+                            new Edge(actors[2], actors[3]),
+                            new Edge(actors[3], actors[4]),
+                            new Edge(actors[3], actors[5]),
+                            new Edge(actors[4], actors[5])
+                        }
+                    }
+                }
+            };
+            var initial = new List<Actor>
+            {
+                actors[0],
+                actors[5]
+            };
 
-            var c3 = communities.First(c => c.Actors.Count == 3);
-            var c4 = communities.First(c => c.Actors.Count == 4);
+            var communities = new FluidC().Compute(network, initial).OrderBy(c => c.Actors.Count).ToList();
 
-            Assert.True(c3.Actors.Any(a => a.Name == "2"));
-            Assert.True(c3.Actors.Any(a => a.Name == "3"));
-            Assert.True(c3.Actors.Any(a => a.Name == "6"));
-
-            Assert.True(c4.Actors.Any(a => a.Name == "0"));
-            Assert.True(c4.Actors.Any(a => a.Name == "1"));
-            Assert.True(c4.Actors.Any(a => a.Name == "4"));
-            Assert.True(c4.Actors.Any(a => a.Name == "5"));
+            Assert.Equal(3, communities[0].Actors.Count);
+            Assert.Equal(3, communities[1].Actors.Count);
         }
 
         private Network TestNetwork
