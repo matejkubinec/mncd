@@ -1,29 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-
     <TargetFramework>netstandard2.1</TargetFramework>
     <LangVersion>8.0</LangVersion>
     <NullableReferenceTypes>true</NullableReferenceTypes>
     <TreatWarningAsErrors>true</TreatWarningAsErrors>
-
-    <!-- Package Info -->
     <PackageId>MNCD</PackageId>
     <Owner>matejkubinec</Owner>
     <Description>Multilayer Network Community Detection</Description>
     <Authors>Matej Kubinec</Authors>
     <PackageProjectUrl>https://github.com/matejkubinec/MN-CD</PackageProjectUrl>
     <RepositoryUrl>https://github.com/matejkubinec/MN-CD</RepositoryUrl>
-
-
   </PropertyGroup>
-
   <PropertyGroup>
     <VersionPrefix>0.0.1</VersionPrefix>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <VersionSuffix>pre-$([System.DateTime]::UtcNow.ToString(yyyy-MM-dd-HH-mm))</VersionSuffix>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
+  </ItemGroup>
 </Project>
