@@ -4,7 +4,7 @@ using MNCD.Core;
 
 namespace MNCD.Readers
 {
-    public class EdgeListReader : IReader
+    public class EdgeListReader
     {
         public Network FromString(string input)
         {
