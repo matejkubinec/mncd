@@ -6,7 +6,11 @@ namespace MNCD.Core
     public class Network
     {
         public IList<Layer> Layers = new List<Layer>();
+
+        public int LayerCount => Layers.Count;
+
         public IList<Actor> Actors = new List<Actor>();
+
         public IList<InterLayerEdge> InterLayerEdges = new List<InterLayerEdge>();
 
         public int[,,] ToMatrix()
