@@ -6,6 +6,8 @@ namespace MNCD.Core
     {
         public readonly List<Actor> Actors = new List<Actor>();
 
+        public int Size => Actors.Count;
+
         public Community()
         {
         }
