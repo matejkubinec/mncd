@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MNCD.Core
 {
@@ -7,5 +8,41 @@ namespace MNCD.Core
         public string Name { get; set; }
         public bool IsDirected { get; set; }
         public IList<Edge> Edges = new List<Edge>();
+
+        public List<Actor> GetActors()
+        {
+            var actors = new HashSet<Actor>();
+            foreach (var edge in Edges)
+            {
+                actors.Add(edge.From);
+                actors.Add(edge.To);
+            }
+            return actors.ToList();
+        }
+
+        public Dictionary<Actor, List<Actor>> GetNeighboursDict()
+        {
+            var dict = new Dictionary<Actor, HashSet<Actor>>();
+            foreach (var edge in Edges)
+            {
+                if (!dict.ContainsKey(edge.From))
+                {
+                    dict[edge.From] = new HashSet<Actor>();
+                }
+
+                if (!dict.ContainsKey(edge.To))
+                {
+                    dict[edge.To] = new HashSet<Actor>();
+                }
+
+                dict[edge.From].Add(edge.To);
+
+                if (!IsDirected)
+                {
+                    dict[edge.To].Add(edge.From);
+                }
+            }
+            return dict.ToDictionary(d => d.Key, d => d.Value.ToList());
+        }
     }
 }
