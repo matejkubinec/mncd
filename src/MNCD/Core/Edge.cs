@@ -20,5 +20,16 @@ namespace MNCD.Core
             From = from;
             To = to;
         }
+
+        public Edge Reverse()
+        {
+            return new Edge()
+            {
+                From = To,
+                To = From,
+                Weight = Weight,
+                Attributes = Attributes
+            };
+        }
     }
 }
