@@ -96,7 +96,7 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
             //    | /       \ |
             //    1           5
 
-            var actors = ActorHelper.Get(7);
+            var actors = ActorHelper.Get(6);
             var network = new Network();
             var ed = new List<Edge>
             {
