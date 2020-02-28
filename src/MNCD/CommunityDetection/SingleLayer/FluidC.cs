@@ -59,7 +59,7 @@ namespace MNCD.CommunityDetection.SingleLayer
                     {
                         // Check communities with highest density
                         var maximal = counter.Values.Max();
-                        var bestCommunities = counter.Where(c => (c.Value - maxDensity) < 0.0001);
+                        var bestCommunities = counter.Where(c => (maximal - c.Value) < 0.0001);
 
                         // Check if actor is in a best community
                         if (bestCommunities.Any(b => b.Key.Actors.Contains(actor)))
