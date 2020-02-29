@@ -7,7 +7,16 @@ namespace MNCD.Core
     {
         public string Name { get; set; }
         public bool IsDirected { get; set; }
-        public IList<Edge> Edges = new List<Edge>();
+        public List<Edge> Edges = new List<Edge>();
+
+        public Layer()
+        {
+        }
+
+        public Layer(List<Edge> edges)
+        {
+            Edges = edges;
+        }
 
         public List<Actor> GetActors()
         {

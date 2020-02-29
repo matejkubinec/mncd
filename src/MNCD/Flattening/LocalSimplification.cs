@@ -7,32 +7,73 @@ namespace MNCD.Flattening
 {
     public class LocalSimplification
     {
-        public Network BasedOnLayerRelevance(Network network, double[] layerRelevances, double threshold)
+        public Network BasedOnLayerRelevance(Network network, double[] layerRelevances, double threshold, bool weightEdges = false)
         {
+            var layerToIndex = network.GetLayerToIndex();
+            var edgesDict = new Dictionary<(Actor from, Actor to), double>();
+
             if (network.Layers.Count != layerRelevances.Length)
             {
                 throw new ArgumentException("Relevances count doesn't match the layers count.");
             }
 
-            var flattenedNetwork = new Network()
+            var flattenedNetwork = new Network(new Layer { Name = "Flattened" }, network.Actors);
+
+            foreach (var layer in network.Layers)
             {
-                Actors = network.Actors,
-                Layers = new List<Layer>
+                var idx = layerToIndex[layer];
+                var relevance = layerRelevances[idx];
+
+                if (relevance >= threshold)
                 {
-                    new Layer
+                    foreach (var edge in layer.Edges)
                     {
-                        Name = "Flattened"
+                        var weight = edge.Weight * (weightEdges ? relevance : 1.0);
+
+                        if (edgesDict.ContainsKey((edge.From, edge.To)))
+                        {
+                            edgesDict[(edge.From, edge.To)] += weight;
+                        }
+                        else if (edgesDict.ContainsKey((edge.To, edge.From)))
+                        {
+                            edgesDict[(edge.To, edge.From)] += weight;
+                        }
+                        else
+                        {
+                            edgesDict[(edge.From, edge.To)] = weight;
+                        }
                     }
                 }
-            };
+            }
 
-            for (var i = 0; i < network.Layers.Count; i++)
+            foreach (var edge in network.InterLayerEdges)
             {
-                if (layerRelevances[i] >= threshold)
+                var lf = layerToIndex[edge.LayerFrom];
+                var lt = layerToIndex[edge.LayerTo];
+                var relevance = (layerRelevances[lf] + layerRelevances[lt]) / 2.0;
+
+                if (relevance >= threshold)
                 {
-                    flattenedNetwork.Layers[0].Edges = flattenedNetwork.Layers[0].Edges.Concat(network.Layers[i].Edges).ToList();
+                    var weight = edge.Weight * (weightEdges ? relevance : 1.0);
+
+                    if (edgesDict.ContainsKey((edge.From, edge.To)))
+                    {
+                        edgesDict[(edge.From, edge.To)] += weight;
+                    }
+                    else if (edgesDict.ContainsKey((edge.To, edge.From)))
+                    {
+                        edgesDict[(edge.To, edge.From)] += weight;
+                    }
+                    else
+                    {
+                        edgesDict[(edge.From, edge.To)] = weight;
+                    }
                 }
             }
+
+            flattenedNetwork.FirstLayer.Edges = edgesDict
+                .Select(e => new Edge(e.Key.from, e.Key.to, e.Value))
+                .ToList();
 
             return flattenedNetwork;
         }
