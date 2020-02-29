@@ -8,6 +8,8 @@ namespace MNCD.Tests.Flattening
 {
     public class WeightedFlatteningTests
     {
+        private readonly WeightedFlattening weightedFlattening = new WeightedFlattening();
+
         [Fact]
         public void OneLayer()
         {
@@ -15,21 +17,22 @@ namespace MNCD.Tests.Flattening
             var edges = new List<Edge> { new Edge(actors[0], actors[1]) };
             var layer = new Layer(edges);
             var network = new Network(layer, actors);
-            var weights = new Dictionary<(Layer, Layer), double>
+            var weights = new double[,]
             { 
-                { (layer, layer), 2.0 }
+                { 2.0 }
             };
-            var flattened = new WeightedFlattening().Flatten(network, weights);
+            var flattened = weightedFlattening.Flatten(network, weights);
 
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.FirstLayer.Edges);
             Assert.Collection(
                 flattened.FirstLayer.Edges,
-                e => Assert.True(
-                    e.From == actors[0] &&
-                    e.To == actors[1] &&
-                    e.Weight == 2.0
-                )
+                e => 
+                {
+                    Assert.Equal(actors[0], e.From);
+                    Assert.Equal(actors[1], e.To);
+                    Assert.Equal(2.0, e.Weight);
+                }
             );
         }
 
@@ -55,23 +58,22 @@ namespace MNCD.Tests.Flattening
             network.Actors = actors;
             network.InterLayerEdges = interLayerEdges;
             network.Layers = new List<Layer> { layer1, layer2 }; 
-            var weights = new Dictionary<(Layer, Layer), double>
+            var weights = new double[,]
             { 
-                { (layer1, layer1), 1.0 },
-                { (layer1, layer2), 2.0 },
-                { (layer2, layer2), 3.0 }
+                { 1.0 , 3.0 },
+                { 3.0 , 2.0 },
             };
-            var flattened = new WeightedFlattening().Flatten(network, weights);
+            var flattened = weightedFlattening.Flatten(network, weights);
 
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.FirstLayer.Edges);
-            Assert.Collection(
-                flattened.FirstLayer.Edges,
-                e => Assert.True(
-                    e.From == actors[0] &&
-                    e.To == actors[1] &&
-                    e.Weight == 6.0
-                )
+            Assert.Collection(flattened.FirstLayer.Edges,
+                e => 
+                {
+                    Assert.Equal(actors[0], e.From);
+                    Assert.Equal(actors[1], e.To);
+                    Assert.Equal(6.0, e.Weight);
+                }
             );
         }
     }

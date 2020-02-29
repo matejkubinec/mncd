@@ -24,5 +24,12 @@ namespace MNCD.Core
         {
             Actors = actors;
         }
+
+        // TODO: move to network extensions
+        public  Dictionary<Layer, int> GetLayerToIndex()
+        {
+            var i = 0;
+            return Layers.ToDictionary(l => l, l => i++);
+        }
     }
 }
