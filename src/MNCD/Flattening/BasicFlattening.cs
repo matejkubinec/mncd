@@ -7,100 +7,30 @@ namespace MNCD.Flattening
     {
         public Network Flatten(Network network, bool weightEdges = false)
         {
-            var isDirected = network.Layers.Any(l => l.IsDirected);
-            var flattenedLayer = new Layer()
-            {
-                IsDirected = isDirected
-            };
+            var flattenedLayer = new Layer();
 
             foreach (var layer in network.Layers)
             {
                 foreach (var edge in layer.Edges)
                 {
-                    if (isDirected)
+                    var flattenedEdge = flattenedLayer.Edges
+                        .FirstOrDefault(e => HasUndirectedEdge(e, edge));
+
+                    if (flattenedEdge != null)
                     {
-                        if (layer.IsDirected)
+                        if (weightEdges)
                         {
-                            var flattenedEdge = flattenedLayer.Edges.FirstOrDefault(e => HasDirectedEdge(e, edge));
-
-                            if (flattenedEdge != null)
-                            {
-                                if (weightEdges)
-                                {
-                                    flattenedEdge.Weight += 1;
-                                }
-                            }
-                            else
-                            {
-                                flattenedLayer.Edges.Add(new Edge
-                                {
-                                    From = edge.From,
-                                    To = edge.To,
-                                    Weight = 1
-                                });
-                            }
-                        }
-                        else
-                        {
-                            var flattenedEdgeFrom = flattenedLayer.Edges.FirstOrDefault(e => HasDirectedEdge(e, edge));
-
-                            if (flattenedEdgeFrom != null)
-                            {
-                                if (weightEdges)
-                                {
-                                    flattenedEdgeFrom.Weight += 1;
-                                }
-                            }
-                            else
-                            {
-                                flattenedLayer.Edges.Add(new Edge
-                                {
-                                    From = edge.From,
-                                    To = edge.To,
-                                    Weight = 1
-                                });
-                            }
-
-                            var flattenedEdgeTo = flattenedLayer.Edges.FirstOrDefault(e => HasDirectedEdge(edge, e));
-
-                            if (flattenedEdgeTo != null)
-                            {
-                                if (weightEdges)
-                                {
-                                    flattenedEdgeTo.Weight += 1;
-                                }
-                            }
-                            else
-                            {
-                                flattenedLayer.Edges.Add(new Edge
-                                {
-                                    From = edge.To,
-                                    To = edge.From,
-                                    Weight = 1
-                                });
-                            }
+                            flattenedEdge.Weight += 1;
                         }
                     }
                     else
                     {
-                        var flattenedEdge = flattenedLayer.Edges.FirstOrDefault(e => HasUndirectedEdge(e, edge));
-
-                        if (flattenedEdge != null)
+                        flattenedLayer.Edges.Add(new Edge
                         {
-                            if (weightEdges)
-                            {
-                                flattenedEdge.Weight += 1;
-                            }
-                        }
-                        else
-                        {
-                            flattenedLayer.Edges.Add(new Edge
-                            {
-                                From = edge.From,
-                                To = edge.To,
-                                Weight = 1
-                            });
-                        }
+                            From = edge.From,
+                            To = edge.To,
+                            Weight = 1
+                        });
                     }
                 }
             }
@@ -123,14 +53,11 @@ namespace MNCD.Flattening
             return flattened;
         }
 
-        private bool HasDirectedEdge(Edge layerEdge, Edge edge)
-        {
-            return layerEdge.From == edge.From && layerEdge.To == edge.To;
-        }
-
         private bool HasUndirectedEdge(Edge layerEdge, Edge edge)
         {
-            return layerEdge.From == edge.From && layerEdge.To == edge.To || layerEdge.To == edge.From && layerEdge.From == edge.To;
+            return
+                layerEdge.From == edge.From && layerEdge.To == edge.To ||
+                layerEdge.To == edge.From && layerEdge.From == edge.To;
         }
     }
 }

@@ -35,25 +35,22 @@ namespace MNCD.Attributes
                     k[edge.From] = 1;
                 }
 
-                if (!layer.IsDirected)
+                if (k.ContainsKey(edge.To))
                 {
-                    if (k.ContainsKey(edge.To))
-                    {
-                        k[edge.To] += 1;
-                    }
-                    else
-                    {
-                        k[edge.To] += 1;
-                    }
+                    k[edge.To] += 1;
+                }
+                else
+                {
+                    k[edge.To] += 1;
+                }
 
-                    if (a.ContainsKey((edge.To, edge.From)))
-                    {
-                        a[(edge.To, edge.From)] += 1;
-                    }
-                    else
-                    {
-                        a[(edge.To, edge.From)] = 1;
-                    }
+                if (a.ContainsKey((edge.To, edge.From)))
+                {
+                    a[(edge.To, edge.From)] += 1;
+                }
+                else
+                {
+                    a[(edge.To, edge.From)] = 1;
                 }
 
                 m += 1;

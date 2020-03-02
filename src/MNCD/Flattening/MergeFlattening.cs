@@ -6,10 +6,9 @@ namespace MNCD.Flattening
 {
     public class MergeFlattening
     {
-        public Network Merge(Network network)
+        public Network Merge(Network network, bool includeWeights)
         {
             var edges = new List<Edge>();
-            var isDirected = network.Layers.Any(l => l.IsDirected);
             var flattenedNetwork = new Network()
             {
                 Actors = network.Actors,
@@ -18,8 +17,7 @@ namespace MNCD.Flattening
                     new Layer
                     {
                         Name = "Flattened",
-                        Edges = edges,
-                        IsDirected = isDirected
+                        Edges = edges
                     },
                 }
             };
@@ -28,81 +26,55 @@ namespace MNCD.Flattening
             {
                 foreach (var layerEdge in layer.Edges)
                 {
+                    var edge = edges.FirstOrDefault(e =>
+                        (e.From == layerEdge.From && e.To == layerEdge.To) ||
+                        (e.From == layerEdge.To && e.To == layerEdge.From)
+                    );
 
-                    if (isDirected)
+                    if (edge == null)
                     {
-                        if (layer.IsDirected)
-                        {
-                            var edge = edges.FirstOrDefault(e => e.From == layerEdge.From && e.To == layerEdge.To);
-
-                            if (edge == null)
-                            {
-                                edges.Add(new Edge(layerEdge.From, layerEdge.To));
-                            }
-                            else
-                            {
-                                edge.Weight += 1;
-                            }
-                        }
-                        else
-                        {
-                            var edge = edges.FirstOrDefault(e => e.From == layerEdge.From && e.To == layerEdge.To);
-                            var edgeInverse = edges.FirstOrDefault(e => e.To == layerEdge.From && e.From == layerEdge.To);
-
-                            if (edge == null)
-                            {
-                                edges.Add(new Edge(layerEdge.From, layerEdge.To));
-                                edges.Add(new Edge(layerEdge.To, layerEdge.From));
-                            }
-                            else
-                            {
-                                edge.Weight += 1;
-                                edgeInverse.Weight += 1;
-                            }
-                        }
+                        edges.Add(new Edge(layerEdge.From, layerEdge.To));
                     }
                     else
                     {
-                        var edge = edges.FirstOrDefault(e =>
-                            (e.From == layerEdge.From && e.To == layerEdge.To) ||
-                            (e.From == layerEdge.To && e.To == layerEdge.From)
-                        );
-
-                        if (edge == null)
-                        {
-                            edges.Add(new Edge(layerEdge.From, layerEdge.To));
-                        }
-                        else
-                        {
-                            edge.Weight += 1;
-                        }
+                        edge.Weight += includeWeights ? layerEdge.Weight : 1;
                     }
+                }
+            }
+
+            foreach (var interLayerEdge in network.InterLayerEdges)
+            {
+                var edge = edges.FirstOrDefault(e =>
+                    (e.From == interLayerEdge.From && e.To == interLayerEdge.To) ||
+                    (e.From == interLayerEdge.To && e.To == interLayerEdge.From)
+                );
+
+                if (edge == null)
+                {
+                    edges.Add(new Edge(interLayerEdge.From, interLayerEdge.To));
+                }
+                else
+                {
+                    edge.Weight += includeWeights ? interLayerEdge.Weight : 1;
                 }
             }
 
             return flattenedNetwork;
         }
 
-        public Network Merge(Network network, int[] layerIndices)
+        public Network Merge(Network network, int[] layerIndices, bool includeWeights)
         {
-            var flattenedNetwork = new Network()
+            var filteredNetwork = new Network()
             {
                 Actors = network.Actors,
-                Layers = new List<Layer>
-                {
-                    new Layer
-                    {
-                        Name = "Flattened"
-                    }
-                }
+                Layers = network.Layers
+                    .Select((l, i) => (l, i))
+                    .Where(pair => layerIndices.Contains(pair.i))
+                    .Select(pair => pair.l)
+                    .ToList()
             };
 
-            foreach (var i in layerIndices)
-            {
-                flattenedNetwork.Layers[0].Edges = flattenedNetwork.Layers[0].Edges.Concat(network.Layers[i].Edges).ToList();
-            }
-
-            return flattenedNetwork;
+            return Merge(filteredNetwork, includeWeights);
         }
     }
 }

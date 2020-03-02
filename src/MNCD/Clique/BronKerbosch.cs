@@ -18,11 +18,6 @@ namespace MNCD.Clique
                 throw new ArgumentException("Algorithm works only on single layer networks.");
             }
 
-            if (network.Layers[0].IsDirected)
-            {
-                throw new ArgumentException("Algorithm works only on nondirected networks.");
-            }
-
             MaximalCliques = new List<List<Actor>>();
             Nodes = InitNodes(network);
             Neighbours = InitNeighbours(network);
