@@ -1,26 +1,26 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using MNCD.Core;
+using MNCD.Helpers;
 
 namespace MNCD.Writers
 {
     public class EdgeListWriter
     {
-        public string ToString(Network network)
+        public string ToString(Network network, bool includeMetadata = false)
         {
-            var actors = network.Actors.ToDictionary(a => a, a => a.Name.Replace(" ", "-"));
-            var layers = network.Layers.ToDictionary(l => l, l => l.Name.Replace(" ", "-"));
+            var actorToIndex = network.Actors.ToIndexDictionary();
+            var layerToIndex = network.Layers.ToIndexDictionary();
 
             var sb = new StringBuilder();
 
             foreach (var layer in network.Layers)
             {
-                var l = layers[layer];
+                var l = layerToIndex[layer];
                 foreach (var edge in layer.Edges)
                 {
-                    var a1 = actors[edge.From];
-                    var a2 = actors[edge.To];
+                    var a1 = actorToIndex[edge.From];
+                    var a2 = actorToIndex[edge.To];
                     var w = edge.Weight;
                     sb.Append($"{a1} {l} {a2} {l} {w}\n");
                 }
@@ -28,30 +28,92 @@ namespace MNCD.Writers
 
             foreach (var interLayerEdge in network.InterLayerEdges)
             {
-                var l1 = layers[interLayerEdge.LayerFrom];
-                var l2 = layers[interLayerEdge.LayerTo];
-                var a1 = actors[interLayerEdge.From];
-                var a2 = actors[interLayerEdge.To];
+                var l1 = layerToIndex[interLayerEdge.LayerFrom];
+                var l2 = layerToIndex[interLayerEdge.LayerTo];
+                var a1 = actorToIndex[interLayerEdge.From];
+                var a2 = actorToIndex[interLayerEdge.To];
                 var w = interLayerEdge.Weight;
                 sb.Append($"{a1} {l1} {a2} {l2} {w}\n");
+            }
+
+            if (includeMetadata)
+            {
+                WriteActors(sb, network.Actors, actorToIndex);
+                WriteLayers(sb, network.Layers, layerToIndex);
             }
 
             return sb.ToString();
         }
 
-        public string ToString(List<Community> communities)
+        public string ToString(
+            List<Actor> actors,
+            List<Community> communities,
+            bool includeMetadata = false)
         {
-            var builder = new StringBuilder();
-            for (var i = 0; i < communities.Count; i++)
+            var actorToIndex = actors.ToIndexDictionary();
+            var communityToIndex = communities.ToIndexDictionary();
+
+            var sb = new StringBuilder();
+            foreach (var c in communities)
             {
-                var actors = communities[i].Actors;
-                for (var j = 0; j < actors.Count; j++)
+                foreach (var a in c.Actors)
                 {
-                    var actor = actors[j];
-                    builder.Append($"{actor.Name.Replace(" ", "")} c{i}\n");
+                    var actor = actorToIndex[a];
+                    var community = communityToIndex[c];
+
+                    sb.Append($"{actor} {community}\n");
                 }
             }
-            return builder.ToString();
+
+            if (includeMetadata)
+            {
+                WriteActors(sb, actors, actorToIndex);
+                WriteCommunities(sb, communities, communityToIndex);
+            }
+
+            return sb.ToString();
+        }
+
+        private void WriteActors(StringBuilder sb, List<Actor> actors, Dictionary<Actor, int> actorToIndex)
+        {
+            if (actors.Count > 0)
+            {
+                sb.Append("# Actors\n");
+                foreach (var a in actors)
+                {
+                    var actor = actorToIndex[a];
+                    var name = string.IsNullOrWhiteSpace(a.Name) ? "-" : a.Name;
+                    sb.Append($"{actor} {name}\n");
+                }
+            }
+        }
+
+        private void WriteLayers(StringBuilder sb, List<Layer> layers, Dictionary<Layer, int> layerToIndex)
+        {
+            if (layers.Count > 0)
+            {
+                sb.Append("# Layers\n");
+                foreach (var a in layers)
+                {
+                    var layer = layerToIndex[a];
+                    var name = string.IsNullOrWhiteSpace(a.Name) ? "-" : a.Name;
+                    sb.Append($"{layer} {name}\n");
+                }
+            }
+        }
+
+        private void WriteCommunities(StringBuilder sb, List<Community> communities, Dictionary<Community, int> communityToIndex)
+        {
+            if (communities.Count > 0)
+            {
+                sb.Append("# Communities\n");
+                foreach (var a in communities)
+                {
+                    var community = communityToIndex[a];
+                    var name = "c" + community;
+                    sb.Append($"{community} {name}\n");
+                }
+            }
         }
     }
 }

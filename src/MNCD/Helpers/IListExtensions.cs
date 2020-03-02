@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MNCD.Helpers
 {
@@ -18,6 +19,13 @@ namespace MNCD.Helpers
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+        public static Dictionary<T, int> ToIndexDictionary<T>(this List<T> items)
+        {
+            return items
+                .Select((item, index) => (item, index))
+                .ToDictionary(pair => pair.item, pair => pair.index);
         }
     }
 }
