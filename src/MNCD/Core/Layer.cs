@@ -6,7 +6,6 @@ namespace MNCD.Core
     public class Layer
     {
         public string Name { get; set; }
-        public bool IsDirected { get; set; }
         public List<Edge> Edges = new List<Edge>();
 
         public Layer()
@@ -45,11 +44,7 @@ namespace MNCD.Core
                 }
 
                 dict[edge.From].Add(edge.To);
-
-                if (!IsDirected)
-                {
-                    dict[edge.To].Add(edge.From);
-                }
+                dict[edge.To].Add(edge.From);
             }
             return dict.ToDictionary(d => d.Key, d => d.Value.ToList());
         }

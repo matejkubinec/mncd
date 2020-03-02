@@ -70,11 +70,9 @@ namespace MNCD.Tests
             Assert.Equal(2, florentine.Layers.Count);
 
             Assert.Equal("marriage", florentine.Layers[0].Name);
-            Assert.False(florentine.Layers[0].IsDirected);
             Assert.Equal(20, florentine.Layers[0].Edges.Count);
 
             Assert.Equal("business", florentine.Layers[1].Name);
-            Assert.False(florentine.Layers[1].IsDirected);
             Assert.Equal(15, florentine.Layers[1].Edges.Count);
         }
     }

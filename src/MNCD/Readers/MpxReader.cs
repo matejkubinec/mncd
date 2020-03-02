@@ -111,7 +111,6 @@ namespace MNCD.Readers
                 network.Layers.Add(new Layer
                 {
                     Name = info[0],
-                    IsDirected = info[1] != "UNDIRECTED"
                 });
             }
 
