@@ -232,8 +232,8 @@ namespace MNCD.Tests.Writers
                 line => Assert.Equal("0 a0", line),
                 line => Assert.Equal("1 a1", line),
                 line => Assert.Equal("# Communities", line),
-                line => Assert.Equal("0 c1", line),
-                line => Assert.Equal("1 c2", line),
+                line => Assert.Equal("0 c0", line),
+                line => Assert.Equal("1 c1", line),
                 line => Assert.Equal("", line)
             );
         }
