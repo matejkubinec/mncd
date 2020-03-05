@@ -12,6 +12,11 @@ namespace MNCD.Core
         {
         }
 
+        public Layer(string name)
+        {
+            Name = name;
+        }
+
         public Layer(List<Edge> edges)
         {
             Edges = edges;
