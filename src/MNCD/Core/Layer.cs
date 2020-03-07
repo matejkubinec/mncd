@@ -6,8 +6,16 @@ namespace MNCD.Core
     public class Layer
     {
         public string Name { get; set; }
-        public bool IsDirected { get; set; }
-        public IList<Edge> Edges = new List<Edge>();
+        public List<Edge> Edges = new List<Edge>();
+
+        public Layer()
+        {
+        }
+
+        public Layer(List<Edge> edges)
+        {
+            Edges = edges;
+        }
 
         public List<Actor> GetActors()
         {
@@ -36,11 +44,7 @@ namespace MNCD.Core
                 }
 
                 dict[edge.From].Add(edge.To);
-
-                if (!IsDirected)
-                {
-                    dict[edge.To].Add(edge.From);
-                }
+                dict[edge.To].Add(edge.From);
             }
             return dict.ToDictionary(d => d.Key, d => d.Value.ToList());
         }

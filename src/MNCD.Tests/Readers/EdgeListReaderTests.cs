@@ -61,7 +61,44 @@ namespace MNCD.Tests.Readers
 
             Assert.Equal(2, network.Layers.Count);
             Assert.NotEmpty(network.InterLayerEdges);
-            Assert.Equal(1, network.InterLayerEdges.Count);
+            Assert.Collection(network.InterLayerEdges,
+                edge =>
+                {
+                    Assert.Equal(network.Actors[0], edge.From);
+                    Assert.Equal(network.Actors[1], edge.To);
+
+                    Assert.Equal(network.Layers[0], edge.LayerFrom);
+                    Assert.Equal(network.Layers[1], edge.LayerTo);
+                }
+            );
+        }
+
+        [Fact]
+        public void InterLayerEdgeWithMetadata()
+        {
+            var interlayer = File.ReadAllText("SampleData/interlayer-metadata.edgelist");
+            var network = reader.FromString(interlayer);
+
+            Assert.Equal(2, network.Layers.Count);
+            Assert.NotEmpty(network.InterLayerEdges);
+            Assert.Collection(network.InterLayerEdges,
+                edge =>
+                {
+                    Assert.Equal(network.Actors[0], edge.From);
+                    Assert.Equal(network.Actors[1], edge.To);
+
+                    Assert.Equal(network.Layers[0], edge.LayerFrom);
+                    Assert.Equal(network.Layers[1], edge.LayerTo);
+                }
+            );
+            Assert.Collection(network.Actors,
+                actor => Assert.Equal("a0", actor.Name),
+                actor => Assert.Equal("a1", actor.Name)
+            );
+            Assert.Collection(network.Layers,
+                layer => Assert.Equal("l0", layer.Name),
+                layer => Assert.Equal("l1", layer.Name)
+            );
         }
 
         [Fact]

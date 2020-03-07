@@ -62,8 +62,7 @@ namespace MNCD.Tests
                     {
                         new Layer
                         {
-                            Edges = edges,
-                            IsDirected = false
+                            Edges = edges
                         }
                     }
                 };
@@ -94,8 +93,7 @@ namespace MNCD.Tests
                     {
                         new Layer
                         {
-                            Edges = edges,
-                            IsDirected = false
+                            Edges = edges
                         }
                     }
                 };

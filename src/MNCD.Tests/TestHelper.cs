@@ -5,11 +5,11 @@ namespace MNCD.Tests
 {
     public static class TestHelper
     {
-        public readonly static List<Actor> Actors3 = new List<Actor> { A1, A2, A3 };
-
         public readonly static Actor A1 = new Actor("A1");
         public readonly static Actor A2 = new Actor("A2");
         public readonly static Actor A3 = new Actor("A3");
+
+        public static List<Actor> Actors3 = new List<Actor> { A1, A2, A3 };
 
         public static string FloretineString = @"
 #TYPE multiplex
@@ -79,7 +79,7 @@ Albizzi,Ginori,marriage
 Acciaiuoli,Medici,marriage
         ".Trim();
 
-        public readonly static Network TwoLayerUndirected = new Network
+        public static Network TwoLayerUndirected => new Network
         {
             Actors = Actors3,
             Layers = new List<Layer>
@@ -90,21 +90,19 @@ Acciaiuoli,Medici,marriage
                     {
                         new Edge(A1, A2),
                         new Edge(A1, A3)
-                    },
-                    IsDirected = false
+                    }
                 },
                 new Layer
                 {
                     Edges = new List<Edge>
                     {
                         new Edge(A3, A1)
-                    },
-                    IsDirected = false
+                    }
                 },
             }
         };
 
-        public readonly static Network TwoLayerDirected = new Network
+        public static Network TwoLayerDirected => new Network
         {
             Actors = Actors3,
             Layers = new List<Layer>
@@ -115,21 +113,19 @@ Acciaiuoli,Medici,marriage
                     {
                         new Edge(A1, A2),
                         new Edge(A1, A3)
-                    },
-                    IsDirected = true
+                    }
                 },
                 new Layer
                 {
                     Edges = new List<Edge>
                     {
                         new Edge(A3, A1)
-                    },
-                    IsDirected = true
+                    }
                 },
             }
         };
 
-        public readonly static Network TwoLayerCombination = new Network
+        public static Network TwoLayerCombination => new Network
         {
             Actors = Actors3,
             Layers = new List<Layer>
@@ -140,16 +136,14 @@ Acciaiuoli,Medici,marriage
                     {
                         new Edge(A1, A2),
                         new Edge(A1, A3)
-                    },
-                    IsDirected = false
+                    }
                 },
                 new Layer
                 {
                     Edges = new List<Edge>
                     {
                         new Edge(A3, A1)
-                    },
-                    IsDirected = true
+                    }
                 },
             }
         };
