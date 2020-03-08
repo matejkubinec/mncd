@@ -1,6 +1,5 @@
 using MNCD.Core;
 using MNCD.Flattening;
-using System.Linq;
 using Xunit;
 
 namespace MNCD.Tests
