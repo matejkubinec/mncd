@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MNCD.Core;
+using MNCD.Extensions;
 
 namespace MNCD.CommunityDetection.SingleLayer
 {

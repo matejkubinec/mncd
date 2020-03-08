@@ -16,7 +16,6 @@ namespace MNCD.Tests
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.Layers);
             Assert.NotEmpty(flattened.FirstLayer.Edges);
-            Assert.Equal(1, flattened.Layers.Count);
             Assert.Equal(TestHelper.Actors3, flattened.Actors);
             Assert.Collection(flattened.FirstLayer.Edges,
                 e =>
@@ -51,7 +50,6 @@ namespace MNCD.Tests
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.Layers);
             Assert.NotEmpty(flattened.FirstLayer.Edges);
-            Assert.Equal(1, flattened.Layers.Count);
             Assert.Equal(TestHelper.Actors3, flattened.Actors);
             Assert.Collection(flattened.FirstLayer.Edges,
                 e =>
