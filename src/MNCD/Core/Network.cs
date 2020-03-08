@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,6 +11,7 @@ namespace MNCD.Core
         public List<InterLayerEdge> InterLayerEdges = new List<InterLayerEdge>();
         public Layer FirstLayer => Layers.FirstOrDefault();
         public int LayerCount => Layers.Count;
+        public int ActorCount => Actors.Count;
 
         public Network()
         {
@@ -23,19 +25,6 @@ namespace MNCD.Core
         public Network(Layer layer, List<Actor> actors) : this(layer)
         {
             Actors = actors;
-        }
-
-        public Network(List<Layer> layers, List<Actor> actors)
-        {
-            Layers = layers;
-            Actors = actors;
-        }
-
-        // TODO: move to network extensions
-        public Dictionary<Layer, int> GetLayerToIndex()
-        {
-            var i = 0;
-            return Layers.ToDictionary(l => l, l => i++);
         }
     }
 }

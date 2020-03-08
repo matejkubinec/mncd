@@ -3,7 +3,6 @@ using MNCD.Flattening;
 using MNCD.Tests.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace MNCD.Tests.Flattening
@@ -36,7 +35,6 @@ namespace MNCD.Tests.Flattening
 
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.Layers);
-            Assert.Equal(1, flattened.Layers.Count);
             Assert.Equal(actors, flattened.Actors);
             Assert.Collection(flattened.FirstLayer.Edges,
                 e => 
@@ -76,7 +74,6 @@ namespace MNCD.Tests.Flattening
 
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.Layers);
-            Assert.Equal(1, flattened.Layers.Count);
             Assert.Equal(actors, flattened.Actors);
             Assert.Collection(flattened.FirstLayer.Edges,
                 e => 
@@ -105,7 +102,6 @@ namespace MNCD.Tests.Flattening
 
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.Layers);
-            Assert.Equal(1, flattened.Layers.Count);
             Assert.Equal(actors, flattened.Actors);
             Assert.Collection(flattened.FirstLayer.Edges,
                 e => 
@@ -145,7 +141,6 @@ namespace MNCD.Tests.Flattening
 
             Assert.NotNull(flattened);
             Assert.NotEmpty(flattened.Layers);
-            Assert.Equal(1, flattened.Layers.Count);
             Assert.Equal(actors, flattened.Actors);
             Assert.Collection(flattened.FirstLayer.Edges,
                 e => 

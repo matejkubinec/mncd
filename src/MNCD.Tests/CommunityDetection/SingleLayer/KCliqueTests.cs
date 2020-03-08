@@ -97,7 +97,6 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
                 var adjacent = kclique.GetAdjacentCliques(clique, membership);
                 Assert.Empty(adjacent);
             }
-
         }
 
         [Fact]
@@ -189,8 +188,10 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
             var c = new Edge(cliqueActors[0], cliqueActors[1]);
             Assert.Collection(network.Layers[0].Edges,
                 e => Assert.True(
-                    (e.From == c.From && e.To == c.To) ||
-                    (e.From == c.To && e.From == c.To)));
+                    e.Pair == (e.From, e.To) ||
+                    e.Pair == (e.To, e.From)
+                )
+            );
         }
 
         [Fact]
@@ -198,12 +199,18 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
         {
             var generator = new CompleteGraphGenerator();
             var kclique = new KClique();
-            var communties = kclique.GetKCommunities(generator.Generate(4), 3);
+            var network = generator.Generate(4);
+            var communties = kclique.GetKCommunities(network, 3);
 
             Assert.NotEmpty(communties);
-            Assert.Equal(1, communties.Count);
-
-
+            Assert.Collection(communties,
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(network.Actors[0], a),
+                    a => Assert.Equal(network.Actors[1], a),
+                    a => Assert.Equal(network.Actors[2], a),
+                    a => Assert.Equal(network.Actors[3], a)
+                )
+            );
         }
 
         [Fact]
@@ -214,7 +221,6 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
             //    |  2 -- 3 -- 4  |
             //    | /           \ |
             //    1               6
-
             var ac = ActorHelper.Get(7);
             var ne = new Network();
             var ed = new List<Edge>
@@ -235,7 +241,13 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
             var communties = kclique.GetKCommunities(ne, 3);
 
             Assert.NotEmpty(communties);
-            Assert.Equal(1, communties.Count);
+            Assert.Collection(communties,
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(ne.Actors[0], a),
+                    a => Assert.Equal(ne.Actors[1], a),
+                    a => Assert.Equal(ne.Actors[2], a)
+                )
+            );
         }
 
         [Fact]
@@ -265,7 +277,18 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
             var communties = kclique.GetKCommunities(ne, 3);
 
             Assert.NotEmpty(communties);
-            Assert.Equal(2, communties.Count);
+            Assert.Collection(communties.OrderBy(c => c.Actors.First().Name),
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(ac[0], a),
+                    a => Assert.Equal(ac[1], a),
+                    a => Assert.Equal(ac[2], a)
+                ),
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(ac[2], a),
+                    a => Assert.Equal(ac[3], a),
+                    a => Assert.Equal(ac[4], a)
+                )
+            );
         }
 
         [Fact]
