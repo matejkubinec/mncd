@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MNCD.Core;
+using MNCD.Extensions;
 using Xunit;
 
 namespace MNCD.Tests.Core

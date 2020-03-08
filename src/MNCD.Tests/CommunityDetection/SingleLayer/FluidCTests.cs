@@ -120,21 +120,18 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
                 .OrderBy(c => c.Actors.First().Name)
                 .ToList();
 
-            actual[0] = new Community(actual[0].Actors.OrderBy(a => a.Name));
-            actual[1] = new Community(actual[1].Actors.OrderBy(a => a.Name));
-
-
-            Assert.Equal(expected.Count, actual.Count);
-
-            Assert.Equal(expected[0].Actors.Count, actual[0].Actors.Count);
-            Assert.Equal(expected[0].Actors[0], actual[0].Actors[0]);
-            Assert.Equal(expected[0].Actors[1], actual[0].Actors[1]);
-            Assert.Equal(expected[0].Actors[2], actual[0].Actors[2]);
-
-            Assert.Equal(expected[1].Actors.Count, actual[1].Actors.Count);
-            Assert.Equal(expected[1].Actors[0], actual[1].Actors[0]);
-            Assert.Equal(expected[1].Actors[1], actual[1].Actors[1]);
-            Assert.Equal(expected[1].Actors[2], actual[1].Actors[2]);
+            Assert.Collection(actual.OrderBy(a => a.Actors.First().Name),
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(actors[0], a),
+                    a => Assert.Equal(actors[1], a),
+                    a => Assert.Equal(actors[2], a)
+                ),
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(actors[3], a),
+                    a => Assert.Equal(actors[4], a),
+                    a => Assert.Equal(actors[5], a)
+                )
+            );
         }
     }
 }
