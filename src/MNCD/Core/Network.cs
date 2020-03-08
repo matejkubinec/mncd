@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,6 +19,12 @@ namespace MNCD.Core
         public Network(Layer layer)
         {
             Layers.Add(layer);
+        }
+
+        public Network(List<Layer> layers, List<Actor> actors)
+        {
+            Layers = layers;
+            Actors = actors;
         }
 
         public Network(Layer layer, List<Actor> actors) : this(layer)
