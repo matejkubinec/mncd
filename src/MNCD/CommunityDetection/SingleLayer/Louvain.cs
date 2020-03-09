@@ -12,35 +12,61 @@ namespace MNCD.CommunityDetection.SingleLayer
     {
         public List<Community> Apply(Network inputNetwork)
         {
+            var hierarchy = GetHierarchy(inputNetwork);
+            if (hierarchy.Count == 0)
+            {
+                return inputNetwork.Actors
+                    .Select(a => new Community(a))
+                    .ToList();
+            }
+            var ordered = hierarchy.OrderByDescending(h => h.modularity);
+            return ordered.First().communities;
+        }
+
+        public List<(double modularity, List<Community> communities)> GetHierarchy(Network inputNetwork)
+        {
             // TODO: add checks
             var network = inputNetwork;
-            List<Community> best = network.Actors
-                .Select(a => new Community())
-                .ToList();
             List<Community> communities;
             Dictionary<Actor, Community> actorToCommunity;
-            
-            while(true)
+            Dictionary<Actor, List<Actor>> actorToActors = null;
+
+            var hierarchy = new List<(double modularity, List<Community> communities)>();
+            while (true)
             {
                 (communities, actorToCommunity) = PhaseOne(network);
 
-                network = PhaseTwo(network, communities, actorToCommunity);
+                var com = communities;
+                if (actorToActors != null)
+                {
+                    var original = new List<Community>();
+                    foreach (var c in communities)
+                    {
+                        var actors = c.Actors.SelectMany(a => actorToActors[a]);
+                        original.Add(new Community(actors));
+                    }
+                    com = original;
+                }
+                com = com.Where(c => c.Size > 0).ToList();
+                hierarchy.Add((Modularity.Compute(inputNetwork, com), com));
 
-                if (network.Actors.Count == 1)
+                (network, actorToActors) = PhaseTwo(network, communities, actorToCommunity);
+
+                var edges = network.FirstLayer.Edges;
+                if (network.ActorCount == 1 ||
+                    edges.Count == 0 ||
+                    (edges.Count == 1 && edges.Any(e => e.From == e.To)))
                 {
                     break;
                 }
-
-                best = communities.Where(c => c.Size > 0).ToList();
             }
-
-            return best;
+            return hierarchy;
         }
 
         internal (List<Community>, Dictionary<Actor, Community>) PhaseOne(Network network)
         {
             var actorToCommunity = network.Actors
-                .ToDictionary(a => a,a => new Community(a));
+                .ToDictionary(a => a, a => new Community(a));
             var communities = actorToCommunity.Values.ToList();
             var actorToNeighbours = network.FirstLayer.GetNeighboursDict();
 
@@ -51,15 +77,20 @@ namespace MNCD.CommunityDetection.SingleLayer
             {
                 iterations++;
                 change = false;
-                
-                foreach(var actor in network.Actors)
+
+                foreach (var actor in network.Actors)
                 {
+                    if (!actorToNeighbours.ContainsKey(actor))
+                    {
+                        continue;
+                    }
+
                     var ac = actorToCommunity[actor];
                     var mc = Modularity.Compute(network, communities);
                     var maxModularity = mc;
                     var com = ac;
 
-                    foreach(var neighbour in actorToNeighbours[actor])
+                    foreach (var neighbour in actorToNeighbours[actor])
                     {
                         var nc = actorToCommunity[neighbour];
 
@@ -89,7 +120,7 @@ namespace MNCD.CommunityDetection.SingleLayer
                         change = true;
                         ac.Actors.Remove(actor);
                         com.Actors.Add(actor);
-                        actorToCommunity[actor] = com; 
+                        actorToCommunity[actor] = com;
                     }
                 }
             }
@@ -97,7 +128,7 @@ namespace MNCD.CommunityDetection.SingleLayer
             return (communities, actorToCommunity);
         }
 
-        internal Network PhaseTwo(
+        internal (Network, Dictionary<Actor, List<Actor>>) PhaseTwo(
             Network network,
             List<Community> communities,
             Dictionary<Actor, Community> actorToCommunity)
@@ -107,8 +138,8 @@ namespace MNCD.CommunityDetection.SingleLayer
                 .Where(c => c.Size > 0)
                 .ToDictionary(c => c, c => new Actor("a" + i++));
             var newEdges = new Dictionary<(Actor f, Actor t), double>();
-            
-            foreach(var edge in network.FirstLayer.Edges)
+
+            foreach (var edge in network.FirstLayer.Edges)
             {
                 var fc = actorToCommunity[edge.From];
                 var tc = actorToCommunity[edge.To];
@@ -135,8 +166,11 @@ namespace MNCD.CommunityDetection.SingleLayer
             }
 
             var newActors = newCommunityToActor.Values.ToList();
+            var actorToActors = newActors.ToDictionary(
+                a => a,
+                a => newCommunityToActor.First(c => c.Value == a).Key.Actors);
             var newNetwork = new Network(new Layer(), newActors);
-            foreach(var newEdge in newEdges)
+            foreach (var newEdge in newEdges)
             {
                 var edge = new Edge
                 {
@@ -146,7 +180,7 @@ namespace MNCD.CommunityDetection.SingleLayer
                 };
                 newNetwork.FirstLayer.Edges.Add(edge);
             }
-            return newNetwork;
+            return (newNetwork, actorToActors);
         }
 
         internal double ModularityGain(Network n, Community c, Actor i)
@@ -154,7 +188,7 @@ namespace MNCD.CommunityDetection.SingleLayer
             var sumIn = GetSumIn(n, c);
             var sumTot = GetSumTot(n, c);
             var kIn = GetKIn(n, i, c);
-            var kI = GetKI(n, i);            
+            var kI = GetKI(n, i);
             var m = GetM(n);
 
             return
@@ -166,7 +200,7 @@ namespace MNCD.CommunityDetection.SingleLayer
         internal double GetSumIn(Network n, Community c)
         {
             var res = 0.0;
-            foreach(var e in n.FirstLayer.Edges)
+            foreach (var e in n.FirstLayer.Edges)
             {
                 if (c.Actors.Contains(e.From) && c.Actors.Contains(e.To))
                 {
@@ -180,7 +214,7 @@ namespace MNCD.CommunityDetection.SingleLayer
         internal double GetSumTot(Network n, Community c)
         {
             var res = 0.0;
-            foreach(var e in n.FirstLayer.Edges)
+            foreach (var e in n.FirstLayer.Edges)
             {
                 if (c.Actors.Contains(e.From))
                 {
@@ -204,9 +238,9 @@ namespace MNCD.CommunityDetection.SingleLayer
         internal double GetKI(Network n, Actor i)
         {
             var res = 0.0;
-            foreach(var e in n.FirstLayer.Edges)
+            foreach (var e in n.FirstLayer.Edges)
             {
-                if(e.From == i || e.To == i)
+                if (e.From == i || e.To == i)
                 {
                     res += e.Weight;
                 }
@@ -218,7 +252,7 @@ namespace MNCD.CommunityDetection.SingleLayer
         internal double GetKIn(Network n, Actor i, Community c)
         {
             var res = 0.0;
-            foreach(var e in n.FirstLayer.Edges)
+            foreach (var e in n.FirstLayer.Edges)
             {
                 if (e.From == i)
                 {

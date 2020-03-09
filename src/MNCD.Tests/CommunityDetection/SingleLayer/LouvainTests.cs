@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using MNCD.CommunityDetection.SingleLayer;
-using MNCD.Core;
-using MNCD.Generators;
 using MNCD.Tests.Helpers;
+using MNCD.Core;
 using Xunit;
+using MNCD.Generators;
+using System;
 
 namespace MNCD.Tests.CommunityDetection.SingleLayer
 {
     public class LouvainTests
     {
         [Fact]
-        public void Test()
+        public void LouvainTest()
         {
             // 0          4
             // | \      / |
@@ -45,6 +46,21 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
                     a => Assert.Equal(actors[5], a)
                 )
             );
+        }
+
+        [Fact]
+        public void TestRandom()
+        {
+            var generator = new RandomMultiLayerGenerator();
+            var random = new Random();
+            foreach (var n in Enumerable.Range(2, 15))
+            {
+                var network = generator.GenerateSingleLayer(n, random.NextDouble());
+                var communities = new Louvain().Apply(network);
+
+                var count = communities.SelectMany(c => c.Actors).Count();
+                Assert.Equal(n, count);
+            }
         }
     }
 }

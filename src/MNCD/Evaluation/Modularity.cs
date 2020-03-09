@@ -16,7 +16,7 @@ namespace MNCD.Evaluation
             var LC = CommunityToLinkCount(edges, communities);
             var KC = CommunityToDegrees(network, communities);
             var M = 0.0;
-            foreach(var c in communities)
+            foreach (var c in communities)
             {
                 M += (LC[c] / L) - Math.Pow(KC[c] / (2.0 * L), 2.0);
             }
@@ -28,9 +28,9 @@ namespace MNCD.Evaluation
             List<Community> communities)
         {
             var res = communities.ToDictionary(c => c, c => 0);
-            foreach(var edge in edges)
+            foreach (var edge in edges)
             {
-                foreach(var c in communities)
+                foreach (var c in communities)
                 {
                     if (c.Actors.Contains(edge.From) &&
                         c.Actors.Contains(edge.To))
@@ -48,11 +48,14 @@ namespace MNCD.Evaluation
         {
             var atd = network.GetActorToDegree();
             var res = communities.ToDictionary(c => c, c => 0);
-            foreach(var c in communities)
+            foreach (var c in communities)
             {
-                foreach(var a in c.Actors)
+                foreach (var a in c.Actors)
                 {
-                    res[c] += (int)atd[a];
+                    if (atd.ContainsKey(a))
+                    {
+                        res[c] += (int)atd[a];
+                    }
                 }
             }
             return res;
