@@ -53,14 +53,11 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
         {
             var generator = new RandomMultiLayerGenerator();
             var random = new Random();
-            foreach (var n in Enumerable.Range(2, 15))
-            {
-                var network = generator.GenerateSingleLayer(n, random.NextDouble());
-                var communities = new Louvain().Apply(network);
+            var network = generator.GenerateSingleLayer(5, 0.65);
+            var communities = new Louvain().Apply(network);
 
-                var count = communities.SelectMany(c => c.Actors).Count();
-                Assert.Equal(n, count);
-            }
+            var count = communities.SelectMany(c => c.Actors).Count();
+            Assert.Equal(5, count);
         }
     }
 }
