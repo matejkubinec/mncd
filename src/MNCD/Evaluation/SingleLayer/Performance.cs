@@ -38,29 +38,29 @@ namespace MNCD.Evaluation.SingleLayer
 
         private static int GetInterEdges(Network network, List<Community> communities)
         {
-            var edgesDict = network.Layers.First().Edges.ToDictionary(e => (e.From, e.To), e => e);
-            var inter = 0;
+            var interEdges = 0;
             for (var i = 0; i < communities.Count; i++)
             {
-                foreach (var a1 in communities[i].Actors)
+                for (var j = i + 1; j < communities.Count; j++)
                 {
-                    for (var j = 0; j < communities.Count; j++)
-                    {
-                        if (i == j) continue;
+                    var c1 = communities[i];
+                    var c2 = communities[j];
 
-                        foreach (var a2 in communities[j].Actors)
+                    var maximalCount = c1.Size * c2.Size;
+
+                    foreach (var edge in network.FirstLayer.Edges)
+                    {
+                        if ((c1.Contains(edge.From) && c2.Contains(edge.To)) ||
+                            (c2.Contains(edge.From) && c1.Contains(edge.To)))
                         {
-                            if (!edgesDict.ContainsKey((a1, a2)) && !edgesDict.ContainsKey((a2, a1)))
-                            {
-                                inter++;
-                            }
+                            maximalCount--;
                         }
                     }
 
+                    interEdges += maximalCount;
                 }
-
             }
-            return inter;
+            return interEdges;
         }
     }
 }
