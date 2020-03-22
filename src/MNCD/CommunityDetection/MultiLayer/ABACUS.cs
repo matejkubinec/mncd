@@ -6,22 +6,18 @@ using MNCD.Extensions;
 
 namespace MNCD.CommunityDetection.MultiLayer
 {
-    ///  4.3 - page 13
-    /// 
     public class ABACUS
     {
         /// <summary>
         /// Applies ABACUS community detection algorithm on supplied network.
         /// ABACUS: frequent pAttern mining-BAsed Community discovery in mUltidimensional networkS
         /// Michele Berlingerio, Fabio Pinelli, Francesco Calabrese
-        /// https://arxiv.org/pdf/1303.2025.pdf
+        /// https://arxiv.org/pdf/1303.2025.pdf.
         /// </summary>
-        /// <param name="network"></param>
-        /// <param name="Func<Network, List<Community>>">
-        /// Community detection algorithm
-        /// </param>
-        /// <param name="treshold"></param>
-        /// <returns></returns>
+        /// <param name="network">Multi-layer network.</param>
+        /// <param name="cd">Community detection algorithm.</param>
+        /// <param name="treshold">Treshold for frequent itemset mining.</param>
+        /// <returns>List of overlapping communities.</returns>
         public List<Community> Apply(
             Network network,
             Func<Network, List<Community>> cd,
@@ -53,8 +49,26 @@ namespace MNCD.CommunityDetection.MultiLayer
             // 3. Each pair is treated as an item and a frequent closed itemset
             // mining algorithm is applied
             var itemSets = new Apriori(membership, treshold).GetClosedItemSets();
+            var result = BuildCommunities(membership, itemSets);
 
-            return new List<Community>();
+            return result;
+        }
+
+        private List<Community> BuildCommunities(
+            Dictionary<Actor, HashSet<(int, int)>> membership,
+            List<HashSet<(int, int)>> itemSets)
+        {
+            var communities = new List<Community>();
+            foreach (var itemSet in itemSets)
+            {
+                var actors = membership
+                    .Where(m => itemSet.IsSubsetOf(m.Value))
+                    .Select(m => m.Key);
+                var community = new Community(actors);
+                communities.Add(community);
+            }
+
+            return communities;
         }
 
         private Network LayerToNetwork(Layer layer)
@@ -62,7 +76,7 @@ namespace MNCD.CommunityDetection.MultiLayer
             return new Network
             {
                 Layers = new List<Layer> { layer },
-                Actors = layer.GetActors()
+                Actors = layer.GetActors(),
             };
         }
 
@@ -106,12 +120,18 @@ namespace MNCD.CommunityDetection.MultiLayer
                     .Select(s => s.Key)
                     .ToList();
                 var joined = Join(supported, k + 1);
+                var joinedSupport = GetSupport(joined);
 
                 // Find closed itemsets
                 foreach (var subset in supported)
                 {
-                    if (joined.All(j => !j.IsSupersetOf(subset)))
+                    foreach (var superset in joined)
                     {
+                        if (subset.IsSubsetOf(superset) && joinedSupport[superset] == support[subset])
+                        {
+                            continue;
+                        }
+
                         _closedItemSets.Add(subset);
                     }
                 }
@@ -128,32 +148,37 @@ namespace MNCD.CommunityDetection.MultiLayer
                 var membership = _membership.Values;
                 foreach (var itemset in itemsets)
                 {
-                    foreach (var item in itemset)
-                    {
-                        support[itemset] += membership
-                            .Where(m => m.Contains(item))
-                            .Count();
-                    }
+                    support[itemset] += membership
+                        .Where(m => itemset.IsSubsetOf(m))
+                        .Count();
                 }
+
                 return support;
             }
 
             private List<HashSet<(int, int)>> Join(List<HashSet<(int, int)>> itemsests, int k)
             {
-                var joined = new HashSet<HashSet<(int, int)>>();
+                var joined = new List<HashSet<(int, int)>>();
                 foreach (var i1 in itemsests)
                 {
                     foreach (var i2 in itemsests)
                     {
                         if (i1.Intersect(i2).Count() >= (k - 2))
                         {
-                            joined.Add(i1.Concat(i2).ToHashSet());
+                            var concatenated = i1.Concat(i2).ToHashSet();
+
+                            if (!joined.Any(j => j.SetEquals(concatenated)))
+                            {
+                                joined.Add(concatenated);
+                            }
                         }
                     }
                 }
+
                 return joined
                     .Where(j => j.Count >= k)
                     .Select(j => j.OrderBy(s => s.Item1).ThenBy(s => s.Item2).ToHashSet())
+                    .ToHashSet()
                     .Distinct()
                     .ToList();
             }

@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MNCD", "MNCD\MNCD.csproj", "{CBC5002F-61B6-4C06-BEEE-09EFADFBF0E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MNCD", "MNCD\MNCD.csproj", "{CBC5002F-61B6-4C06-BEEE-09EFADFBF0E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MNCD.Tests", "MNCD.Tests\MNCD.Tests.csproj", "{14AD22A6-EF00-4429-A058-4B4FEDED0522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MNCD.Tests", "MNCD.Tests\MNCD.Tests.csproj", "{14AD22A6-EF00-4429-A058-4B4FEDED0522}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BAB81A8A-92C6-473D-9409-6E58AEC1FF51}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CBC5002F-61B6-4C06-BEEE-09EFADFBF0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,18 +34,6 @@ Global
 		{CBC5002F-61B6-4C06-BEEE-09EFADFBF0E2}.Release|x64.Build.0 = Release|Any CPU
 		{CBC5002F-61B6-4C06-BEEE-09EFADFBF0E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{CBC5002F-61B6-4C06-BEEE-09EFADFBF0E2}.Release|x86.Build.0 = Release|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Debug|x64.Build.0 = Debug|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Debug|x86.Build.0 = Debug|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Release|x64.ActiveCfg = Release|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Release|x64.Build.0 = Release|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Release|x86.ActiveCfg = Release|Any CPU
-		{FA85A6E7-08CB-43EE-B143-50E2C10EEF4D}.Release|x86.Build.0 = Release|Any CPU
 		{14AD22A6-EF00-4429-A058-4B4FEDED0522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14AD22A6-EF00-4429-A058-4B4FEDED0522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14AD22A6-EF00-4429-A058-4B4FEDED0522}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -56,5 +46,11 @@ Global
 		{14AD22A6-EF00-4429-A058-4B4FEDED0522}.Release|x64.Build.0 = Release|Any CPU
 		{14AD22A6-EF00-4429-A058-4B4FEDED0522}.Release|x86.ActiveCfg = Release|Any CPU
 		{14AD22A6-EF00-4429-A058-4B4FEDED0522}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {165B9558-142F-4460-BBC5-D25971B5B4ED}
 	EndGlobalSection
 EndGlobal
