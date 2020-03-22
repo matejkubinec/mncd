@@ -5,6 +5,31 @@ namespace MNCD.Tests.Helpers
 {
     public static class NetworkHelper
     {
+        public static Network TwoLayerTriangles()
+        {
+            // L1             L2
+            // 0               4
+            // | \   L1--L2  / |
+            // |  2 ------- 3  |
+            // | /           \ |
+            // 1               5
+            var actors = ActorHelper.Get(6);
+            var edges = new List<Edge>
+            {
+                new Edge(actors[0], actors[1]),
+                new Edge(actors[0], actors[2]),
+                new Edge(actors[1], actors[2]),
+                new Edge(actors[2], actors[3]),
+                new Edge(actors[3], actors[4]),
+                new Edge(actors[3], actors[5]),
+                new Edge(actors[4], actors[5])
+            };
+            var layerOne = new Layer(edges);
+            var layerTwo = new Layer(edges);
+            var layers = new List<Layer> { layerOne, layerTwo };
+            return new Network(layers, actors);
+        }
+
         public static Network InitBarabasi()
         {
             var A = ActorHelper.Get(9);
