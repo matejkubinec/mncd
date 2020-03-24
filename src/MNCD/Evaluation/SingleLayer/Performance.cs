@@ -4,8 +4,27 @@ using MNCD.Core;
 
 namespace MNCD.Evaluation.SingleLayer
 {
+    /// <summary>
+    /// Implement Performance quality function for communities.
+    /// Based on:
+    /// Community detection in graphs
+    /// https://arxiv.org/abs/0906.0612
+    /// Santo Fortunato.
+    /// </summary>
     public static class Performance
     {
+        /// <summary>
+        /// Get perfomance for partition of network.
+        /// </summary>
+        /// <param name="network">
+        /// Network that is partitioned.
+        /// </param>
+        /// <param name="communities">
+        /// List of communities for which the performance should be computed.
+        /// </param>
+        /// <returns>
+        /// Performance of a patitioning of network.
+        /// </returns>
         public static double Get(Network network, List<Community> communities)
         {
             var intra = GetIntraEdges(network, communities);
@@ -15,7 +34,7 @@ namespace MNCD.Evaluation.SingleLayer
 
             if (totalPairs > 0)
             {
-                return (intra + inter) / (double)totalPairs;
+                return (intra + inter) / totalPairs;
             }
             else
             {
@@ -33,6 +52,7 @@ namespace MNCD.Evaluation.SingleLayer
                     count++;
                 }
             }
+
             return count;
         }
 
@@ -60,6 +80,7 @@ namespace MNCD.Evaluation.SingleLayer
                     interEdges += maximalCount;
                 }
             }
+
             return interEdges;
         }
     }

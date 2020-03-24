@@ -4,6 +4,7 @@ using System.Linq;
 using MNCD.Evaluation;
 using MNCD.Core;
 using MNCD.Extensions;
+using MNCD.Evaluation.SingleLayer;
 
 namespace MNCD.CommunityDetection.SingleLayer
 {
