@@ -5,15 +5,16 @@ using MNCD.Evaluation;
 using MNCD.Core;
 using MNCD.Tests.Helpers;
 using Xunit;
+using MNCD.Evaluation.SingleLayer;
 
-namespace MNCD.Tests.Evaluation
+namespace MNCD.Tests.Evaluation.SingleLayer
 {
     public class ModularityTests
     {
         [Fact]
         public void Zero()
         {
-            for(var i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
                 var network = new MNCD.Generators.CompleteGraphGenerator().Generate(2 + i);
                 var communities = new List<Community> { new Community(network.Actors) };
