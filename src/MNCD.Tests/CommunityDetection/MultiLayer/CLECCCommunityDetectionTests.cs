@@ -51,6 +51,55 @@ namespace MNCD.Tests.CommunityDetection.MultiLayer
         }
 
         [Fact]
+        public void ConnectedTrianglesMultiLayer()
+        {
+            // L1            L2
+            // 0             4
+            // | \  L1-L2  / |
+            // |  2 ----- 3  |
+            // | /         \ |
+            // 1             5
+            var A = ActorHelper.Get(6);
+            var e0 = new List<Edge>
+            {
+                new Edge(A[0], A[1]),
+                new Edge(A[0], A[2]),
+                new Edge(A[1], A[2]),
+            };
+            var e1 = new List<Edge>
+            {
+                new Edge(A[3], A[4]),
+                new Edge(A[3], A[5]),
+                new Edge(A[4], A[5])
+            };
+            var l0 = new Layer(e0);
+            var l1 = new Layer(e1);
+            var L = new List<Layer> { l0, l1 };
+            var I = new List<InterLayerEdge>
+            {
+                new InterLayerEdge(A[2], l0, A[3], l1)
+            };
+            var network = new Network(L, A)
+            {
+                InterLayerEdges = I
+            };
+            var communities = new CLECCCommunityDetection().Apply(network, 1, 2);
+
+            Assert.Collection(communities.OrderBy(c => c.Actors.First().Name),
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(A[0], a),
+                    a => Assert.Equal(A[1], a),
+                    a => Assert.Equal(A[2], a)
+                ),
+                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                    a => Assert.Equal(A[3], a),
+                    a => Assert.Equal(A[4], a),
+                    a => Assert.Equal(A[5], a)
+                )
+            );
+        }
+
+        [Fact]
         public void TestRandom()
         {
             var random = new Random();
