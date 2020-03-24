@@ -49,7 +49,7 @@ namespace MNCD.Neighbourhood
                     }
                     else
                     {
-                        neighbours[neighbour] = 0;
+                        neighbours[neighbour] = 1;
                     }
                 }
             }

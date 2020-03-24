@@ -34,7 +34,16 @@ namespace MNCD.Neighbourhood
             var y = MN(n, e.To, alpha);
             var xy = new List<Actor> { e.From, e.To };
 
-            return x.Intersect(y).Count() / (double)x.Union(y).Except(xy).Count();
+            var result = x.Intersect(y).Count() / (double)x.Union(y).Except(xy).Count();
+
+            if (double.IsNaN(result))
+            {
+                return 0;
+            }
+            else
+            {
+                return result;
+            }
         }
 
         private static List<Actor> MN(Network n, Actor x, int alpha)
