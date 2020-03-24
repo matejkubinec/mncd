@@ -17,6 +17,9 @@ namespace MNCD.Neighbourhood
         /// <summary>
         /// Computes the CLECC measure for supplied edge.
         /// </summary>
+        /// <param name="n">
+        /// Multi-Layer Network.
+        /// </param>
         /// <param name="e">
         /// Edge, for which the CLECC measure will be computed.
         /// </param>

@@ -13,19 +13,26 @@ namespace MNCD.CommunityDetection.MultiLayer
     ///
     /// An Introduction to Community Detection in Multi-layered Social Network
     /// https://arxiv.org/ftp/arxiv/papers/1209/1209.6050.pdf
-    /// Piotr Bródka, Tomasz Filipowski, Przemysław Kazienko
+    /// Piotr Bródka, Tomasz Filipowski, Przemysław Kazienko.
     /// </summary>
     public class CLECCCommunityDetection
     {
         /// <summary>
-        /// 
+        /// Community detection based on CLECC (cross-layer edge clustering coefficient) measure.
         /// </summary>
-        /// <param name="n"></param>
-        /// <param name="alpha"></param>
-        /// <param name="k"></param>
-        /// <returns></returns>
-        public List<Community> Apply(Network n, int alpha, int k)
+        /// <param name="network">
+        /// Network on which the community detection will be applied.
+        /// </param>
+        /// <param name="alpha">
+        /// Minimum number of layers on which neighbouring node must be a neighbour with node x.
+        /// </param>
+        /// <param name="k">
+        /// Number of Communities
+        /// </param>
+        /// <returns>List of communities.</returns>
+        public List<Community> Apply(Network network, int alpha, int k)
         {
+            var n = CopyNetwork(network);
             var flattened = new BasicFlattening().Flatten(n, true);
             var components = ConnectedComponents(flattened);
 
@@ -68,6 +75,22 @@ namespace MNCD.CommunityDetection.MultiLayer
         private IEnumerable<List<Actor>> ConnectedComponents(Network network)
         {
             return Connected.GetConnectedComponents(network.FirstLayer, network.Actors);
+        }
+
+        private Network CopyNetwork(Network n)
+        {
+            var layers = n.Layers.Select(l => new Layer
+            {
+                Name = l.Name,
+                Edges = l.Edges.Select(e => e.Copy()).ToList(),
+            }).ToList();
+            var interLayer = n.InterLayerEdges.Select(e => e.Copy()).ToList();
+            return new Network
+            {
+                Actors = n.Actors,
+                Layers = layers,
+                InterLayerEdges = interLayer,
+            };
         }
     }
 }
