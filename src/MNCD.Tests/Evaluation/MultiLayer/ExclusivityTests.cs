@@ -1,48 +1,14 @@
 using System.Collections.Generic;
+using MNCD.Evaluation.MultiLayer;
 using MNCD.Core;
-using MNCD.Evaluation;
 using Xunit;
 
-namespace MNCD.Tests.Evaluation
+namespace MNCD.Tests.Evaluation.MultiLayer
 {
-    public class VarietyTests
+    public class ExclusivityTests
     {
         [Fact]
-        public void VarietyEqualsOne()
-        {
-            var actors = new List<Actor>
-            {
-                new Actor("a1"),
-                new Actor("a2")
-            };
-            var network = new Network
-            {
-                Actors = actors,
-                Layers = new List<Layer>
-                {
-                    new Layer
-                    {
-                        Edges = new List<Edge>
-                        {
-                            new Edge(actors[0], actors[1])
-                        }
-                    },
-                    new Layer
-                    {
-                        Edges = new List<Edge>
-                        {
-                            new Edge(actors[0], actors[1])
-                        }
-                    }
-                }
-            };
-            var community = new Community(actors);
-
-            Assert.Equal(1, Variety.Compute(community, network));
-        }
-
-        [Fact]
-        public void VarietyEqualsZero()
+        public void ExclusivityEqualsOne()
         {
             var actors = new List<Actor>
             {
@@ -72,9 +38,43 @@ namespace MNCD.Tests.Evaluation
                     }
                 }
             };
-            var community = new Community(actors.GetRange(0, 2));
+            var community = new Community(actors);
 
-            Assert.Equal(0, Variety.Compute(community, network));
+            Assert.Equal(1, Exclusivity.Compute(community, network));
+        }
+
+        [Fact]
+        public void ExclusivityEqualsZero()
+        {
+            var actors = new List<Actor>
+            {
+                new Actor("a1"),
+                new Actor("a2")
+            };
+            var network = new Network
+            {
+                Actors = actors,
+                Layers = new List<Layer>
+                {
+                    new Layer
+                    {
+                        Edges = new List<Edge>
+                        {
+                            new Edge(actors[0], actors[1])
+                        }
+                    },
+                    new Layer
+                    {
+                        Edges = new List<Edge>
+                        {
+                            new Edge(actors[0], actors[1])
+                        }
+                    }
+                }
+            };
+            var community = new Community(actors);
+
+            Assert.Equal(0, Exclusivity.Compute(community, network));
         }
     }
 }

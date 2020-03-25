@@ -22,5 +22,18 @@
         {
             Weight = w;
         }
+
+        public new InterLayerEdge Copy()
+        {
+            return new InterLayerEdge
+            {
+                From = From,
+                LayerFrom = LayerFrom,
+                To = To,
+                LayerTo = LayerTo,
+                Weight = Weight,
+                Attributes = Attributes,
+            };
+        }
     }
 }

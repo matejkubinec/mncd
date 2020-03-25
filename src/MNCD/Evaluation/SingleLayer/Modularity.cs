@@ -4,23 +4,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MNCD.Evaluation
+namespace MNCD.Evaluation.SingleLayer
 {
+    /// <summary>
+    /// Class that implements modularity measure.
+    /// Based on: http://networksciencebook.com/chapter/9#modularity.
+    /// </summary>
     public static class Modularity
     {
-        // http://networksciencebook.com/chapter/9#modularity    
+        /// <summary>
+        /// Computes modularity for network patitioning.
+        /// </summary>
+        /// <param name="network">
+        /// Network that is partitioned.
+        /// </param>
+        /// <param name="communities">
+        /// List of communities for which the modularity should be computed.
+        /// </param>
+        /// <returns>Modularity of the partition.</returns>
         public static double Compute(Network network, List<Community> communities)
         {
             var edges = network.FirstLayer.Edges;
-            var L = (double)edges.Count();
-            var LC = CommunityToLinkCount(edges, communities);
-            var KC = CommunityToDegrees(network, communities);
-            var M = 0.0;
+            var l = (double)edges.Count();
+            var lc = CommunityToLinkCount(edges, communities);
+            var kc = CommunityToDegrees(network, communities);
+
+            var m = 0.0;
             foreach (var c in communities)
             {
-                M += (LC[c] / L) - Math.Pow(KC[c] / (2.0 * L), 2.0);
+                m += (lc[c] / l) - Math.Pow(kc[c] / (2.0 * l), 2.0);
             }
-            return M;
+
+            return m;
         }
 
         internal static Dictionary<Community, int> CommunityToLinkCount(
@@ -39,6 +54,7 @@ namespace MNCD.Evaluation
                     }
                 }
             }
+
             return res;
         }
 
@@ -58,8 +74,8 @@ namespace MNCD.Evaluation
                     }
                 }
             }
+
             return res;
         }
     }
 }
-

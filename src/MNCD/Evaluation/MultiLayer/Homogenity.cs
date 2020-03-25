@@ -3,10 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using MNCD.Core;
 
-namespace MNCD.Evaluation
+namespace MNCD.Evaluation.MultiLayer
 {
+    /// <summary>
+    /// Class implementing homogenity measure.
+    /// Finding Redundant and Complementary Communities in Multidimensional Networks
+    /// http://www.michelecoscia.com/wp-content/uploads/2012/08/cosciacikm11.pdf
+    /// Michele Berlingerio, Michele Coscia, Fosca Giannotti.
+    /// </summary>
     public static class Homogenity
     {
+        /// <summary>
+        /// Computes homogenity for supplied community in supplied network.
+        /// </summary>
+        /// <param name="community">Community for which homogenity will be computed.</param>
+        /// <param name="network">Network in which community resides.</param>
+        /// <returns>Homogenity value for community.</returns>
         public static double Compute(Community community, Network network)
         {
             if (network.LayerCount <= 1)
