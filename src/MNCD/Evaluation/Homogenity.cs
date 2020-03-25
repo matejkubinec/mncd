@@ -9,6 +9,16 @@ namespace MNCD.Evaluation
     {
         public static double Compute(Community community, Network network)
         {
+            if (network.LayerCount <= 1)
+            {
+                throw new ArgumentException("Homogenity can be computed only for multi-layered networkx.");
+            }
+
+            if (community.Size == 0)
+            {
+                return 1;
+            }
+
             var d = network.Layers.Count;
             var edgeLayerCounts = new List<double>();
 
@@ -31,7 +41,12 @@ namespace MNCD.Evaluation
             var sigmaC = GetSigmaC(edgeLayerCounts, d);
             var sigmaCMax = GetSigmaCMax(edgeLayerCounts);
 
-            return 1 - sigmaC / sigmaCMax;
+            if (sigmaCMax == 0)
+            {
+                return 1;
+            }
+
+            return 1 - (sigmaC / sigmaCMax);
         }
 
         private static double GetSigmaC(List<double> pcds, int d)
