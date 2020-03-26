@@ -1,11 +1,11 @@
+using MNCD.CommunityDetection.SingleLayer;
+using MNCD.Core;
+using MNCD.Generators;
+using MNCD.Tests.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.CommunityDetection.SingleLayer;
-using MNCD.Tests.Helpers;
-using MNCD.Core;
 using Xunit;
-using MNCD.Generators;
-using System;
 
 namespace MNCD.Tests.CommunityDetection.SingleLayer
 {
