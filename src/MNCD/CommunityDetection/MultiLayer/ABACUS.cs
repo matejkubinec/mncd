@@ -88,7 +88,7 @@ namespace MNCD.CommunityDetection.MultiLayer
             return new Network
             {
                 Layers = new List<Layer> { layer },
-                Actors = layer.GetActors(),
+                Actors = layer.GetLayerActors(),
             };
         }
 

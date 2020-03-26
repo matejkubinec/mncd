@@ -1,22 +1,51 @@
+using MNCD.Core;
+using MNCD.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.Core;
-using MNCD.Extensions;
 
 namespace MNCD.CommunityDetection.SingleLayer
 {
-    // https://arxiv.org/pdf/1703.09307.pdf
+    /// <summary>
+    /// Implements FluidC algorithm.
+    ///
+    /// Fluid Communities: A Competitive, Scalable and Diverse Community Detection Algorithm
+    /// https://arxiv.org/pdf/1703.09307.pdf
+    /// Ferran Pares, Dario Garcia-Gasulla, Armand Vilalta, Jonatan Moreno, Eduard Ayguade,
+    /// Jesus Labarta, Ulises Cortes and Toyotaro Suzumura.
+    /// </summary>
     public class FluidC
     {
-        private static Random Random = new Random();
+        private static readonly Random Random = new Random();
 
+        /// <summary>
+        /// Computes communities in network based on FluidC algorithm.
+        /// </summary>
+        /// <param name="network">Network in which to compute communities.</param>
+        /// <param name="k">Number of communities.</param>
+        /// <param name="maxIterations">Maximum number of iterations.</param>
+        /// <returns>List of communities.</returns>
         public IEnumerable<Community> Compute(Network network, int k, int maxIterations = 100)
         {
-            if (k <= 0) throw new ArgumentException("K must be greater than zero.");
-            if (maxIterations <= 1) throw new ArgumentException("MaxIterations must be greater than 1.");
-            if (network.LayerCount != 1) throw new ArgumentException("Network must have only one layer.");
-            if (network.Actors.Count < k) throw new ArgumentException("K must be less than number of actors.");
+            if (k <= 0)
+            {
+                throw new ArgumentException("K must be greater than zero.");
+            }
+
+            if (maxIterations <= 1)
+            {
+                throw new ArgumentException("MaxIterations must be greater than 1.");
+            }
+
+            if (network.LayerCount != 1)
+            {
+                throw new ArgumentException("Network must have only one layer.");
+            }
+
+            if (network.Actors.Count < k)
+            {
+                throw new ArgumentException("K must be less than number of actors.");
+            }
 
             var maxDensity = 1.0;
             var actors = network.Actors.OrderBy(r => Random.NextDouble());

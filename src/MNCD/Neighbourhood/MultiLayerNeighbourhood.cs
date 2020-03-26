@@ -1,6 +1,6 @@
+using MNCD.Core;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.Core;
 
 namespace MNCD.Neighbourhood
 {
@@ -9,7 +9,7 @@ namespace MNCD.Neighbourhood
     /// An Introduction to Community Detection in Multi-layered Social Network.
     ///
     /// https://arxiv.org/ftp/arxiv/papers/1209/1209.6050.pdf
-    /// Piotr Bródka, Tomasz Filipowski, Przemysław Kazienko
+    /// Piotr Bródka, Tomasz Filipowski, Przemysław Kazienko.
     /// </summary>
     public static class MultiLayerNeighbourhood
     {
@@ -41,7 +41,6 @@ namespace MNCD.Neighbourhood
                     }
 
                     var neighbour = e.From == x ? e.To : e.From;
-
 
                     if (neighbours.ContainsKey(neighbour))
                     {

@@ -29,7 +29,7 @@ namespace MNCD.Flattening
                         {
                             From = edge.From,
                             To = edge.To,
-                            Weight = 1
+                            Weight = 1,
                         });
                     }
                 }
@@ -41,23 +41,20 @@ namespace MNCD.Flattening
                 {
                     From = interLayerEdge.From,
                     To = interLayerEdge.To,
-                    Weight = 1
+                    Weight = 1,
                 });
             }
 
             var flattened = new Network
             {
-                Actors = network.Actors
+                Actors = network.Actors,
             };
             flattened.Layers.Add(flattenedLayer);
             return flattened;
         }
 
-        private bool HasUndirectedEdge(Edge layerEdge, Edge edge)
-        {
-            return
-                layerEdge.From == edge.From && layerEdge.To == edge.To ||
-                layerEdge.To == edge.From && layerEdge.From == edge.To;
-        }
+        private bool HasUndirectedEdge(Edge layerEdge, Edge edge) =>
+            (layerEdge.From == edge.From && layerEdge.To == edge.To) ||
+            (layerEdge.To == edge.From && layerEdge.From == edge.To);
     }
 }

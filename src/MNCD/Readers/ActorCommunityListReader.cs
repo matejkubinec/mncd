@@ -1,7 +1,7 @@
+using MNCD.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.Core;
 
 namespace MNCD.Readers
 {

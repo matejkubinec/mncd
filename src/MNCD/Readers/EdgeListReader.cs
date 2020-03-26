@@ -1,6 +1,6 @@
+using MNCD.Core;
 using System;
 using System.Collections.Generic;
-using MNCD.Core;
 
 namespace MNCD.Readers
 {
@@ -75,7 +75,6 @@ namespace MNCD.Readers
                             throw new ArgumentException("Invalid edgelist layers metadata.");
                         }
 
-
                         var l = values[0];
                         var n = values[1];
 
@@ -115,7 +114,7 @@ namespace MNCD.Readers
                         Layer1 = l1,
                         Actor2 = a2,
                         Layer2 = l2,
-                        Weight = w
+                        Weight = w,
                     };
 
                     if (!actors.ContainsKey(a1))
@@ -168,7 +167,7 @@ namespace MNCD.Readers
                     {
                         From = a1,
                         To = a2,
-                        Weight = w
+                        Weight = w,
                     };
                     l1.Edges.Add(edge);
                 }
@@ -180,7 +179,7 @@ namespace MNCD.Readers
                         To = a2,
                         LayerFrom = l1,
                         LayerTo = l2,
-                        Weight = w
+                        Weight = w,
                     };
                     network.InterLayerEdges.Add(edge);
                 }
@@ -192,9 +191,13 @@ namespace MNCD.Readers
         private class EdgeListRow
         {
             public string Actor1 { get; set; }
+
             public string Layer1 { get; set; }
+
             public string Actor2 { get; set; }
+
             public string Layer2 { get; set; }
+
             public string Weight { get; set; }
         }
     }

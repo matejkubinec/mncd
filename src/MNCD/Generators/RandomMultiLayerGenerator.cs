@@ -1,7 +1,7 @@
+using MNCD.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.Core;
 
 namespace MNCD.Generators
 {
@@ -9,7 +9,7 @@ namespace MNCD.Generators
     // https://networkx.github.io/documentation/networkx-1.10/_modules/networkx/generators/random_graphs.html#fast_gnp_random_graph
     public class RandomMultiLayerGenerator
     {
-        private static Random Random = new Random();
+        private static readonly Random Random = new Random();
 
         public Network Generate(int n, int l, double p)
         {
@@ -52,11 +52,12 @@ namespace MNCD.Generators
                         To = t,
                         LayerFrom = lf,
                         LayerTo = lt,
-                        Weight = edge.Weight
+                        Weight = edge.Weight,
                     };
                     multiLayer.InterLayerEdges.Add(interLayer);
                 }
             }
+
             return multiLayer;
         }
 
@@ -96,37 +97,28 @@ namespace MNCD.Generators
                     network.FirstLayer.Edges.Add(edge);
                 }
             }
+
             return network;
         }
 
-        internal List<Actor> InitActors(int n)
-        {
-            return Enumerable
-                .Range(0, n)
-                .Select(a => new Actor($"a{a}"))
-                .ToList();
-        }
+        internal List<Actor> InitActors(int n) => Enumerable
+            .Range(0, n)
+            .Select(a => new Actor($"a{a}"))
+            .ToList();
 
-        internal List<Layer> InitLayers(int l)
-        {
-            return Enumerable
-                            .Range(0, l)
-                            .Select(a => new Layer($"l{a}"))
-                            .ToList();
-        }
+        internal List<Layer> InitLayers(int l) => Enumerable
+            .Range(0, l)
+            .Select(a => new Layer($"l{a}"))
+            .ToList();
 
         internal Dictionary<Actor, Layer> ActorToLayer(
             List<Actor> actors,
-            List<Layer> layers)
-        {
-            return actors.ToDictionary(
+            List<Layer> layers) => actors.ToDictionary(
                 a => a,
                 a =>
                 {
                     var idx = Random.Next(layers.Count);
                     return layers[idx];
-                }
-            );
-        }
+                });
     }
 }

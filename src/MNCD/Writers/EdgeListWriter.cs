@@ -1,7 +1,7 @@
+using MNCD.Core;
+using MNCD.Extensions;
 using System.Collections.Generic;
 using System.Text;
-using MNCD.Core;
-using MNCD.Helpers;
 
 namespace MNCD.Writers
 {
@@ -45,35 +45,6 @@ namespace MNCD.Writers
             return sb.ToString();
         }
 
-        public string ToString(
-            List<Actor> actors,
-            List<Community> communities,
-            bool includeMetadata = false)
-        {
-            var actorToIndex = actors.ToIndexDictionary();
-            var communityToIndex = communities.ToIndexDictionary();
-
-            var sb = new StringBuilder();
-            foreach (var c in communities)
-            {
-                foreach (var a in c.Actors)
-                {
-                    var actor = actorToIndex[a];
-                    var community = communityToIndex[c];
-
-                    sb.Append($"{actor} {community}\n");
-                }
-            }
-
-            if (includeMetadata)
-            {
-                WriteActors(sb, actors, actorToIndex);
-                WriteCommunities(sb, communities, communityToIndex);
-            }
-
-            return sb.ToString();
-        }
-
         private void WriteActors(StringBuilder sb, List<Actor> actors, Dictionary<Actor, int> actorToIndex)
         {
             if (actors.Count > 0)
@@ -98,20 +69,6 @@ namespace MNCD.Writers
                     var layer = layerToIndex[a];
                     var name = string.IsNullOrWhiteSpace(a.Name) ? "-" : a.Name;
                     sb.Append($"{layer} {name}\n");
-                }
-            }
-        }
-
-        private void WriteCommunities(StringBuilder sb, List<Community> communities, Dictionary<Community, int> communityToIndex)
-        {
-            if (communities.Count > 0)
-            {
-                sb.Append("# Communities\n");
-                foreach (var a in communities)
-                {
-                    var community = communityToIndex[a];
-                    var name = "c" + community;
-                    sb.Append($"{community} {name}\n");
                 }
             }
         }

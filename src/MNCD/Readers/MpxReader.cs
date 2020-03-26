@@ -1,9 +1,9 @@
+using MNCD.Core;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using MNCD.Core;
 
 namespace MNCD.Readers
 {
@@ -12,11 +12,12 @@ namespace MNCD.Readers
     {
         public async Task<Network> FromStream(Stream stream)
         {
-            var content = "";
+            var content = string.Empty;
             using (var reader = new StreamReader(stream))
             {
                 content = await reader.ReadToEndAsync();
             }
+
             return FromString(content);
         }
 
@@ -26,15 +27,11 @@ namespace MNCD.Readers
             return FromString(content);
         }
 
-
         public Network FromString(string content)
         {
             var network = new Network();
             var lines = Regex.Split(content, "\r\n|\r|\n");
-            var type = "";
-            var actorAttributes = new List<string>();
-            var nodeAttributes = new List<string>();
-            var edgeAttributes = new List<string>();
+            var type = string.Empty;
             var layers = new List<string>();
             var actors = new List<string>();
             var nodes = new List<string>();
@@ -57,19 +54,6 @@ namespace MNCD.Readers
                     while (lines[++i] != string.Empty)
                     {
                         layers.Add(lines[i]);
-
-                        if (i + 1 == lines.Length)
-                        {
-                            break;
-                        }
-                    }
-                }
-
-                if (lines[i].StartsWith("#ACTOR ATTRIBUTES"))
-                {
-                    while (lines[++i] != string.Empty)
-                    {
-                        actorAttributes.Add(lines[i]);
 
                         if (i + 1 == lines.Length)
                         {
@@ -117,27 +101,7 @@ namespace MNCD.Readers
             foreach (var actor in actors)
             {
                 var actorInfo = actor.Split(",");
-                var parsedActor = new Actor()
-                {
-                    Name = actorInfo[0]
-                };
-
-                for (var i = 0; i < actorAttributes.Count; i++)
-                {
-                    var attributeInfo = actorAttributes[i].Split(",");
-
-                    if (attributeInfo[1].Trim() == "NUMERIC")
-                    {
-                        var attribute = new NumericAttribute()
-                        {
-                            Name = attributeInfo[0],
-                            Value = double.Parse(actorInfo[i + 1])
-                        };
-                        parsedActor.Attributes.Add(attribute);
-                    }
-
-                }
-
+                var parsedActor = new Actor(actorInfo[0]);
                 network.Actors.Add(parsedActor);
             }
 
@@ -146,12 +110,7 @@ namespace MNCD.Readers
                 var edgeInfo = edgeInput.Split(",");
                 var fromActor = network.Actors.First(a => a.Name == edgeInfo[0]);
                 var toActor = network.Actors.First(a => a.Name == edgeInfo[1]);
-                var edge = new Edge()
-                {
-                    From = fromActor,
-                    To = toActor
-                };
-
+                var edge = new Edge(fromActor, toActor);
                 network.Layers.First(l => l.Name == edgeInfo[2]).Edges.Add(edge);
             }
 

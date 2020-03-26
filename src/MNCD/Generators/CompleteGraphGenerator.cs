@@ -1,7 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using Combinatorics.Collections;
 using MNCD.Core;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MNCD.Generators
 {
@@ -9,13 +9,11 @@ namespace MNCD.Generators
     {
         public Network Generate(int n)
         {
-            var network = new Network();
             var actors = Enumerable
                 .Range(0, n)
                 .Select(i => new Actor(i.ToString()))
                 .ToList();
-            network.Actors = actors;
-            network.Layers.Add(new Layer());
+            var network = new Network(new Layer(), actors);
 
             if (n > 1)
             {
@@ -36,10 +34,7 @@ namespace MNCD.Generators
 
         public Network GenerateMultiLayer(int n, int l)
         {
-            var network = new Network();
-            network.Actors = InitActors(n);
-            network.Layers = InitLayers(l);
-
+            var network = new Network(InitLayers(l), InitActors(n));
             var combinationsLayers = new Combinations<Layer>(network.Layers, 2);
             var combinationsActors = new Combinations<Actor>(network.Actors, 2);
 
@@ -83,20 +78,14 @@ namespace MNCD.Generators
             return network;
         }
 
-        internal List<Actor> InitActors(int n)
-        {
-            return Enumerable
-                .Range(0, n)
-                .Select(i => new Actor(i.ToString()))
-                .ToList();
-        }
+        internal List<Actor> InitActors(int n) => Enumerable
+            .Range(0, n)
+            .Select(i => new Actor(i.ToString()))
+            .ToList();
 
-        internal List<Layer> InitLayers(int l)
-        {
-            return Enumerable
-                .Range(0, l)
-                .Select(l => new Layer($"l{l}"))
-                .ToList();
-        }
+        internal List<Layer> InitLayers(int l) => Enumerable
+            .Range(0, l)
+            .Select(l => new Layer($"l{l}"))
+            .ToList();
     }
 }

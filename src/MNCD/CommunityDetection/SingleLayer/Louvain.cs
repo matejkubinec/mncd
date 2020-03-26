@@ -1,18 +1,33 @@
+using MNCD.Core;
+using MNCD.Evaluation.SingleLayer;
+using MNCD.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.Evaluation;
-using MNCD.Core;
-using MNCD.Extensions;
-using MNCD.Evaluation.SingleLayer;
 
 namespace MNCD.CommunityDetection.SingleLayer
 {
-    // https://arxiv.org/abs/0803.0476
+    /// <summary>
+    /// Compute communities in network based on louvain algorithm.
+    ///
+    /// Fast unfolding of communities in large networks
+    /// https://arxiv.org/abs/0803.0476
+    /// Vincent D. Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Etienne Lefebvre.
+    /// </summary>
     public class Louvain
     {
+        /// <summary>
+        /// Computes communities based on louvain algorithm.
+        /// </summary>
+        /// <param name="inputNetwork">Network in which to compute communities.</param>
+        /// <returns>List of communities.</returns>
         public List<Community> Apply(Network inputNetwork)
         {
+            if (inputNetwork.LayerCount > 1)
+            {
+                throw new ArgumentException("Louvain works only on single layered networks.");
+            }
+
             var hierarchy = GetHierarchy(inputNetwork);
             if (hierarchy.Count == 0)
             {
@@ -20,13 +35,23 @@ namespace MNCD.CommunityDetection.SingleLayer
                     .Select(a => new Community(a))
                     .ToList();
             }
+
             var ordered = hierarchy.OrderByDescending(h => h.modularity);
             return ordered.First().communities;
         }
 
+        /// <summary>
+        /// Computes communities hierarchy.
+        /// </summary>
+        /// <param name="inputNetwork">Input network.</param>
+        /// <returns>Hierarchy of communities and it's modularities.</returns>
         public List<(double modularity, List<Community> communities)> GetHierarchy(Network inputNetwork)
         {
-            // TODO: add checks
+            if (inputNetwork.LayerCount > 1)
+            {
+                throw new ArgumentException("Louvain works only on single layered networks.");
+            }
+
             var network = inputNetwork;
             List<Community> communities;
             Dictionary<Actor, Community> actorToCommunity;
@@ -46,8 +71,10 @@ namespace MNCD.CommunityDetection.SingleLayer
                         var actors = c.Actors.SelectMany(a => actorToActors[a]);
                         original.Add(new Community(actors));
                     }
+
                     com = original;
                 }
+
                 com = com.Where(c => c.Size > 0).ToList();
                 hierarchy.Add((Modularity.Compute(inputNetwork, com), com));
 
@@ -61,9 +88,15 @@ namespace MNCD.CommunityDetection.SingleLayer
                     break;
                 }
             }
+
             return hierarchy;
         }
 
+        /// <summary>
+        /// Phase one of louvain.
+        /// </summary>
+        /// <param name="network">Network.</param>
+        /// <returns>list of communities and mapping of actor to community.</returns>
         internal (List<Community>, Dictionary<Actor, Community>) PhaseOne(Network network)
         {
             var actorToCommunity = network.Actors
@@ -129,6 +162,13 @@ namespace MNCD.CommunityDetection.SingleLayer
             return (communities, actorToCommunity);
         }
 
+        /// <summary>
+        /// Phase two of louvain algorithm.
+        /// </summary>
+        /// <param name="network">Network.</param>
+        /// <param name="communities">List of communities.</param>
+        /// <param name="actorToCommunity">Mapping of actor to community.</param>
+        /// <returns>Created network and mapping of actor to actors.</returns>
         internal (Network, Dictionary<Actor, List<Actor>>) PhaseTwo(
             Network network,
             List<Community> communities,
@@ -177,13 +217,21 @@ namespace MNCD.CommunityDetection.SingleLayer
                 {
                     From = newEdge.Key.f,
                     To = newEdge.Key.t,
-                    Weight = newEdge.Value
+                    Weight = newEdge.Value,
                 };
                 newNetwork.FirstLayer.Edges.Add(edge);
             }
+
             return (newNetwork, actorToActors);
         }
 
+        /// <summary>
+        /// Computes modularity gain of moving actor i into community c.
+        /// </summary>
+        /// <param name="n">Network.</param>
+        /// <param name="c">Community.</param>
+        /// <param name="i">Actor to be moved.</param>
+        /// <returns>Modularity gain of moving actor in into community c.</returns>
         internal double ModularityGain(Network n, Community c, Actor i)
         {
             var sumIn = GetSumIn(n, c);
@@ -194,10 +242,15 @@ namespace MNCD.CommunityDetection.SingleLayer
 
             return
             (((sumIn + kIn) / (2 * m)) - Math.Pow((sumTot + kI) / (2 * m), 2)) -
-            ((sumIn / (2 * m)) - Math.Pow(sumTot / (2 * m), 2) - Math.Pow((kI / (2 * m)), 2));
+            ((sumIn / (2 * m)) - Math.Pow(sumTot / (2 * m), 2) - Math.Pow(kI / (2 * m), 2));
         }
 
-        // Sum of the weights of the links inside C
+        /// <summary>
+        /// Computes sum of weights of links inside the community.
+        /// </summary>
+        /// <param name="n">Network.</param>
+        /// <param name="c">Community.</param>
+        /// <returns>Sum of weights of links inside the community.</returns>
         internal double GetSumIn(Network n, Community c)
         {
             var res = 0.0;
@@ -208,10 +261,16 @@ namespace MNCD.CommunityDetection.SingleLayer
                     res += e.Weight;
                 }
             }
+
             return res;
         }
 
-        // Sum of the weights of the links incident to nodes in C
+        /// <summary>
+        /// Computes sum of the weights of the links incident to nodes in C.
+        /// </summary>
+        /// <param name="n">Network.</param>
+        /// <param name="c">Community.</param>
+        /// <returns>Sum of the weights of the links incident to nodes in C.</returns>
         internal double GetSumTot(Network n, Community c)
         {
             var res = 0.0;
@@ -232,10 +291,16 @@ namespace MNCD.CommunityDetection.SingleLayer
                     }
                 }
             }
+
             return res;
         }
 
-        // Sum of the weights of the links incident to node i
+        /// <summary>
+        /// Computes sum of the weights of the links incident to node i.
+        /// </summary>
+        /// <param name="n">Network.</param>
+        /// <param name="i">Actor.</param>
+        /// <returns>Sum of the weights of the links incident to node i.</returns>
         internal double GetKI(Network n, Actor i)
         {
             var res = 0.0;
@@ -246,10 +311,17 @@ namespace MNCD.CommunityDetection.SingleLayer
                     res += e.Weight;
                 }
             }
+
             return res;
         }
 
-        // Sum of the weights of the links from i to nodes in C
+        /// <summary>
+        /// Computes Sum of the weights of the links from i to nodes in C.
+        /// </summary>
+        /// <param name="n">Network.</param>
+        /// <param name="i">Actor.</param>
+        /// <param name="c">Community.</param>
+        /// <returns>Sum of the weights of the links from i to nodes in c.</returns>
         internal double GetKIn(Network n, Actor i, Community c)
         {
             var res = 0.0;
@@ -270,10 +342,15 @@ namespace MNCD.CommunityDetection.SingleLayer
                     }
                 }
             }
+
             return res;
         }
 
-        // Sum of the weights of all the links in the network
+        /// <summary>
+        /// Computes sum of weights of links in the network.
+        /// </summary>
+        /// <param name="network">Network.</param>
+        /// <returns>Sum of weights.</returns>
         internal double GetM(Network network)
         {
             return network.FirstLayer.Edges.Sum(e => e.Weight);
