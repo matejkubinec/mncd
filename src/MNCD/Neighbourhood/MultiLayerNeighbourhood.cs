@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MNCD.Core;
 
-// TODO: add tests for MultiLayer neighbourhood
 namespace MNCD.Neighbourhood
 {
     /// <summary>
@@ -28,6 +27,7 @@ namespace MNCD.Neighbourhood
         /// Minimum number of layers on which neighbouring node must be a 
         /// neighbour with node x.
         /// </param>
+        /// <returns>Multilayer neighbourhood of node x.</returns>
         public static List<Actor> GetMN(Network n, Actor x, int alpha)
         {
             var neighbours = new Dictionary<Actor, int>();
