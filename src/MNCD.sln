@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MNCD", "MNCD\MNCD.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MNCD.Tests", "MNCD.Tests\MNCD.Tests.csproj", "{14AD22A6-EF00-4429-A058-4B4FEDED0522}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BAB81A8A-92C6-473D-9409-6E58AEC1FF51}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4A96C23-8D09-45A4-BC91-A183828D1730}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
@@ -51,6 +51,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {165B9558-142F-4460-BBC5-D25971B5B4ED}
+		SolutionGuid = {EA5855F9-D68C-4823-B771-B433D4858FDE}
 	EndGlobalSection
 EndGlobal

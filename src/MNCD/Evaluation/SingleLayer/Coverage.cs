@@ -5,13 +5,34 @@ using MNCD.Core;
 
 namespace MNCD.Evaluation.SingleLayer
 {
-    // https://networkx.github.io/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.quality.coverage.html#networkx.algorithms.community.quality.coverage
+    /// <summary>
+    /// Coverage
+    /// Based on:
+    /// Community detection in graphs
+    /// https://arxiv.org/abs/0906.0612
+    /// Santo Fortunato.
+    /// </summary>
     public static class Coverage
     {
+        /// <summary>
+        /// Computes coverage for partition, the ratio of the number of intra-community
+        /// edges by the total number of edges.
+        /// </summary>
+        /// <param name="network">
+        /// Network that is partitioned.
+        /// </param>
+        /// <param name="communities">
+        /// List of communities for which the coverage should be computed.
+        /// </param>
+        /// <returns>
+        /// The ratio of the number of intra-community edges by the total number of edges.
+        /// </returns>
         public static double Get(Network network, List<Community> communities)
         {
-            if (network.LayerCount != 1) throw new ArgumentException("Coverage only works on single layer networks.");
-
+            if (network.LayerCount != 1)
+            {
+                throw new ArgumentException("Coverage only works on single layer networks.");
+            }
 
             var intra = GetIntraEdges(network, communities);
             var total = GetTotalEdges(network);
@@ -36,6 +57,7 @@ namespace MNCD.Evaluation.SingleLayer
                     count++;
                 }
             }
+
             return count;
         }
 

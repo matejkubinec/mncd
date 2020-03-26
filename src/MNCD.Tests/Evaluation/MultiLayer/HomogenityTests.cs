@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using MNCD.Core;
 using MNCD.Evaluation;
+using MNCD.Evaluation.MultiLayer;
 using Xunit;
 
-namespace MNCD.Tests.Evaluation
+namespace MNCD.Tests.Evaluation.MultiLayer
 {
     public class HomogenityTests
     {

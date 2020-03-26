@@ -11,3 +11,6 @@ dotnet_diagnostic.SA1101.severity = none
 
 # SA1309: Field names should not begin with underscore
 dotnet_diagnostic.SA1309.severity = none
+
+# SA1208: System using directives should be placed before other using directives
+dotnet_diagnostic.SA1208.severity = none
