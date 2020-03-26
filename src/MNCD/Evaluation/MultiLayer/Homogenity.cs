@@ -28,7 +28,7 @@ namespace MNCD.Evaluation.MultiLayer
 
             if (community.Size == 0)
             {
-                return 0;
+                return 1;
             }
 
             var d = network.Layers.Count;
@@ -53,7 +53,12 @@ namespace MNCD.Evaluation.MultiLayer
             var sigmaC = GetSigmaC(edgeLayerCounts, d);
             var sigmaCMax = GetSigmaCMax(edgeLayerCounts);
 
-            return 1 - sigmaC / sigmaCMax;
+            if (sigmaCMax == 0)
+            {
+                return 1;
+            }
+
+            return 1 - (sigmaC / sigmaCMax);
         }
 
         private static double GetSigmaC(List<double> pcds, int d)

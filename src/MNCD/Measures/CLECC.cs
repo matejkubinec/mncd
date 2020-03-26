@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MNCD.Core;
 
-// TODO: add tests for CLECC
 namespace MNCD.Neighbourhood
 {
     /// <summary>
@@ -10,7 +9,7 @@ namespace MNCD.Neighbourhood
     /// Based on:
     /// An Introduction to Community Detection in Multi-layered Social Network.
     /// https://arxiv.org/ftp/arxiv/papers/1209/1209.6050.pdf
-    /// Piotr Bródka, Tomasz Filipowski, Przemysław Kazienko
+    /// Piotr Bródka, Tomasz Filipowski, Przemysław Kazienko.
     /// </summary>
     public static class CLECC
     {

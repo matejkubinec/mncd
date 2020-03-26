@@ -72,6 +72,11 @@ namespace MNCD.Evaluation.MultiLayer
                 totalConnections += layers.Count;
             }
 
+            if (totalConnections == 0)
+            {
+                return 0;
+            }
+
             return exclusiveConnections / totalConnections;
         }
     }
