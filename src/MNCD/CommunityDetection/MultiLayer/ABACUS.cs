@@ -6,6 +6,9 @@ using MNCD.Extensions;
 
 namespace MNCD.CommunityDetection.MultiLayer
 {
+    /// <summary>
+    /// Implementation of ABACUS community detection algorithm.
+    /// </summary>
     public class ABACUS
     {
         /// <summary>
@@ -51,6 +54,15 @@ namespace MNCD.CommunityDetection.MultiLayer
             var itemSets = new Apriori(membership, treshold).GetClosedItemSets();
             var result = BuildCommunities(membership, itemSets);
 
+            // Add actors without communities into their own communities
+            foreach (var actor in network.Actors)
+            {
+                if (result.All(c => !c.Actors.Contains(actor)))
+                {
+                    result.Add(new Community(actor));
+                }
+            }
+
             return result;
         }
 
@@ -82,7 +94,7 @@ namespace MNCD.CommunityDetection.MultiLayer
 
         /// <summary>
         /// This class implements the apriori algorithm based on:
-        /// https://www.geeksforgeeks.org/apriori-algorithm/
+        /// https://www.geeksforgeeks.org/apriori-algorithm/.
         /// </summary>
         private class Apriori
         {
