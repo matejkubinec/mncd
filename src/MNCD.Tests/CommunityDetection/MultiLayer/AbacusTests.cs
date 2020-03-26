@@ -1,10 +1,10 @@
-using MNCD.CommunityDetection.SingleLayer;
 using MNCD.CommunityDetection.MultiLayer;
-using MNCD.Tests.Helpers;
-using Xunit;
+using MNCD.CommunityDetection.SingleLayer;
 using MNCD.Generators;
+using MNCD.Tests.Helpers;
 using System;
 using System.Linq;
+using Xunit;
 
 namespace MNCD.Tests.CommunityDetection.MultiLayer
 {
