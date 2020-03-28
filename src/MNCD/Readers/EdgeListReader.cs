@@ -4,8 +4,23 @@ using System.Collections.Generic;
 
 namespace MNCD.Readers
 {
+    /// <summary>
+    /// Class implementing reading network from a string in edgelist format.
+    /// </summary>
     public class EdgeListReader
     {
+        /// <summary>
+        /// Creates network from a string in edgelist format.
+        /// Edgelist must be in following format:
+        /// actor_from layer_from actor_to layer_to weight.
+        /// It can also include metadata in following format:
+        /// # Actors
+        /// actor_idx actor_name
+        /// # Layers
+        /// layer_idx layer_name.
+        /// </summary>
+        /// <param name="input">Input string in edgelist format.</param>
+        /// <returns>Read network.</returns>
         public Network FromString(string input)
         {
             var actors = new Dictionary<string, Actor>();
@@ -103,7 +118,7 @@ namespace MNCD.Readers
                     var l2 = values[3];
                     var w = values[4];
 
-                    if (!double.TryParse(w, out var value))
+                    if (!double.TryParse(w, out _))
                     {
                         throw new ArgumentException("Invalid weight.");
                     }

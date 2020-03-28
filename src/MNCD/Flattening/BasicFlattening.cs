@@ -3,8 +3,21 @@ using System.Linq;
 
 namespace MNCD.Flattening
 {
+    /// <summary>
+    /// Class that implements basic flattening method.
+    ///
+    /// 6.1.1 Flattening - Page 100
+    /// Multilayer Social Networks
+    /// Mark E. Dickison, Matteo Magnani and Luca Rossi.
+    /// </summary>
     public class BasicFlattening
     {
+        /// <summary>
+        /// Gets flattened network.
+        /// </summary>
+        /// <param name="network">Multi-layer network.</param>
+        /// <param name="weightEdges">Include edge weights in flattening.</param>
+        /// <returns>Flattened network.</returns>
         public Network Flatten(Network network, bool weightEdges = false)
         {
             var flattenedLayer = new Layer();

@@ -1,4 +1,5 @@
 using MNCD.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,12 +25,20 @@ namespace MNCD.Neighbourhood
         /// Node (Actor), for which the neighbourhood will be found.
         /// </param>
         /// <param name="alpha">
-        /// Minimum number of layers on which neighbouring node must be a 
+        /// Minimum number of layers on which neighbouring node must be a
         /// neighbour with node x.
         /// </param>
         /// <returns>Multilayer neighbourhood of node x.</returns>
         public static List<Actor> GetMN(Network n, Actor x, int alpha)
         {
+            n = n ?? throw new ArgumentNullException("Argument 'n' (network) must be not be null.");
+            x = x ?? throw new ArgumentNullException("Argument 'x' (actor) must not be null.");
+
+            if (alpha < 1)
+            {
+                throw new ArgumentOutOfRangeException("Argument 'alpha' must be greater than zero.");
+            }
+
             var neighbours = new Dictionary<Actor, int>();
             foreach (var l in n.Layers)
             {

@@ -3,8 +3,40 @@ using System.Linq;
 
 namespace MNCD.Flattening
 {
+    /// <summary>
+    /// Class that implements merge flattening method.
+    ///
+    /// 4.2.1 Flattening and Projection
+    /// Multilayer Social Networks
+    /// Mark E. Dickison, Matteo Magnani and Luca Rossi.
+    /// </summary>
     public class MergeFlattening
     {
+        /// <summary>
+        /// Flattens network.
+        /// </summary>
+        /// <param name="network">Multi-layered network.</param>
+        /// <param name="layerIndices">Indices of layers to be included.</param>
+        /// <param name="includeWeights">If include weights during flattening.</param>
+        /// <returns>Flattened network.</returns>
+        public Network Merge(Network network, int[] layerIndices, bool includeWeights)
+        {
+            var layers = network.Layers
+                .Select((l, i) => (l, i))
+                .Where(pair => layerIndices.Contains(pair.i))
+                .Select(pair => pair.l)
+                .ToList();
+            var actors = network.Actors;
+            var filteredNetwork = new Network(layers, actors);
+            return Merge(filteredNetwork, includeWeights);
+        }
+
+        /// <summary>
+        /// Flattens network.
+        /// </summary>
+        /// <param name="network">Multi-layered network.</param>
+        /// <param name="includeWeights">If include weights during flattening.</param>
+        /// <returns>Flattened network.</returns>
         public Network Merge(Network network, bool includeWeights)
         {
             var flattenedNetwork = new Network(new Layer("Flattened"), network.Actors);
@@ -33,8 +65,7 @@ namespace MNCD.Flattening
             {
                 var edge = edges.FirstOrDefault(e =>
                     (e.From == interLayerEdge.From && e.To == interLayerEdge.To) ||
-                    (e.From == interLayerEdge.To && e.To == interLayerEdge.From)
-                );
+                    (e.From == interLayerEdge.To && e.To == interLayerEdge.From));
 
                 if (edge == null)
                 {
@@ -47,18 +78,6 @@ namespace MNCD.Flattening
             }
 
             return flattenedNetwork;
-        }
-
-        public Network Merge(Network network, int[] layerIndices, bool includeWeights)
-        {
-            var layers = network.Layers
-                .Select((l, i) => (l, i))
-                .Where(pair => layerIndices.Contains(pair.i))
-                .Select(pair => pair.l)
-                .ToList();
-            var actors = network.Actors;
-            var filteredNetwork = new Network(layers, actors);
-            return Merge(filteredNetwork, includeWeights);
         }
     }
 }

@@ -1,14 +1,35 @@
 ﻿using MNCD.Core;
 using MNCD.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace MNCD.Flattening
 {
+    /// <summary>
+    /// Class that implements weighted flattening method.
+    ///
+    /// 4.2.1 Flattening and Projection
+    /// Multilayer Social Networks
+    /// Mark E. Dickison, Matteo Magnani and Luca Rossi.
+    /// </summary>
     public class WeightedFlattening
     {
+        /// <summary>
+        /// Flattens network based on weights between layers.
+        /// </summary>
+        /// <param name="network">Multi-layer network.</param>
+        /// <param name="weights">MxM matrix of weights. (M - number of layers).</param>
+        /// <returns>Flattened network.</returns>
         public Network Flatten(Network network, double[,] weights)
         {
+            network = network ?? throw new ArgumentNullException("Network must not be null.");
+
+            if (weights.GetLength(0) != weights.GetLength(1) || weights.GetLength(0) != network.LayerCount)
+            {
+                throw new ArgumentException("Weights matrix must be of size layer count x layer count.");
+            }
+
             var flattened = new Network(new Layer(), network.Actors);
             var layerToIndex = network.GetLayerToIndex();
             var edgesDict = new Dictionary<(Actor from, Actor to), double>();

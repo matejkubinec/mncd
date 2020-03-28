@@ -5,8 +5,26 @@ using System.Text;
 
 namespace MNCD.Writers
 {
+    /// <summary>
+    /// Class implementing conversion from network to a string representation.
+    /// </summary>
     public class EdgeListWriter
     {
+        /// <summary>
+        /// Coverts network a string representation in following format:
+        ///
+        /// actor_from layer_from actor_to layer_to weight
+        ///
+        /// Optionally can include metadata:
+        /// # Actors
+        /// actor_idx actor_name
+        /// # Layers
+        /// layer_idx layer_name
+        /// .
+        /// </summary>
+        /// <param name="network">Network to be converted.</param>
+        /// <param name="includeMetadata">Include metadata about actors and layers.</param>
+        /// <returns>String representation of network.</returns>
         public string ToString(Network network, bool includeMetadata = false)
         {
             var actorToIndex = network.Actors.ToIndexDictionary();

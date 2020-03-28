@@ -5,12 +5,29 @@ using System.Text;
 
 namespace MNCD.Writers
 {
+    /// <summary>
+    /// Class implementing conversion from communities to string.
+    /// </summary>
     public class ActorCommunityListWriter
     {
-        public string ToString(
-            List<Actor> actors,
-            List<Community> communities = null,
-            bool includeMetadata = false)
+        /// <summary>
+        /// Converts communit list into a string.
+        ///
+        /// Output format:
+        /// actor community
+        ///
+        /// Optional metadata:
+        /// # Actors
+        /// actor_idx actor_name
+        /// # Layers
+        /// layer_idx layer_name.
+        ///
+        /// </summary>
+        /// <param name="actors">Actors from network.</param>
+        /// <param name="communities">List of communities.</param>
+        /// <param name="includeMetadata">Include metadata about actors and communities.</param>
+        /// <returns>String representation of community list.</returns>
+        public string ToString(List<Actor> actors, List<Community> communities, bool includeMetadata = false)
         {
             var actorToIndex = actors.ToIndexDictionary();
             var communityToIndex = communities.ToIndexDictionary();

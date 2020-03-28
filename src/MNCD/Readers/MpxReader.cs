@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 
 namespace MNCD.Readers
 {
-    // https://rdrr.io/cran/multinet/man/IO.html
+    /// <summary>
+    /// Implements reading a subset of MPX format.
+    /// See more: https://rdrr.io/cran/multinet/man/IO.html.
+    /// </summary>
     public class MpxReader
     {
+        /// <summary>
+        /// Reads a network from a text stream that contains string in MPX format.
+        /// </summary>
+        /// <param name="stream">String stream.</param>
+        /// <returns>Network.</returns>
         public async Task<Network> FromStream(Stream stream)
         {
             var content = string.Empty;
@@ -21,12 +29,22 @@ namespace MNCD.Readers
             return FromString(content);
         }
 
+        /// <summary>
+        /// Reads network from a mpx file.
+        /// </summary>
+        /// <param name="path">Path to a mpx file.</param>
+        /// <returns>Network.</returns>
         public async Task<Network> FromPath(string path)
         {
             var content = await File.ReadAllTextAsync(path);
             return FromString(content);
         }
 
+        /// <summary>
+        /// Reads a network from a string in mpx format.
+        /// </summary>
+        /// <param name="content">String in mpx format.</param>
+        /// <returns>Network.</returns>
         public Network FromString(string content)
         {
             var network = new Network();

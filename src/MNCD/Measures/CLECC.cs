@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MNCD.Core;
@@ -23,7 +24,7 @@ namespace MNCD.Neighbourhood
         /// Edge, for which the CLECC measure will be computed.
         /// </param>
         /// <param name="alpha">
-        /// Minimum number of layers on which neighbouring node must be a 
+        /// Minimum number of layers on which neighbouring node must be a
         /// neighbour with node x.
         /// </param>
         /// <returns>
@@ -32,6 +33,14 @@ namespace MNCD.Neighbourhood
         /// </returns>
         public static double GetCLECC(Network n, Edge e, int alpha)
         {
+            n = n ?? throw new ArgumentNullException("Argument 'n' (network) must not be null.");
+            e = e ?? throw new ArgumentNullException("Argument 'e' (edge) must not be null.");
+
+            if (alpha < 1)
+            {
+                throw new ArgumentOutOfRangeException("Argument 'alpha' must be greater than zero.");
+            }
+
             var x = MN(n, e.From, alpha);
             var y = MN(n, e.To, alpha);
             var xy = new List<Actor> { e.From, e.To };
