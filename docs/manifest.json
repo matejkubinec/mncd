@@ -1,0 +1,716 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/MatejKubinec/dev/code/mncd/src/MNCD",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Clique.BronKerbosch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Clique.BronKerbosch.html",
+          "hash": "RVcgD+KYMzpF7oPfuJ+zcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Clique.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Clique.html",
+          "hash": "57J6sdMn6+CaWcZfDzCKBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.MultiLayer.ABACUS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.MultiLayer.ABACUS.html",
+          "hash": "fcwCv8ni0nFehtSH0+TfLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.html",
+          "hash": "/q5pFqi11CtJ+TWOrOzZ/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.MultiLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.MultiLayer.html",
+          "hash": "6hgx/mRTZPX8jnpVdSVA8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.SingleLayer.FluidC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.SingleLayer.FluidC.html",
+          "hash": "pg6jNhHWopWRE7M8LFZjCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.SingleLayer.KClique.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.SingleLayer.KClique.html",
+          "hash": "uctWR1C/vdOfqO4rElEZsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.SingleLayer.Louvain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.SingleLayer.Louvain.html",
+          "hash": "x9m1geytiyaABmNuVy5LfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.CommunityDetection.SingleLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.CommunityDetection.SingleLayer.html",
+          "hash": "++p2BUp6FbA5OTFQFa1Y6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Components.Connected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Components.Connected.html",
+          "hash": "tiaN5orKA/eAJDqRV48U8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Components.html",
+          "hash": "4huqTFGAGhQJWGSbAWmtFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.Actor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.Actor.html",
+          "hash": "DbQWdSisXdhcx+3DP4oxuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.Community.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.Community.html",
+          "hash": "OiaTeE5DgJBJx8nhNPcstw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.Edge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.Edge.html",
+          "hash": "zuBj/PpV931q/aRNzVk1jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.InterLayerEdge.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.InterLayerEdge.html",
+          "hash": "KprBNhbSv520pJBGkEnYmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.Layer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.Layer.html",
+          "hash": "7XjQsCGF5/OWk+mOH7Ie1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.Network.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.Network.html",
+          "hash": "3pjVJgKyMzmOLsMsWoQrKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Core.html",
+          "hash": "w4grG1EAUmthCsNhBSYvVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.MultiLayer.Complementarity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.MultiLayer.Complementarity.html",
+          "hash": "OsFvurkkCNsON7ll4xe1DQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.MultiLayer.Exclusivity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.MultiLayer.Exclusivity.html",
+          "hash": "V9EfFQVWXX5n7k0a8DJHJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.MultiLayer.Homogenity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.MultiLayer.Homogenity.html",
+          "hash": "aQ5DfJXNsjvHufwN5Ti9gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.MultiLayer.Redundancy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.MultiLayer.Redundancy.html",
+          "hash": "5skiF6s+96jyGUB3nzXITg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.MultiLayer.Variety.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.MultiLayer.Variety.html",
+          "hash": "tYziS48xTNrlKDcN7/l+Yg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.MultiLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.MultiLayer.html",
+          "hash": "GsfLVN3k2ApPvKddvUuhzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.SingleLayer.Coverage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.SingleLayer.Coverage.html",
+          "hash": "Kvj2rnGi18SS02Udpnk+uw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.SingleLayer.Modularity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.SingleLayer.Modularity.html",
+          "hash": "o7p+bOA/WmZZOpS3fnB33A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.SingleLayer.Performance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.SingleLayer.Performance.html",
+          "hash": "xBLL3+vXNsrECnOIee0prQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Evaluation.SingleLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Evaluation.SingleLayer.html",
+          "hash": "AYuz2tg6JlBZuaGR0YWR3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Extensions.ListExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Extensions.ListExtensions.html",
+          "hash": "6j+5ImZCVAeE1xEQb31QRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Extensions.NetworkExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Extensions.NetworkExtensions.html",
+          "hash": "I98S8zrWF84biuUeK+9Lkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Extensions.html",
+          "hash": "mSnm+7h35wOi2pnSd7Mc7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Flattening.BasicFlattening.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Flattening.BasicFlattening.html",
+          "hash": "pE7IGbLZtGCNq08/LS330Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Flattening.LocalSimplification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Flattening.LocalSimplification.html",
+          "hash": "fXKx/HJI8uN/xWmxjoSiJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Flattening.MergeFlattening.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Flattening.MergeFlattening.html",
+          "hash": "jZoBuKWDIk2bfLDsVcMdnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Flattening.WeightedFlattening.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Flattening.WeightedFlattening.html",
+          "hash": "F8kA/vtbERF7BcvzzcXWPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Flattening.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Flattening.html",
+          "hash": "trZchahIuokNnESz21FjTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Generators.CompleteGraphGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Generators.CompleteGraphGenerator.html",
+          "hash": "5cnCjnlO8opP3yN6Hw/1cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Generators.RandomMultiLayerGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Generators.RandomMultiLayerGenerator.html",
+          "hash": "hBuOQYB5H1roknf7iO+u3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Generators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Generators.html",
+          "hash": "IBjcSkdv7EqZhr4dr1tnPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Neighbourhood.CLECC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Neighbourhood.CLECC.html",
+          "hash": "FeqIazZswRftk3C8OlXaAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Neighbourhood.MultiLayerNeighbourhood.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Neighbourhood.MultiLayerNeighbourhood.html",
+          "hash": "Zb7YrbKOYwDFS2P48P7anw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Neighbourhood.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Neighbourhood.html",
+          "hash": "b7l4L1MzE7noMDYjpclj3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Readers.ActorCommunityListReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Readers.ActorCommunityListReader.html",
+          "hash": "poj6xDswl+d0uGXww3KdGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Readers.EdgeListReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Readers.EdgeListReader.html",
+          "hash": "mYzJG789kbUgXYxS7hG3Jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Readers.MpxReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Readers.MpxReader.html",
+          "hash": "nPDdR+BYs97iy2DRJiwd+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Readers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Readers.html",
+          "hash": "/Ybb7vmf3DhfmuqnlGnBOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Writers.ActorCommunityListWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Writers.ActorCommunityListWriter.html",
+          "hash": "CQ4kHYsztyJ9EypMqjcFKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Writers.EdgeListWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Writers.EdgeListWriter.html",
+          "hash": "jo2I0n5P/JleODi5k8+wyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MNCD.Writers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MNCD.Writers.html",
+          "hash": "t0NJBCEK6LBnDen5XyelGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "s3acPskcmgQzrKgAfQWqbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "uKsNLpdDvMJj5zF8ame+ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "xNMgqGCIidWKrhcbKP/QNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "AIAbqomL20gTMELur95dFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 49,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

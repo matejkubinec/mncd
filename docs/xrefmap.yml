@@ -1,0 +1,1342 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: MNCD.Clique
+  name: MNCD.Clique
+  href: api/MNCD.Clique.html
+  commentId: N:MNCD.Clique
+  fullName: MNCD.Clique
+  nameWithType: MNCD.Clique
+- uid: MNCD.Clique.BronKerbosch
+  name: BronKerbosch
+  href: api/MNCD.Clique.BronKerbosch.html
+  commentId: T:MNCD.Clique.BronKerbosch
+  fullName: MNCD.Clique.BronKerbosch
+  nameWithType: BronKerbosch
+- uid: MNCD.Clique.BronKerbosch.GetMaximalCliques(MNCD.Core.Network)
+  name: GetMaximalCliques(Network)
+  href: api/MNCD.Clique.BronKerbosch.html#MNCD_Clique_BronKerbosch_GetMaximalCliques_MNCD_Core_Network_
+  commentId: M:MNCD.Clique.BronKerbosch.GetMaximalCliques(MNCD.Core.Network)
+  fullName: MNCD.Clique.BronKerbosch.GetMaximalCliques(MNCD.Core.Network)
+  nameWithType: BronKerbosch.GetMaximalCliques(Network)
+- uid: MNCD.Clique.BronKerbosch.GetMaximalCliques*
+  name: GetMaximalCliques
+  href: api/MNCD.Clique.BronKerbosch.html#MNCD_Clique_BronKerbosch_GetMaximalCliques_
+  commentId: Overload:MNCD.Clique.BronKerbosch.GetMaximalCliques
+  isSpec: "True"
+  fullName: MNCD.Clique.BronKerbosch.GetMaximalCliques
+  nameWithType: BronKerbosch.GetMaximalCliques
+- uid: MNCD.CommunityDetection.MultiLayer
+  name: MNCD.CommunityDetection.MultiLayer
+  href: api/MNCD.CommunityDetection.MultiLayer.html
+  commentId: N:MNCD.CommunityDetection.MultiLayer
+  fullName: MNCD.CommunityDetection.MultiLayer
+  nameWithType: MNCD.CommunityDetection.MultiLayer
+- uid: MNCD.CommunityDetection.MultiLayer.ABACUS
+  name: ABACUS
+  href: api/MNCD.CommunityDetection.MultiLayer.ABACUS.html
+  commentId: T:MNCD.CommunityDetection.MultiLayer.ABACUS
+  fullName: MNCD.CommunityDetection.MultiLayer.ABACUS
+  nameWithType: ABACUS
+- uid: MNCD.CommunityDetection.MultiLayer.ABACUS.Apply(MNCD.Core.Network,System.Func{MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community}},System.Double)
+  name: Apply(Network, Func<Network, List<Community>>, Double)
+  href: api/MNCD.CommunityDetection.MultiLayer.ABACUS.html#MNCD_CommunityDetection_MultiLayer_ABACUS_Apply_MNCD_Core_Network_System_Func_MNCD_Core_Network_System_Collections_Generic_List_MNCD_Core_Community___System_Double_
+  commentId: M:MNCD.CommunityDetection.MultiLayer.ABACUS.Apply(MNCD.Core.Network,System.Func{MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community}},System.Double)
+  name.vb: Apply(Network, Func(Of Network, List(Of Community)), Double)
+  fullName: MNCD.CommunityDetection.MultiLayer.ABACUS.Apply(MNCD.Core.Network, System.Func<MNCD.Core.Network, System.Collections.Generic.List<MNCD.Core.Community>>, System.Double)
+  fullName.vb: MNCD.CommunityDetection.MultiLayer.ABACUS.Apply(MNCD.Core.Network, System.Func(Of MNCD.Core.Network, System.Collections.Generic.List(Of MNCD.Core.Community)), System.Double)
+  nameWithType: ABACUS.Apply(Network, Func<Network, List<Community>>, Double)
+  nameWithType.vb: ABACUS.Apply(Network, Func(Of Network, List(Of Community)), Double)
+- uid: MNCD.CommunityDetection.MultiLayer.ABACUS.Apply*
+  name: Apply
+  href: api/MNCD.CommunityDetection.MultiLayer.ABACUS.html#MNCD_CommunityDetection_MultiLayer_ABACUS_Apply_
+  commentId: Overload:MNCD.CommunityDetection.MultiLayer.ABACUS.Apply
+  isSpec: "True"
+  fullName: MNCD.CommunityDetection.MultiLayer.ABACUS.Apply
+  nameWithType: ABACUS.Apply
+- uid: MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection
+  name: CLECCCommunityDetection
+  href: api/MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.html
+  commentId: T:MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection
+  fullName: MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection
+  nameWithType: CLECCCommunityDetection
+- uid: MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.Apply(MNCD.Core.Network,System.Int32,System.Int32)
+  name: Apply(Network, Int32, Int32)
+  href: api/MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.html#MNCD_CommunityDetection_MultiLayer_CLECCCommunityDetection_Apply_MNCD_Core_Network_System_Int32_System_Int32_
+  commentId: M:MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.Apply(MNCD.Core.Network,System.Int32,System.Int32)
+  fullName: MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.Apply(MNCD.Core.Network, System.Int32, System.Int32)
+  nameWithType: CLECCCommunityDetection.Apply(Network, Int32, Int32)
+- uid: MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.Apply*
+  name: Apply
+  href: api/MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.html#MNCD_CommunityDetection_MultiLayer_CLECCCommunityDetection_Apply_
+  commentId: Overload:MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.Apply
+  isSpec: "True"
+  fullName: MNCD.CommunityDetection.MultiLayer.CLECCCommunityDetection.Apply
+  nameWithType: CLECCCommunityDetection.Apply
+- uid: MNCD.CommunityDetection.SingleLayer
+  name: MNCD.CommunityDetection.SingleLayer
+  href: api/MNCD.CommunityDetection.SingleLayer.html
+  commentId: N:MNCD.CommunityDetection.SingleLayer
+  fullName: MNCD.CommunityDetection.SingleLayer
+  nameWithType: MNCD.CommunityDetection.SingleLayer
+- uid: MNCD.CommunityDetection.SingleLayer.FluidC
+  name: FluidC
+  href: api/MNCD.CommunityDetection.SingleLayer.FluidC.html
+  commentId: T:MNCD.CommunityDetection.SingleLayer.FluidC
+  fullName: MNCD.CommunityDetection.SingleLayer.FluidC
+  nameWithType: FluidC
+- uid: MNCD.CommunityDetection.SingleLayer.FluidC.Compute(MNCD.Core.Network,System.Int32,System.Int32)
+  name: Compute(Network, Int32, Int32)
+  href: api/MNCD.CommunityDetection.SingleLayer.FluidC.html#MNCD_CommunityDetection_SingleLayer_FluidC_Compute_MNCD_Core_Network_System_Int32_System_Int32_
+  commentId: M:MNCD.CommunityDetection.SingleLayer.FluidC.Compute(MNCD.Core.Network,System.Int32,System.Int32)
+  fullName: MNCD.CommunityDetection.SingleLayer.FluidC.Compute(MNCD.Core.Network, System.Int32, System.Int32)
+  nameWithType: FluidC.Compute(Network, Int32, Int32)
+- uid: MNCD.CommunityDetection.SingleLayer.FluidC.Compute*
+  name: Compute
+  href: api/MNCD.CommunityDetection.SingleLayer.FluidC.html#MNCD_CommunityDetection_SingleLayer_FluidC_Compute_
+  commentId: Overload:MNCD.CommunityDetection.SingleLayer.FluidC.Compute
+  isSpec: "True"
+  fullName: MNCD.CommunityDetection.SingleLayer.FluidC.Compute
+  nameWithType: FluidC.Compute
+- uid: MNCD.CommunityDetection.SingleLayer.KClique
+  name: KClique
+  href: api/MNCD.CommunityDetection.SingleLayer.KClique.html
+  commentId: T:MNCD.CommunityDetection.SingleLayer.KClique
+  fullName: MNCD.CommunityDetection.SingleLayer.KClique
+  nameWithType: KClique
+- uid: MNCD.CommunityDetection.SingleLayer.KClique.GetKCommunities(MNCD.Core.Network,System.Int32)
+  name: GetKCommunities(Network, Int32)
+  href: api/MNCD.CommunityDetection.SingleLayer.KClique.html#MNCD_CommunityDetection_SingleLayer_KClique_GetKCommunities_MNCD_Core_Network_System_Int32_
+  commentId: M:MNCD.CommunityDetection.SingleLayer.KClique.GetKCommunities(MNCD.Core.Network,System.Int32)
+  fullName: MNCD.CommunityDetection.SingleLayer.KClique.GetKCommunities(MNCD.Core.Network, System.Int32)
+  nameWithType: KClique.GetKCommunities(Network, Int32)
+- uid: MNCD.CommunityDetection.SingleLayer.KClique.GetKCommunities*
+  name: GetKCommunities
+  href: api/MNCD.CommunityDetection.SingleLayer.KClique.html#MNCD_CommunityDetection_SingleLayer_KClique_GetKCommunities_
+  commentId: Overload:MNCD.CommunityDetection.SingleLayer.KClique.GetKCommunities
+  isSpec: "True"
+  fullName: MNCD.CommunityDetection.SingleLayer.KClique.GetKCommunities
+  nameWithType: KClique.GetKCommunities
+- uid: MNCD.CommunityDetection.SingleLayer.Louvain
+  name: Louvain
+  href: api/MNCD.CommunityDetection.SingleLayer.Louvain.html
+  commentId: T:MNCD.CommunityDetection.SingleLayer.Louvain
+  fullName: MNCD.CommunityDetection.SingleLayer.Louvain
+  nameWithType: Louvain
+- uid: MNCD.CommunityDetection.SingleLayer.Louvain.Apply(MNCD.Core.Network)
+  name: Apply(Network)
+  href: api/MNCD.CommunityDetection.SingleLayer.Louvain.html#MNCD_CommunityDetection_SingleLayer_Louvain_Apply_MNCD_Core_Network_
+  commentId: M:MNCD.CommunityDetection.SingleLayer.Louvain.Apply(MNCD.Core.Network)
+  fullName: MNCD.CommunityDetection.SingleLayer.Louvain.Apply(MNCD.Core.Network)
+  nameWithType: Louvain.Apply(Network)
+- uid: MNCD.CommunityDetection.SingleLayer.Louvain.Apply*
+  name: Apply
+  href: api/MNCD.CommunityDetection.SingleLayer.Louvain.html#MNCD_CommunityDetection_SingleLayer_Louvain_Apply_
+  commentId: Overload:MNCD.CommunityDetection.SingleLayer.Louvain.Apply
+  isSpec: "True"
+  fullName: MNCD.CommunityDetection.SingleLayer.Louvain.Apply
+  nameWithType: Louvain.Apply
+- uid: MNCD.CommunityDetection.SingleLayer.Louvain.GetHierarchy(MNCD.Core.Network)
+  name: GetHierarchy(Network)
+  href: api/MNCD.CommunityDetection.SingleLayer.Louvain.html#MNCD_CommunityDetection_SingleLayer_Louvain_GetHierarchy_MNCD_Core_Network_
+  commentId: M:MNCD.CommunityDetection.SingleLayer.Louvain.GetHierarchy(MNCD.Core.Network)
+  fullName: MNCD.CommunityDetection.SingleLayer.Louvain.GetHierarchy(MNCD.Core.Network)
+  nameWithType: Louvain.GetHierarchy(Network)
+- uid: MNCD.CommunityDetection.SingleLayer.Louvain.GetHierarchy*
+  name: GetHierarchy
+  href: api/MNCD.CommunityDetection.SingleLayer.Louvain.html#MNCD_CommunityDetection_SingleLayer_Louvain_GetHierarchy_
+  commentId: Overload:MNCD.CommunityDetection.SingleLayer.Louvain.GetHierarchy
+  isSpec: "True"
+  fullName: MNCD.CommunityDetection.SingleLayer.Louvain.GetHierarchy
+  nameWithType: Louvain.GetHierarchy
+- uid: MNCD.Components
+  name: MNCD.Components
+  href: api/MNCD.Components.html
+  commentId: N:MNCD.Components
+  fullName: MNCD.Components
+  nameWithType: MNCD.Components
+- uid: MNCD.Components.Connected
+  name: Connected
+  href: api/MNCD.Components.Connected.html
+  commentId: T:MNCD.Components.Connected
+  fullName: MNCD.Components.Connected
+  nameWithType: Connected
+- uid: MNCD.Components.Connected.GetConnectedComponents(MNCD.Core.Layer,System.Collections.Generic.IEnumerable{MNCD.Core.Actor})
+  name: GetConnectedComponents(Layer, IEnumerable<Actor>)
+  href: api/MNCD.Components.Connected.html#MNCD_Components_Connected_GetConnectedComponents_MNCD_Core_Layer_System_Collections_Generic_IEnumerable_MNCD_Core_Actor__
+  commentId: M:MNCD.Components.Connected.GetConnectedComponents(MNCD.Core.Layer,System.Collections.Generic.IEnumerable{MNCD.Core.Actor})
+  name.vb: GetConnectedComponents(Layer, IEnumerable(Of Actor))
+  fullName: MNCD.Components.Connected.GetConnectedComponents(MNCD.Core.Layer, System.Collections.Generic.IEnumerable<MNCD.Core.Actor>)
+  fullName.vb: MNCD.Components.Connected.GetConnectedComponents(MNCD.Core.Layer, System.Collections.Generic.IEnumerable(Of MNCD.Core.Actor))
+  nameWithType: Connected.GetConnectedComponents(Layer, IEnumerable<Actor>)
+  nameWithType.vb: Connected.GetConnectedComponents(Layer, IEnumerable(Of Actor))
+- uid: MNCD.Components.Connected.GetConnectedComponents*
+  name: GetConnectedComponents
+  href: api/MNCD.Components.Connected.html#MNCD_Components_Connected_GetConnectedComponents_
+  commentId: Overload:MNCD.Components.Connected.GetConnectedComponents
+  isSpec: "True"
+  fullName: MNCD.Components.Connected.GetConnectedComponents
+  nameWithType: Connected.GetConnectedComponents
+- uid: MNCD.Core
+  name: MNCD.Core
+  href: api/MNCD.Core.html
+  commentId: N:MNCD.Core
+  fullName: MNCD.Core
+  nameWithType: MNCD.Core
+- uid: MNCD.Core.Actor
+  name: Actor
+  href: api/MNCD.Core.Actor.html
+  commentId: T:MNCD.Core.Actor
+  fullName: MNCD.Core.Actor
+  nameWithType: Actor
+- uid: MNCD.Core.Actor.#ctor
+  name: Actor()
+  href: api/MNCD.Core.Actor.html#MNCD_Core_Actor__ctor
+  commentId: M:MNCD.Core.Actor.#ctor
+  fullName: MNCD.Core.Actor.Actor()
+  nameWithType: Actor.Actor()
+- uid: MNCD.Core.Actor.#ctor(System.String)
+  name: Actor(String)
+  href: api/MNCD.Core.Actor.html#MNCD_Core_Actor__ctor_System_String_
+  commentId: M:MNCD.Core.Actor.#ctor(System.String)
+  fullName: MNCD.Core.Actor.Actor(System.String)
+  nameWithType: Actor.Actor(String)
+- uid: MNCD.Core.Actor.#ctor*
+  name: Actor
+  href: api/MNCD.Core.Actor.html#MNCD_Core_Actor__ctor_
+  commentId: Overload:MNCD.Core.Actor.#ctor
+  isSpec: "True"
+  fullName: MNCD.Core.Actor.Actor
+  nameWithType: Actor.Actor
+- uid: MNCD.Core.Actor.Name
+  name: Name
+  href: api/MNCD.Core.Actor.html#MNCD_Core_Actor_Name
+  commentId: P:MNCD.Core.Actor.Name
+  fullName: MNCD.Core.Actor.Name
+  nameWithType: Actor.Name
+- uid: MNCD.Core.Actor.Name*
+  name: Name
+  href: api/MNCD.Core.Actor.html#MNCD_Core_Actor_Name_
+  commentId: Overload:MNCD.Core.Actor.Name
+  isSpec: "True"
+  fullName: MNCD.Core.Actor.Name
+  nameWithType: Actor.Name
+- uid: MNCD.Core.Community
+  name: Community
+  href: api/MNCD.Core.Community.html
+  commentId: T:MNCD.Core.Community
+  fullName: MNCD.Core.Community
+  nameWithType: Community
+- uid: MNCD.Core.Community.#ctor
+  name: Community()
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community__ctor
+  commentId: M:MNCD.Core.Community.#ctor
+  fullName: MNCD.Core.Community.Community()
+  nameWithType: Community.Community()
+- uid: MNCD.Core.Community.#ctor(MNCD.Core.Actor)
+  name: Community(Actor)
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community__ctor_MNCD_Core_Actor_
+  commentId: M:MNCD.Core.Community.#ctor(MNCD.Core.Actor)
+  fullName: MNCD.Core.Community.Community(MNCD.Core.Actor)
+  nameWithType: Community.Community(Actor)
+- uid: MNCD.Core.Community.#ctor(MNCD.Core.Actor[])
+  name: Community(Actor[])
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community__ctor_MNCD_Core_Actor___
+  commentId: M:MNCD.Core.Community.#ctor(MNCD.Core.Actor[])
+  name.vb: Community(Actor())
+  fullName: MNCD.Core.Community.Community(MNCD.Core.Actor[])
+  fullName.vb: MNCD.Core.Community.Community(MNCD.Core.Actor())
+  nameWithType: Community.Community(Actor[])
+  nameWithType.vb: Community.Community(Actor())
+- uid: MNCD.Core.Community.#ctor(System.Collections.Generic.IEnumerable{MNCD.Core.Actor})
+  name: Community(IEnumerable<Actor>)
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community__ctor_System_Collections_Generic_IEnumerable_MNCD_Core_Actor__
+  commentId: M:MNCD.Core.Community.#ctor(System.Collections.Generic.IEnumerable{MNCD.Core.Actor})
+  name.vb: Community(IEnumerable(Of Actor))
+  fullName: MNCD.Core.Community.Community(System.Collections.Generic.IEnumerable<MNCD.Core.Actor>)
+  fullName.vb: MNCD.Core.Community.Community(System.Collections.Generic.IEnumerable(Of MNCD.Core.Actor))
+  nameWithType: Community.Community(IEnumerable<Actor>)
+  nameWithType.vb: Community.Community(IEnumerable(Of Actor))
+- uid: MNCD.Core.Community.#ctor*
+  name: Community
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community__ctor_
+  commentId: Overload:MNCD.Core.Community.#ctor
+  isSpec: "True"
+  fullName: MNCD.Core.Community.Community
+  nameWithType: Community.Community
+- uid: MNCD.Core.Community.Actors
+  name: Actors
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community_Actors
+  commentId: P:MNCD.Core.Community.Actors
+  fullName: MNCD.Core.Community.Actors
+  nameWithType: Community.Actors
+- uid: MNCD.Core.Community.Actors*
+  name: Actors
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community_Actors_
+  commentId: Overload:MNCD.Core.Community.Actors
+  isSpec: "True"
+  fullName: MNCD.Core.Community.Actors
+  nameWithType: Community.Actors
+- uid: MNCD.Core.Community.Contains(MNCD.Core.Actor)
+  name: Contains(Actor)
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community_Contains_MNCD_Core_Actor_
+  commentId: M:MNCD.Core.Community.Contains(MNCD.Core.Actor)
+  fullName: MNCD.Core.Community.Contains(MNCD.Core.Actor)
+  nameWithType: Community.Contains(Actor)
+- uid: MNCD.Core.Community.Contains*
+  name: Contains
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community_Contains_
+  commentId: Overload:MNCD.Core.Community.Contains
+  isSpec: "True"
+  fullName: MNCD.Core.Community.Contains
+  nameWithType: Community.Contains
+- uid: MNCD.Core.Community.Size
+  name: Size
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community_Size
+  commentId: P:MNCD.Core.Community.Size
+  fullName: MNCD.Core.Community.Size
+  nameWithType: Community.Size
+- uid: MNCD.Core.Community.Size*
+  name: Size
+  href: api/MNCD.Core.Community.html#MNCD_Core_Community_Size_
+  commentId: Overload:MNCD.Core.Community.Size
+  isSpec: "True"
+  fullName: MNCD.Core.Community.Size
+  nameWithType: Community.Size
+- uid: MNCD.Core.Edge
+  name: Edge
+  href: api/MNCD.Core.Edge.html
+  commentId: T:MNCD.Core.Edge
+  fullName: MNCD.Core.Edge
+  nameWithType: Edge
+- uid: MNCD.Core.Edge.#ctor
+  name: Edge()
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge__ctor
+  commentId: M:MNCD.Core.Edge.#ctor
+  fullName: MNCD.Core.Edge.Edge()
+  nameWithType: Edge.Edge()
+- uid: MNCD.Core.Edge.#ctor(MNCD.Core.Actor,MNCD.Core.Actor)
+  name: Edge(Actor, Actor)
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge__ctor_MNCD_Core_Actor_MNCD_Core_Actor_
+  commentId: M:MNCD.Core.Edge.#ctor(MNCD.Core.Actor,MNCD.Core.Actor)
+  fullName: MNCD.Core.Edge.Edge(MNCD.Core.Actor, MNCD.Core.Actor)
+  nameWithType: Edge.Edge(Actor, Actor)
+- uid: MNCD.Core.Edge.#ctor(MNCD.Core.Actor,MNCD.Core.Actor,System.Double)
+  name: Edge(Actor, Actor, Double)
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge__ctor_MNCD_Core_Actor_MNCD_Core_Actor_System_Double_
+  commentId: M:MNCD.Core.Edge.#ctor(MNCD.Core.Actor,MNCD.Core.Actor,System.Double)
+  fullName: MNCD.Core.Edge.Edge(MNCD.Core.Actor, MNCD.Core.Actor, System.Double)
+  nameWithType: Edge.Edge(Actor, Actor, Double)
+- uid: MNCD.Core.Edge.#ctor*
+  name: Edge
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge__ctor_
+  commentId: Overload:MNCD.Core.Edge.#ctor
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.Edge
+  nameWithType: Edge.Edge
+- uid: MNCD.Core.Edge.Copy
+  name: Copy()
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Copy
+  commentId: M:MNCD.Core.Edge.Copy
+  fullName: MNCD.Core.Edge.Copy()
+  nameWithType: Edge.Copy()
+- uid: MNCD.Core.Edge.Copy*
+  name: Copy
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Copy_
+  commentId: Overload:MNCD.Core.Edge.Copy
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.Copy
+  nameWithType: Edge.Copy
+- uid: MNCD.Core.Edge.From
+  name: From
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_From
+  commentId: P:MNCD.Core.Edge.From
+  fullName: MNCD.Core.Edge.From
+  nameWithType: Edge.From
+- uid: MNCD.Core.Edge.From*
+  name: From
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_From_
+  commentId: Overload:MNCD.Core.Edge.From
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.From
+  nameWithType: Edge.From
+- uid: MNCD.Core.Edge.Pair
+  name: Pair
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Pair
+  commentId: P:MNCD.Core.Edge.Pair
+  fullName: MNCD.Core.Edge.Pair
+  nameWithType: Edge.Pair
+- uid: MNCD.Core.Edge.Pair*
+  name: Pair
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Pair_
+  commentId: Overload:MNCD.Core.Edge.Pair
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.Pair
+  nameWithType: Edge.Pair
+- uid: MNCD.Core.Edge.Reverse
+  name: Reverse()
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Reverse
+  commentId: M:MNCD.Core.Edge.Reverse
+  fullName: MNCD.Core.Edge.Reverse()
+  nameWithType: Edge.Reverse()
+- uid: MNCD.Core.Edge.Reverse*
+  name: Reverse
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Reverse_
+  commentId: Overload:MNCD.Core.Edge.Reverse
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.Reverse
+  nameWithType: Edge.Reverse
+- uid: MNCD.Core.Edge.To
+  name: To
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_To
+  commentId: P:MNCD.Core.Edge.To
+  fullName: MNCD.Core.Edge.To
+  nameWithType: Edge.To
+- uid: MNCD.Core.Edge.To*
+  name: To
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_To_
+  commentId: Overload:MNCD.Core.Edge.To
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.To
+  nameWithType: Edge.To
+- uid: MNCD.Core.Edge.Weight
+  name: Weight
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Weight
+  commentId: P:MNCD.Core.Edge.Weight
+  fullName: MNCD.Core.Edge.Weight
+  nameWithType: Edge.Weight
+- uid: MNCD.Core.Edge.Weight*
+  name: Weight
+  href: api/MNCD.Core.Edge.html#MNCD_Core_Edge_Weight_
+  commentId: Overload:MNCD.Core.Edge.Weight
+  isSpec: "True"
+  fullName: MNCD.Core.Edge.Weight
+  nameWithType: Edge.Weight
+- uid: MNCD.Core.InterLayerEdge
+  name: InterLayerEdge
+  href: api/MNCD.Core.InterLayerEdge.html
+  commentId: T:MNCD.Core.InterLayerEdge
+  fullName: MNCD.Core.InterLayerEdge
+  nameWithType: InterLayerEdge
+- uid: MNCD.Core.InterLayerEdge.#ctor
+  name: InterLayerEdge()
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge__ctor
+  commentId: M:MNCD.Core.InterLayerEdge.#ctor
+  fullName: MNCD.Core.InterLayerEdge.InterLayerEdge()
+  nameWithType: InterLayerEdge.InterLayerEdge()
+- uid: MNCD.Core.InterLayerEdge.#ctor(MNCD.Core.Actor,MNCD.Core.Layer,MNCD.Core.Actor,MNCD.Core.Layer)
+  name: InterLayerEdge(Actor, Layer, Actor, Layer)
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge__ctor_MNCD_Core_Actor_MNCD_Core_Layer_MNCD_Core_Actor_MNCD_Core_Layer_
+  commentId: M:MNCD.Core.InterLayerEdge.#ctor(MNCD.Core.Actor,MNCD.Core.Layer,MNCD.Core.Actor,MNCD.Core.Layer)
+  fullName: MNCD.Core.InterLayerEdge.InterLayerEdge(MNCD.Core.Actor, MNCD.Core.Layer, MNCD.Core.Actor, MNCD.Core.Layer)
+  nameWithType: InterLayerEdge.InterLayerEdge(Actor, Layer, Actor, Layer)
+- uid: MNCD.Core.InterLayerEdge.#ctor(MNCD.Core.Actor,MNCD.Core.Layer,MNCD.Core.Actor,MNCD.Core.Layer,System.Double)
+  name: InterLayerEdge(Actor, Layer, Actor, Layer, Double)
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge__ctor_MNCD_Core_Actor_MNCD_Core_Layer_MNCD_Core_Actor_MNCD_Core_Layer_System_Double_
+  commentId: M:MNCD.Core.InterLayerEdge.#ctor(MNCD.Core.Actor,MNCD.Core.Layer,MNCD.Core.Actor,MNCD.Core.Layer,System.Double)
+  fullName: MNCD.Core.InterLayerEdge.InterLayerEdge(MNCD.Core.Actor, MNCD.Core.Layer, MNCD.Core.Actor, MNCD.Core.Layer, System.Double)
+  nameWithType: InterLayerEdge.InterLayerEdge(Actor, Layer, Actor, Layer, Double)
+- uid: MNCD.Core.InterLayerEdge.#ctor*
+  name: InterLayerEdge
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge__ctor_
+  commentId: Overload:MNCD.Core.InterLayerEdge.#ctor
+  isSpec: "True"
+  fullName: MNCD.Core.InterLayerEdge.InterLayerEdge
+  nameWithType: InterLayerEdge.InterLayerEdge
+- uid: MNCD.Core.InterLayerEdge.Copy
+  name: Copy()
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_Copy
+  commentId: M:MNCD.Core.InterLayerEdge.Copy
+  fullName: MNCD.Core.InterLayerEdge.Copy()
+  nameWithType: InterLayerEdge.Copy()
+- uid: MNCD.Core.InterLayerEdge.Copy*
+  name: Copy
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_Copy_
+  commentId: Overload:MNCD.Core.InterLayerEdge.Copy
+  isSpec: "True"
+  fullName: MNCD.Core.InterLayerEdge.Copy
+  nameWithType: InterLayerEdge.Copy
+- uid: MNCD.Core.InterLayerEdge.InterLayerPair
+  name: InterLayerPair
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_InterLayerPair
+  commentId: P:MNCD.Core.InterLayerEdge.InterLayerPair
+  fullName: MNCD.Core.InterLayerEdge.InterLayerPair
+  nameWithType: InterLayerEdge.InterLayerPair
+- uid: MNCD.Core.InterLayerEdge.InterLayerPair*
+  name: InterLayerPair
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_InterLayerPair_
+  commentId: Overload:MNCD.Core.InterLayerEdge.InterLayerPair
+  isSpec: "True"
+  fullName: MNCD.Core.InterLayerEdge.InterLayerPair
+  nameWithType: InterLayerEdge.InterLayerPair
+- uid: MNCD.Core.InterLayerEdge.LayerFrom
+  name: LayerFrom
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_LayerFrom
+  commentId: P:MNCD.Core.InterLayerEdge.LayerFrom
+  fullName: MNCD.Core.InterLayerEdge.LayerFrom
+  nameWithType: InterLayerEdge.LayerFrom
+- uid: MNCD.Core.InterLayerEdge.LayerFrom*
+  name: LayerFrom
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_LayerFrom_
+  commentId: Overload:MNCD.Core.InterLayerEdge.LayerFrom
+  isSpec: "True"
+  fullName: MNCD.Core.InterLayerEdge.LayerFrom
+  nameWithType: InterLayerEdge.LayerFrom
+- uid: MNCD.Core.InterLayerEdge.LayerTo
+  name: LayerTo
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_LayerTo
+  commentId: P:MNCD.Core.InterLayerEdge.LayerTo
+  fullName: MNCD.Core.InterLayerEdge.LayerTo
+  nameWithType: InterLayerEdge.LayerTo
+- uid: MNCD.Core.InterLayerEdge.LayerTo*
+  name: LayerTo
+  href: api/MNCD.Core.InterLayerEdge.html#MNCD_Core_InterLayerEdge_LayerTo_
+  commentId: Overload:MNCD.Core.InterLayerEdge.LayerTo
+  isSpec: "True"
+  fullName: MNCD.Core.InterLayerEdge.LayerTo
+  nameWithType: InterLayerEdge.LayerTo
+- uid: MNCD.Core.Layer
+  name: Layer
+  href: api/MNCD.Core.Layer.html
+  commentId: T:MNCD.Core.Layer
+  fullName: MNCD.Core.Layer
+  nameWithType: Layer
+- uid: MNCD.Core.Layer.#ctor
+  name: Layer()
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer__ctor
+  commentId: M:MNCD.Core.Layer.#ctor
+  fullName: MNCD.Core.Layer.Layer()
+  nameWithType: Layer.Layer()
+- uid: MNCD.Core.Layer.#ctor(System.Collections.Generic.List{MNCD.Core.Edge})
+  name: Layer(List<Edge>)
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer__ctor_System_Collections_Generic_List_MNCD_Core_Edge__
+  commentId: M:MNCD.Core.Layer.#ctor(System.Collections.Generic.List{MNCD.Core.Edge})
+  name.vb: Layer(List(Of Edge))
+  fullName: MNCD.Core.Layer.Layer(System.Collections.Generic.List<MNCD.Core.Edge>)
+  fullName.vb: MNCD.Core.Layer.Layer(System.Collections.Generic.List(Of MNCD.Core.Edge))
+  nameWithType: Layer.Layer(List<Edge>)
+  nameWithType.vb: Layer.Layer(List(Of Edge))
+- uid: MNCD.Core.Layer.#ctor(System.String)
+  name: Layer(String)
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer__ctor_System_String_
+  commentId: M:MNCD.Core.Layer.#ctor(System.String)
+  fullName: MNCD.Core.Layer.Layer(System.String)
+  nameWithType: Layer.Layer(String)
+- uid: MNCD.Core.Layer.#ctor*
+  name: Layer
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer__ctor_
+  commentId: Overload:MNCD.Core.Layer.#ctor
+  isSpec: "True"
+  fullName: MNCD.Core.Layer.Layer
+  nameWithType: Layer.Layer
+- uid: MNCD.Core.Layer.Edges
+  name: Edges
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_Edges
+  commentId: P:MNCD.Core.Layer.Edges
+  fullName: MNCD.Core.Layer.Edges
+  nameWithType: Layer.Edges
+- uid: MNCD.Core.Layer.Edges*
+  name: Edges
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_Edges_
+  commentId: Overload:MNCD.Core.Layer.Edges
+  isSpec: "True"
+  fullName: MNCD.Core.Layer.Edges
+  nameWithType: Layer.Edges
+- uid: MNCD.Core.Layer.GetLayerActors
+  name: GetLayerActors()
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_GetLayerActors
+  commentId: M:MNCD.Core.Layer.GetLayerActors
+  fullName: MNCD.Core.Layer.GetLayerActors()
+  nameWithType: Layer.GetLayerActors()
+- uid: MNCD.Core.Layer.GetLayerActors*
+  name: GetLayerActors
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_GetLayerActors_
+  commentId: Overload:MNCD.Core.Layer.GetLayerActors
+  isSpec: "True"
+  fullName: MNCD.Core.Layer.GetLayerActors
+  nameWithType: Layer.GetLayerActors
+- uid: MNCD.Core.Layer.GetNeighboursDict
+  name: GetNeighboursDict()
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_GetNeighboursDict
+  commentId: M:MNCD.Core.Layer.GetNeighboursDict
+  fullName: MNCD.Core.Layer.GetNeighboursDict()
+  nameWithType: Layer.GetNeighboursDict()
+- uid: MNCD.Core.Layer.GetNeighboursDict*
+  name: GetNeighboursDict
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_GetNeighboursDict_
+  commentId: Overload:MNCD.Core.Layer.GetNeighboursDict
+  isSpec: "True"
+  fullName: MNCD.Core.Layer.GetNeighboursDict
+  nameWithType: Layer.GetNeighboursDict
+- uid: MNCD.Core.Layer.Name
+  name: Name
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_Name
+  commentId: P:MNCD.Core.Layer.Name
+  fullName: MNCD.Core.Layer.Name
+  nameWithType: Layer.Name
+- uid: MNCD.Core.Layer.Name*
+  name: Name
+  href: api/MNCD.Core.Layer.html#MNCD_Core_Layer_Name_
+  commentId: Overload:MNCD.Core.Layer.Name
+  isSpec: "True"
+  fullName: MNCD.Core.Layer.Name
+  nameWithType: Layer.Name
+- uid: MNCD.Core.Network
+  name: Network
+  href: api/MNCD.Core.Network.html
+  commentId: T:MNCD.Core.Network
+  fullName: MNCD.Core.Network
+  nameWithType: Network
+- uid: MNCD.Core.Network.#ctor
+  name: Network()
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network__ctor
+  commentId: M:MNCD.Core.Network.#ctor
+  fullName: MNCD.Core.Network.Network()
+  nameWithType: Network.Network()
+- uid: MNCD.Core.Network.#ctor(MNCD.Core.Layer)
+  name: Network(Layer)
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network__ctor_MNCD_Core_Layer_
+  commentId: M:MNCD.Core.Network.#ctor(MNCD.Core.Layer)
+  fullName: MNCD.Core.Network.Network(MNCD.Core.Layer)
+  nameWithType: Network.Network(Layer)
+- uid: MNCD.Core.Network.#ctor(MNCD.Core.Layer,System.Collections.Generic.List{MNCD.Core.Actor})
+  name: Network(Layer, List<Actor>)
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network__ctor_MNCD_Core_Layer_System_Collections_Generic_List_MNCD_Core_Actor__
+  commentId: M:MNCD.Core.Network.#ctor(MNCD.Core.Layer,System.Collections.Generic.List{MNCD.Core.Actor})
+  name.vb: Network(Layer, List(Of Actor))
+  fullName: MNCD.Core.Network.Network(MNCD.Core.Layer, System.Collections.Generic.List<MNCD.Core.Actor>)
+  fullName.vb: MNCD.Core.Network.Network(MNCD.Core.Layer, System.Collections.Generic.List(Of MNCD.Core.Actor))
+  nameWithType: Network.Network(Layer, List<Actor>)
+  nameWithType.vb: Network.Network(Layer, List(Of Actor))
+- uid: MNCD.Core.Network.#ctor(System.Collections.Generic.List{MNCD.Core.Layer},System.Collections.Generic.List{MNCD.Core.Actor})
+  name: Network(List<Layer>, List<Actor>)
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network__ctor_System_Collections_Generic_List_MNCD_Core_Layer__System_Collections_Generic_List_MNCD_Core_Actor__
+  commentId: M:MNCD.Core.Network.#ctor(System.Collections.Generic.List{MNCD.Core.Layer},System.Collections.Generic.List{MNCD.Core.Actor})
+  name.vb: Network(List(Of Layer), List(Of Actor))
+  fullName: MNCD.Core.Network.Network(System.Collections.Generic.List<MNCD.Core.Layer>, System.Collections.Generic.List<MNCD.Core.Actor>)
+  fullName.vb: MNCD.Core.Network.Network(System.Collections.Generic.List(Of MNCD.Core.Layer), System.Collections.Generic.List(Of MNCD.Core.Actor))
+  nameWithType: Network.Network(List<Layer>, List<Actor>)
+  nameWithType.vb: Network.Network(List(Of Layer), List(Of Actor))
+- uid: MNCD.Core.Network.#ctor*
+  name: Network
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network__ctor_
+  commentId: Overload:MNCD.Core.Network.#ctor
+  isSpec: "True"
+  fullName: MNCD.Core.Network.Network
+  nameWithType: Network.Network
+- uid: MNCD.Core.Network.ActorCount
+  name: ActorCount
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_ActorCount
+  commentId: P:MNCD.Core.Network.ActorCount
+  fullName: MNCD.Core.Network.ActorCount
+  nameWithType: Network.ActorCount
+- uid: MNCD.Core.Network.ActorCount*
+  name: ActorCount
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_ActorCount_
+  commentId: Overload:MNCD.Core.Network.ActorCount
+  isSpec: "True"
+  fullName: MNCD.Core.Network.ActorCount
+  nameWithType: Network.ActorCount
+- uid: MNCD.Core.Network.Actors
+  name: Actors
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_Actors
+  commentId: P:MNCD.Core.Network.Actors
+  fullName: MNCD.Core.Network.Actors
+  nameWithType: Network.Actors
+- uid: MNCD.Core.Network.Actors*
+  name: Actors
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_Actors_
+  commentId: Overload:MNCD.Core.Network.Actors
+  isSpec: "True"
+  fullName: MNCD.Core.Network.Actors
+  nameWithType: Network.Actors
+- uid: MNCD.Core.Network.FirstLayer
+  name: FirstLayer
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_FirstLayer
+  commentId: P:MNCD.Core.Network.FirstLayer
+  fullName: MNCD.Core.Network.FirstLayer
+  nameWithType: Network.FirstLayer
+- uid: MNCD.Core.Network.FirstLayer*
+  name: FirstLayer
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_FirstLayer_
+  commentId: Overload:MNCD.Core.Network.FirstLayer
+  isSpec: "True"
+  fullName: MNCD.Core.Network.FirstLayer
+  nameWithType: Network.FirstLayer
+- uid: MNCD.Core.Network.InterLayerEdges
+  name: InterLayerEdges
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_InterLayerEdges
+  commentId: P:MNCD.Core.Network.InterLayerEdges
+  fullName: MNCD.Core.Network.InterLayerEdges
+  nameWithType: Network.InterLayerEdges
+- uid: MNCD.Core.Network.InterLayerEdges*
+  name: InterLayerEdges
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_InterLayerEdges_
+  commentId: Overload:MNCD.Core.Network.InterLayerEdges
+  isSpec: "True"
+  fullName: MNCD.Core.Network.InterLayerEdges
+  nameWithType: Network.InterLayerEdges
+- uid: MNCD.Core.Network.LayerCount
+  name: LayerCount
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_LayerCount
+  commentId: P:MNCD.Core.Network.LayerCount
+  fullName: MNCD.Core.Network.LayerCount
+  nameWithType: Network.LayerCount
+- uid: MNCD.Core.Network.LayerCount*
+  name: LayerCount
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_LayerCount_
+  commentId: Overload:MNCD.Core.Network.LayerCount
+  isSpec: "True"
+  fullName: MNCD.Core.Network.LayerCount
+  nameWithType: Network.LayerCount
+- uid: MNCD.Core.Network.Layers
+  name: Layers
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_Layers
+  commentId: P:MNCD.Core.Network.Layers
+  fullName: MNCD.Core.Network.Layers
+  nameWithType: Network.Layers
+- uid: MNCD.Core.Network.Layers*
+  name: Layers
+  href: api/MNCD.Core.Network.html#MNCD_Core_Network_Layers_
+  commentId: Overload:MNCD.Core.Network.Layers
+  isSpec: "True"
+  fullName: MNCD.Core.Network.Layers
+  nameWithType: Network.Layers
+- uid: MNCD.Evaluation.MultiLayer
+  name: MNCD.Evaluation.MultiLayer
+  href: api/MNCD.Evaluation.MultiLayer.html
+  commentId: N:MNCD.Evaluation.MultiLayer
+  fullName: MNCD.Evaluation.MultiLayer
+  nameWithType: MNCD.Evaluation.MultiLayer
+- uid: MNCD.Evaluation.MultiLayer.Complementarity
+  name: Complementarity
+  href: api/MNCD.Evaluation.MultiLayer.Complementarity.html
+  commentId: T:MNCD.Evaluation.MultiLayer.Complementarity
+  fullName: MNCD.Evaluation.MultiLayer.Complementarity
+  nameWithType: Complementarity
+- uid: MNCD.Evaluation.MultiLayer.Complementarity.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  name: Compute(Community, Network)
+  href: api/MNCD.Evaluation.MultiLayer.Complementarity.html#MNCD_Evaluation_MultiLayer_Complementarity_Compute_MNCD_Core_Community_MNCD_Core_Network_
+  commentId: M:MNCD.Evaluation.MultiLayer.Complementarity.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  fullName: MNCD.Evaluation.MultiLayer.Complementarity.Compute(MNCD.Core.Community, MNCD.Core.Network)
+  nameWithType: Complementarity.Compute(Community, Network)
+- uid: MNCD.Evaluation.MultiLayer.Complementarity.Compute*
+  name: Compute
+  href: api/MNCD.Evaluation.MultiLayer.Complementarity.html#MNCD_Evaluation_MultiLayer_Complementarity_Compute_
+  commentId: Overload:MNCD.Evaluation.MultiLayer.Complementarity.Compute
+  isSpec: "True"
+  fullName: MNCD.Evaluation.MultiLayer.Complementarity.Compute
+  nameWithType: Complementarity.Compute
+- uid: MNCD.Evaluation.MultiLayer.Exclusivity
+  name: Exclusivity
+  href: api/MNCD.Evaluation.MultiLayer.Exclusivity.html
+  commentId: T:MNCD.Evaluation.MultiLayer.Exclusivity
+  fullName: MNCD.Evaluation.MultiLayer.Exclusivity
+  nameWithType: Exclusivity
+- uid: MNCD.Evaluation.MultiLayer.Exclusivity.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  name: Compute(Community, Network)
+  href: api/MNCD.Evaluation.MultiLayer.Exclusivity.html#MNCD_Evaluation_MultiLayer_Exclusivity_Compute_MNCD_Core_Community_MNCD_Core_Network_
+  commentId: M:MNCD.Evaluation.MultiLayer.Exclusivity.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  fullName: MNCD.Evaluation.MultiLayer.Exclusivity.Compute(MNCD.Core.Community, MNCD.Core.Network)
+  nameWithType: Exclusivity.Compute(Community, Network)
+- uid: MNCD.Evaluation.MultiLayer.Exclusivity.Compute*
+  name: Compute
+  href: api/MNCD.Evaluation.MultiLayer.Exclusivity.html#MNCD_Evaluation_MultiLayer_Exclusivity_Compute_
+  commentId: Overload:MNCD.Evaluation.MultiLayer.Exclusivity.Compute
+  isSpec: "True"
+  fullName: MNCD.Evaluation.MultiLayer.Exclusivity.Compute
+  nameWithType: Exclusivity.Compute
+- uid: MNCD.Evaluation.MultiLayer.Homogenity
+  name: Homogenity
+  href: api/MNCD.Evaluation.MultiLayer.Homogenity.html
+  commentId: T:MNCD.Evaluation.MultiLayer.Homogenity
+  fullName: MNCD.Evaluation.MultiLayer.Homogenity
+  nameWithType: Homogenity
+- uid: MNCD.Evaluation.MultiLayer.Homogenity.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  name: Compute(Community, Network)
+  href: api/MNCD.Evaluation.MultiLayer.Homogenity.html#MNCD_Evaluation_MultiLayer_Homogenity_Compute_MNCD_Core_Community_MNCD_Core_Network_
+  commentId: M:MNCD.Evaluation.MultiLayer.Homogenity.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  fullName: MNCD.Evaluation.MultiLayer.Homogenity.Compute(MNCD.Core.Community, MNCD.Core.Network)
+  nameWithType: Homogenity.Compute(Community, Network)
+- uid: MNCD.Evaluation.MultiLayer.Homogenity.Compute*
+  name: Compute
+  href: api/MNCD.Evaluation.MultiLayer.Homogenity.html#MNCD_Evaluation_MultiLayer_Homogenity_Compute_
+  commentId: Overload:MNCD.Evaluation.MultiLayer.Homogenity.Compute
+  isSpec: "True"
+  fullName: MNCD.Evaluation.MultiLayer.Homogenity.Compute
+  nameWithType: Homogenity.Compute
+- uid: MNCD.Evaluation.MultiLayer.Redundancy
+  name: Redundancy
+  href: api/MNCD.Evaluation.MultiLayer.Redundancy.html
+  commentId: T:MNCD.Evaluation.MultiLayer.Redundancy
+  fullName: MNCD.Evaluation.MultiLayer.Redundancy
+  nameWithType: Redundancy
+- uid: MNCD.Evaluation.MultiLayer.Redundancy.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  name: Compute(Community, Network)
+  href: api/MNCD.Evaluation.MultiLayer.Redundancy.html#MNCD_Evaluation_MultiLayer_Redundancy_Compute_MNCD_Core_Community_MNCD_Core_Network_
+  commentId: M:MNCD.Evaluation.MultiLayer.Redundancy.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  fullName: MNCD.Evaluation.MultiLayer.Redundancy.Compute(MNCD.Core.Community, MNCD.Core.Network)
+  nameWithType: Redundancy.Compute(Community, Network)
+- uid: MNCD.Evaluation.MultiLayer.Redundancy.Compute*
+  name: Compute
+  href: api/MNCD.Evaluation.MultiLayer.Redundancy.html#MNCD_Evaluation_MultiLayer_Redundancy_Compute_
+  commentId: Overload:MNCD.Evaluation.MultiLayer.Redundancy.Compute
+  isSpec: "True"
+  fullName: MNCD.Evaluation.MultiLayer.Redundancy.Compute
+  nameWithType: Redundancy.Compute
+- uid: MNCD.Evaluation.MultiLayer.Variety
+  name: Variety
+  href: api/MNCD.Evaluation.MultiLayer.Variety.html
+  commentId: T:MNCD.Evaluation.MultiLayer.Variety
+  fullName: MNCD.Evaluation.MultiLayer.Variety
+  nameWithType: Variety
+- uid: MNCD.Evaluation.MultiLayer.Variety.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  name: Compute(Community, Network)
+  href: api/MNCD.Evaluation.MultiLayer.Variety.html#MNCD_Evaluation_MultiLayer_Variety_Compute_MNCD_Core_Community_MNCD_Core_Network_
+  commentId: M:MNCD.Evaluation.MultiLayer.Variety.Compute(MNCD.Core.Community,MNCD.Core.Network)
+  fullName: MNCD.Evaluation.MultiLayer.Variety.Compute(MNCD.Core.Community, MNCD.Core.Network)
+  nameWithType: Variety.Compute(Community, Network)
+- uid: MNCD.Evaluation.MultiLayer.Variety.Compute*
+  name: Compute
+  href: api/MNCD.Evaluation.MultiLayer.Variety.html#MNCD_Evaluation_MultiLayer_Variety_Compute_
+  commentId: Overload:MNCD.Evaluation.MultiLayer.Variety.Compute
+  isSpec: "True"
+  fullName: MNCD.Evaluation.MultiLayer.Variety.Compute
+  nameWithType: Variety.Compute
+- uid: MNCD.Evaluation.SingleLayer
+  name: MNCD.Evaluation.SingleLayer
+  href: api/MNCD.Evaluation.SingleLayer.html
+  commentId: N:MNCD.Evaluation.SingleLayer
+  fullName: MNCD.Evaluation.SingleLayer
+  nameWithType: MNCD.Evaluation.SingleLayer
+- uid: MNCD.Evaluation.SingleLayer.Coverage
+  name: Coverage
+  href: api/MNCD.Evaluation.SingleLayer.Coverage.html
+  commentId: T:MNCD.Evaluation.SingleLayer.Coverage
+  fullName: MNCD.Evaluation.SingleLayer.Coverage
+  nameWithType: Coverage
+- uid: MNCD.Evaluation.SingleLayer.Coverage.Get(MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community})
+  name: Get(Network, List<Community>)
+  href: api/MNCD.Evaluation.SingleLayer.Coverage.html#MNCD_Evaluation_SingleLayer_Coverage_Get_MNCD_Core_Network_System_Collections_Generic_List_MNCD_Core_Community__
+  commentId: M:MNCD.Evaluation.SingleLayer.Coverage.Get(MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community})
+  name.vb: Get(Network, List(Of Community))
+  fullName: MNCD.Evaluation.SingleLayer.Coverage.Get(MNCD.Core.Network, System.Collections.Generic.List<MNCD.Core.Community>)
+  fullName.vb: MNCD.Evaluation.SingleLayer.Coverage.Get(MNCD.Core.Network, System.Collections.Generic.List(Of MNCD.Core.Community))
+  nameWithType: Coverage.Get(Network, List<Community>)
+  nameWithType.vb: Coverage.Get(Network, List(Of Community))
+- uid: MNCD.Evaluation.SingleLayer.Coverage.Get*
+  name: Get
+  href: api/MNCD.Evaluation.SingleLayer.Coverage.html#MNCD_Evaluation_SingleLayer_Coverage_Get_
+  commentId: Overload:MNCD.Evaluation.SingleLayer.Coverage.Get
+  isSpec: "True"
+  fullName: MNCD.Evaluation.SingleLayer.Coverage.Get
+  nameWithType: Coverage.Get
+- uid: MNCD.Evaluation.SingleLayer.Modularity
+  name: Modularity
+  href: api/MNCD.Evaluation.SingleLayer.Modularity.html
+  commentId: T:MNCD.Evaluation.SingleLayer.Modularity
+  fullName: MNCD.Evaluation.SingleLayer.Modularity
+  nameWithType: Modularity
+- uid: MNCD.Evaluation.SingleLayer.Modularity.Compute(MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community})
+  name: Compute(Network, List<Community>)
+  href: api/MNCD.Evaluation.SingleLayer.Modularity.html#MNCD_Evaluation_SingleLayer_Modularity_Compute_MNCD_Core_Network_System_Collections_Generic_List_MNCD_Core_Community__
+  commentId: M:MNCD.Evaluation.SingleLayer.Modularity.Compute(MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community})
+  name.vb: Compute(Network, List(Of Community))
+  fullName: MNCD.Evaluation.SingleLayer.Modularity.Compute(MNCD.Core.Network, System.Collections.Generic.List<MNCD.Core.Community>)
+  fullName.vb: MNCD.Evaluation.SingleLayer.Modularity.Compute(MNCD.Core.Network, System.Collections.Generic.List(Of MNCD.Core.Community))
+  nameWithType: Modularity.Compute(Network, List<Community>)
+  nameWithType.vb: Modularity.Compute(Network, List(Of Community))
+- uid: MNCD.Evaluation.SingleLayer.Modularity.Compute*
+  name: Compute
+  href: api/MNCD.Evaluation.SingleLayer.Modularity.html#MNCD_Evaluation_SingleLayer_Modularity_Compute_
+  commentId: Overload:MNCD.Evaluation.SingleLayer.Modularity.Compute
+  isSpec: "True"
+  fullName: MNCD.Evaluation.SingleLayer.Modularity.Compute
+  nameWithType: Modularity.Compute
+- uid: MNCD.Evaluation.SingleLayer.Performance
+  name: Performance
+  href: api/MNCD.Evaluation.SingleLayer.Performance.html
+  commentId: T:MNCD.Evaluation.SingleLayer.Performance
+  fullName: MNCD.Evaluation.SingleLayer.Performance
+  nameWithType: Performance
+- uid: MNCD.Evaluation.SingleLayer.Performance.Get(MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community})
+  name: Get(Network, List<Community>)
+  href: api/MNCD.Evaluation.SingleLayer.Performance.html#MNCD_Evaluation_SingleLayer_Performance_Get_MNCD_Core_Network_System_Collections_Generic_List_MNCD_Core_Community__
+  commentId: M:MNCD.Evaluation.SingleLayer.Performance.Get(MNCD.Core.Network,System.Collections.Generic.List{MNCD.Core.Community})
+  name.vb: Get(Network, List(Of Community))
+  fullName: MNCD.Evaluation.SingleLayer.Performance.Get(MNCD.Core.Network, System.Collections.Generic.List<MNCD.Core.Community>)
+  fullName.vb: MNCD.Evaluation.SingleLayer.Performance.Get(MNCD.Core.Network, System.Collections.Generic.List(Of MNCD.Core.Community))
+  nameWithType: Performance.Get(Network, List<Community>)
+  nameWithType.vb: Performance.Get(Network, List(Of Community))
+- uid: MNCD.Evaluation.SingleLayer.Performance.Get*
+  name: Get
+  href: api/MNCD.Evaluation.SingleLayer.Performance.html#MNCD_Evaluation_SingleLayer_Performance_Get_
+  commentId: Overload:MNCD.Evaluation.SingleLayer.Performance.Get
+  isSpec: "True"
+  fullName: MNCD.Evaluation.SingleLayer.Performance.Get
+  nameWithType: Performance.Get
+- uid: MNCD.Extensions
+  name: MNCD.Extensions
+  href: api/MNCD.Extensions.html
+  commentId: N:MNCD.Extensions
+  fullName: MNCD.Extensions
+  nameWithType: MNCD.Extensions
+- uid: MNCD.Extensions.ListExtensions
+  name: ListExtensions
+  href: api/MNCD.Extensions.ListExtensions.html
+  commentId: T:MNCD.Extensions.ListExtensions
+  fullName: MNCD.Extensions.ListExtensions
+  nameWithType: ListExtensions
+- uid: MNCD.Extensions.ListExtensions.Shuffle*
+  name: Shuffle
+  href: api/MNCD.Extensions.ListExtensions.html#MNCD_Extensions_ListExtensions_Shuffle_
+  commentId: Overload:MNCD.Extensions.ListExtensions.Shuffle
+  isSpec: "True"
+  fullName: MNCD.Extensions.ListExtensions.Shuffle
+  nameWithType: ListExtensions.Shuffle
+- uid: MNCD.Extensions.ListExtensions.Shuffle``1(System.Collections.Generic.IList{``0})
+  name: Shuffle<T>(IList<T>)
+  href: api/MNCD.Extensions.ListExtensions.html#MNCD_Extensions_ListExtensions_Shuffle__1_System_Collections_Generic_IList___0__
+  commentId: M:MNCD.Extensions.ListExtensions.Shuffle``1(System.Collections.Generic.IList{``0})
+  name.vb: Shuffle(Of T)(IList(Of T))
+  fullName: MNCD.Extensions.ListExtensions.Shuffle<T>(System.Collections.Generic.IList<T>)
+  fullName.vb: MNCD.Extensions.ListExtensions.Shuffle(Of T)(System.Collections.Generic.IList(Of T))
+  nameWithType: ListExtensions.Shuffle<T>(IList<T>)
+  nameWithType.vb: ListExtensions.Shuffle(Of T)(IList(Of T))
+- uid: MNCD.Extensions.ListExtensions.ToIndexDict*
+  name: ToIndexDict
+  href: api/MNCD.Extensions.ListExtensions.html#MNCD_Extensions_ListExtensions_ToIndexDict_
+  commentId: Overload:MNCD.Extensions.ListExtensions.ToIndexDict
+  isSpec: "True"
+  fullName: MNCD.Extensions.ListExtensions.ToIndexDict
+  nameWithType: ListExtensions.ToIndexDict
+- uid: MNCD.Extensions.ListExtensions.ToIndexDict``1(System.Collections.Generic.List{``0})
+  name: ToIndexDict<T>(List<T>)
+  href: api/MNCD.Extensions.ListExtensions.html#MNCD_Extensions_ListExtensions_ToIndexDict__1_System_Collections_Generic_List___0__
+  commentId: M:MNCD.Extensions.ListExtensions.ToIndexDict``1(System.Collections.Generic.List{``0})
+  name.vb: ToIndexDict(Of T)(List(Of T))
+  fullName: MNCD.Extensions.ListExtensions.ToIndexDict<T>(System.Collections.Generic.List<T>)
+  fullName.vb: MNCD.Extensions.ListExtensions.ToIndexDict(Of T)(System.Collections.Generic.List(Of T))
+  nameWithType: ListExtensions.ToIndexDict<T>(List<T>)
+  nameWithType.vb: ListExtensions.ToIndexDict(Of T)(List(Of T))
+- uid: MNCD.Extensions.ListExtensions.ToIndexDictionary*
+  name: ToIndexDictionary
+  href: api/MNCD.Extensions.ListExtensions.html#MNCD_Extensions_ListExtensions_ToIndexDictionary_
+  commentId: Overload:MNCD.Extensions.ListExtensions.ToIndexDictionary
+  isSpec: "True"
+  fullName: MNCD.Extensions.ListExtensions.ToIndexDictionary
+  nameWithType: ListExtensions.ToIndexDictionary
+- uid: MNCD.Extensions.ListExtensions.ToIndexDictionary``1(System.Collections.Generic.List{``0})
+  name: ToIndexDictionary<T>(List<T>)
+  href: api/MNCD.Extensions.ListExtensions.html#MNCD_Extensions_ListExtensions_ToIndexDictionary__1_System_Collections_Generic_List___0__
+  commentId: M:MNCD.Extensions.ListExtensions.ToIndexDictionary``1(System.Collections.Generic.List{``0})
+  name.vb: ToIndexDictionary(Of T)(List(Of T))
+  fullName: MNCD.Extensions.ListExtensions.ToIndexDictionary<T>(System.Collections.Generic.List<T>)
+  fullName.vb: MNCD.Extensions.ListExtensions.ToIndexDictionary(Of T)(System.Collections.Generic.List(Of T))
+  nameWithType: ListExtensions.ToIndexDictionary<T>(List<T>)
+  nameWithType.vb: ListExtensions.ToIndexDictionary(Of T)(List(Of T))
+- uid: MNCD.Extensions.NetworkExtensions
+  name: NetworkExtensions
+  href: api/MNCD.Extensions.NetworkExtensions.html
+  commentId: T:MNCD.Extensions.NetworkExtensions
+  fullName: MNCD.Extensions.NetworkExtensions
+  nameWithType: NetworkExtensions
+- uid: MNCD.Extensions.NetworkExtensions.GetActorToDegree(MNCD.Core.Network,System.Boolean)
+  name: GetActorToDegree(Network, Boolean)
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_GetActorToDegree_MNCD_Core_Network_System_Boolean_
+  commentId: M:MNCD.Extensions.NetworkExtensions.GetActorToDegree(MNCD.Core.Network,System.Boolean)
+  fullName: MNCD.Extensions.NetworkExtensions.GetActorToDegree(MNCD.Core.Network, System.Boolean)
+  nameWithType: NetworkExtensions.GetActorToDegree(Network, Boolean)
+- uid: MNCD.Extensions.NetworkExtensions.GetActorToDegree*
+  name: GetActorToDegree
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_GetActorToDegree_
+  commentId: Overload:MNCD.Extensions.NetworkExtensions.GetActorToDegree
+  isSpec: "True"
+  fullName: MNCD.Extensions.NetworkExtensions.GetActorToDegree
+  nameWithType: NetworkExtensions.GetActorToDegree
+- uid: MNCD.Extensions.NetworkExtensions.GetLayerToIndex(MNCD.Core.Network)
+  name: GetLayerToIndex(Network)
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_GetLayerToIndex_MNCD_Core_Network_
+  commentId: M:MNCD.Extensions.NetworkExtensions.GetLayerToIndex(MNCD.Core.Network)
+  fullName: MNCD.Extensions.NetworkExtensions.GetLayerToIndex(MNCD.Core.Network)
+  nameWithType: NetworkExtensions.GetLayerToIndex(Network)
+- uid: MNCD.Extensions.NetworkExtensions.GetLayerToIndex*
+  name: GetLayerToIndex
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_GetLayerToIndex_
+  commentId: Overload:MNCD.Extensions.NetworkExtensions.GetLayerToIndex
+  isSpec: "True"
+  fullName: MNCD.Extensions.NetworkExtensions.GetLayerToIndex
+  nameWithType: NetworkExtensions.GetLayerToIndex
+- uid: MNCD.Extensions.NetworkExtensions.LayerDegreesDict(MNCD.Core.Network,System.Int32)
+  name: LayerDegreesDict(Network, Int32)
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_LayerDegreesDict_MNCD_Core_Network_System_Int32_
+  commentId: M:MNCD.Extensions.NetworkExtensions.LayerDegreesDict(MNCD.Core.Network,System.Int32)
+  fullName: MNCD.Extensions.NetworkExtensions.LayerDegreesDict(MNCD.Core.Network, System.Int32)
+  nameWithType: NetworkExtensions.LayerDegreesDict(Network, Int32)
+- uid: MNCD.Extensions.NetworkExtensions.LayerDegreesDict*
+  name: LayerDegreesDict
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_LayerDegreesDict_
+  commentId: Overload:MNCD.Extensions.NetworkExtensions.LayerDegreesDict
+  isSpec: "True"
+  fullName: MNCD.Extensions.NetworkExtensions.LayerDegreesDict
+  nameWithType: NetworkExtensions.LayerDegreesDict
+- uid: MNCD.Extensions.NetworkExtensions.LayerToAdjencyMatrix(MNCD.Core.Network,System.Int32)
+  name: LayerToAdjencyMatrix(Network, Int32)
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_LayerToAdjencyMatrix_MNCD_Core_Network_System_Int32_
+  commentId: M:MNCD.Extensions.NetworkExtensions.LayerToAdjencyMatrix(MNCD.Core.Network,System.Int32)
+  fullName: MNCD.Extensions.NetworkExtensions.LayerToAdjencyMatrix(MNCD.Core.Network, System.Int32)
+  nameWithType: NetworkExtensions.LayerToAdjencyMatrix(Network, Int32)
+- uid: MNCD.Extensions.NetworkExtensions.LayerToAdjencyMatrix*
+  name: LayerToAdjencyMatrix
+  href: api/MNCD.Extensions.NetworkExtensions.html#MNCD_Extensions_NetworkExtensions_LayerToAdjencyMatrix_
+  commentId: Overload:MNCD.Extensions.NetworkExtensions.LayerToAdjencyMatrix
+  isSpec: "True"
+  fullName: MNCD.Extensions.NetworkExtensions.LayerToAdjencyMatrix
+  nameWithType: NetworkExtensions.LayerToAdjencyMatrix
+- uid: MNCD.Flattening
+  name: MNCD.Flattening
+  href: api/MNCD.Flattening.html
+  commentId: N:MNCD.Flattening
+  fullName: MNCD.Flattening
+  nameWithType: MNCD.Flattening
+- uid: MNCD.Flattening.BasicFlattening
+  name: BasicFlattening
+  href: api/MNCD.Flattening.BasicFlattening.html
+  commentId: T:MNCD.Flattening.BasicFlattening
+  fullName: MNCD.Flattening.BasicFlattening
+  nameWithType: BasicFlattening
+- uid: MNCD.Flattening.BasicFlattening.Flatten(MNCD.Core.Network,System.Boolean)
+  name: Flatten(Network, Boolean)
+  href: api/MNCD.Flattening.BasicFlattening.html#MNCD_Flattening_BasicFlattening_Flatten_MNCD_Core_Network_System_Boolean_
+  commentId: M:MNCD.Flattening.BasicFlattening.Flatten(MNCD.Core.Network,System.Boolean)
+  fullName: MNCD.Flattening.BasicFlattening.Flatten(MNCD.Core.Network, System.Boolean)
+  nameWithType: BasicFlattening.Flatten(Network, Boolean)
+- uid: MNCD.Flattening.BasicFlattening.Flatten*
+  name: Flatten
+  href: api/MNCD.Flattening.BasicFlattening.html#MNCD_Flattening_BasicFlattening_Flatten_
+  commentId: Overload:MNCD.Flattening.BasicFlattening.Flatten
+  isSpec: "True"
+  fullName: MNCD.Flattening.BasicFlattening.Flatten
+  nameWithType: BasicFlattening.Flatten
+- uid: MNCD.Flattening.LocalSimplification
+  name: LocalSimplification
+  href: api/MNCD.Flattening.LocalSimplification.html
+  commentId: T:MNCD.Flattening.LocalSimplification
+  fullName: MNCD.Flattening.LocalSimplification
+  nameWithType: LocalSimplification
+- uid: MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance(MNCD.Core.Network,System.Double[],System.Double,System.Boolean)
+  name: BasedOnLayerRelevance(Network, Double[], Double, Boolean)
+  href: api/MNCD.Flattening.LocalSimplification.html#MNCD_Flattening_LocalSimplification_BasedOnLayerRelevance_MNCD_Core_Network_System_Double___System_Double_System_Boolean_
+  commentId: M:MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance(MNCD.Core.Network,System.Double[],System.Double,System.Boolean)
+  name.vb: BasedOnLayerRelevance(Network, Double(), Double, Boolean)
+  fullName: MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance(MNCD.Core.Network, System.Double[], System.Double, System.Boolean)
+  fullName.vb: MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance(MNCD.Core.Network, System.Double(), System.Double, System.Boolean)
+  nameWithType: LocalSimplification.BasedOnLayerRelevance(Network, Double[], Double, Boolean)
+  nameWithType.vb: LocalSimplification.BasedOnLayerRelevance(Network, Double(), Double, Boolean)
+- uid: MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance*
+  name: BasedOnLayerRelevance
+  href: api/MNCD.Flattening.LocalSimplification.html#MNCD_Flattening_LocalSimplification_BasedOnLayerRelevance_
+  commentId: Overload:MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance
+  isSpec: "True"
+  fullName: MNCD.Flattening.LocalSimplification.BasedOnLayerRelevance
+  nameWithType: LocalSimplification.BasedOnLayerRelevance
+- uid: MNCD.Flattening.MergeFlattening
+  name: MergeFlattening
+  href: api/MNCD.Flattening.MergeFlattening.html
+  commentId: T:MNCD.Flattening.MergeFlattening
+  fullName: MNCD.Flattening.MergeFlattening
+  nameWithType: MergeFlattening
+- uid: MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network,System.Boolean)
+  name: Merge(Network, Boolean)
+  href: api/MNCD.Flattening.MergeFlattening.html#MNCD_Flattening_MergeFlattening_Merge_MNCD_Core_Network_System_Boolean_
+  commentId: M:MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network,System.Boolean)
+  fullName: MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network, System.Boolean)
+  nameWithType: MergeFlattening.Merge(Network, Boolean)
+- uid: MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network,System.Int32[],System.Boolean)
+  name: Merge(Network, Int32[], Boolean)
+  href: api/MNCD.Flattening.MergeFlattening.html#MNCD_Flattening_MergeFlattening_Merge_MNCD_Core_Network_System_Int32___System_Boolean_
+  commentId: M:MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network,System.Int32[],System.Boolean)
+  name.vb: Merge(Network, Int32(), Boolean)
+  fullName: MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network, System.Int32[], System.Boolean)
+  fullName.vb: MNCD.Flattening.MergeFlattening.Merge(MNCD.Core.Network, System.Int32(), System.Boolean)
+  nameWithType: MergeFlattening.Merge(Network, Int32[], Boolean)
+  nameWithType.vb: MergeFlattening.Merge(Network, Int32(), Boolean)
+- uid: MNCD.Flattening.MergeFlattening.Merge*
+  name: Merge
+  href: api/MNCD.Flattening.MergeFlattening.html#MNCD_Flattening_MergeFlattening_Merge_
+  commentId: Overload:MNCD.Flattening.MergeFlattening.Merge
+  isSpec: "True"
+  fullName: MNCD.Flattening.MergeFlattening.Merge
+  nameWithType: MergeFlattening.Merge
+- uid: MNCD.Flattening.WeightedFlattening
+  name: WeightedFlattening
+  href: api/MNCD.Flattening.WeightedFlattening.html
+  commentId: T:MNCD.Flattening.WeightedFlattening
+  fullName: MNCD.Flattening.WeightedFlattening
+  nameWithType: WeightedFlattening
+- uid: MNCD.Flattening.WeightedFlattening.Flatten(MNCD.Core.Network,System.Double[0:,0:])
+  name: Flatten(Network, Double[,])
+  href: api/MNCD.Flattening.WeightedFlattening.html#MNCD_Flattening_WeightedFlattening_Flatten_MNCD_Core_Network_System_Double_0__0___
+  commentId: M:MNCD.Flattening.WeightedFlattening.Flatten(MNCD.Core.Network,System.Double[0:,0:])
+  name.vb: Flatten(Network, Double(,))
+  fullName: MNCD.Flattening.WeightedFlattening.Flatten(MNCD.Core.Network, System.Double[,])
+  fullName.vb: MNCD.Flattening.WeightedFlattening.Flatten(MNCD.Core.Network, System.Double(,))
+  nameWithType: WeightedFlattening.Flatten(Network, Double[,])
+  nameWithType.vb: WeightedFlattening.Flatten(Network, Double(,))
+- uid: MNCD.Flattening.WeightedFlattening.Flatten*
+  name: Flatten
+  href: api/MNCD.Flattening.WeightedFlattening.html#MNCD_Flattening_WeightedFlattening_Flatten_
+  commentId: Overload:MNCD.Flattening.WeightedFlattening.Flatten
+  isSpec: "True"
+  fullName: MNCD.Flattening.WeightedFlattening.Flatten
+  nameWithType: WeightedFlattening.Flatten
+- uid: MNCD.Generators
+  name: MNCD.Generators
+  href: api/MNCD.Generators.html
+  commentId: N:MNCD.Generators
+  fullName: MNCD.Generators
+  nameWithType: MNCD.Generators
+- uid: MNCD.Generators.CompleteGraphGenerator
+  name: CompleteGraphGenerator
+  href: api/MNCD.Generators.CompleteGraphGenerator.html
+  commentId: T:MNCD.Generators.CompleteGraphGenerator
+  fullName: MNCD.Generators.CompleteGraphGenerator
+  nameWithType: CompleteGraphGenerator
+- uid: MNCD.Generators.CompleteGraphGenerator.Generate(System.Int32)
+  name: Generate(Int32)
+  href: api/MNCD.Generators.CompleteGraphGenerator.html#MNCD_Generators_CompleteGraphGenerator_Generate_System_Int32_
+  commentId: M:MNCD.Generators.CompleteGraphGenerator.Generate(System.Int32)
+  fullName: MNCD.Generators.CompleteGraphGenerator.Generate(System.Int32)
+  nameWithType: CompleteGraphGenerator.Generate(Int32)
+- uid: MNCD.Generators.CompleteGraphGenerator.Generate*
+  name: Generate
+  href: api/MNCD.Generators.CompleteGraphGenerator.html#MNCD_Generators_CompleteGraphGenerator_Generate_
+  commentId: Overload:MNCD.Generators.CompleteGraphGenerator.Generate
+  isSpec: "True"
+  fullName: MNCD.Generators.CompleteGraphGenerator.Generate
+  nameWithType: CompleteGraphGenerator.Generate
+- uid: MNCD.Generators.CompleteGraphGenerator.GenerateMultiLayer(System.Int32,System.Int32)
+  name: GenerateMultiLayer(Int32, Int32)
+  href: api/MNCD.Generators.CompleteGraphGenerator.html#MNCD_Generators_CompleteGraphGenerator_GenerateMultiLayer_System_Int32_System_Int32_
+  commentId: M:MNCD.Generators.CompleteGraphGenerator.GenerateMultiLayer(System.Int32,System.Int32)
+  fullName: MNCD.Generators.CompleteGraphGenerator.GenerateMultiLayer(System.Int32, System.Int32)
+  nameWithType: CompleteGraphGenerator.GenerateMultiLayer(Int32, Int32)
+- uid: MNCD.Generators.CompleteGraphGenerator.GenerateMultiLayer*
+  name: GenerateMultiLayer
+  href: api/MNCD.Generators.CompleteGraphGenerator.html#MNCD_Generators_CompleteGraphGenerator_GenerateMultiLayer_
+  commentId: Overload:MNCD.Generators.CompleteGraphGenerator.GenerateMultiLayer
+  isSpec: "True"
+  fullName: MNCD.Generators.CompleteGraphGenerator.GenerateMultiLayer
+  nameWithType: CompleteGraphGenerator.GenerateMultiLayer
+- uid: MNCD.Generators.RandomMultiLayerGenerator
+  name: RandomMultiLayerGenerator
+  href: api/MNCD.Generators.RandomMultiLayerGenerator.html
+  commentId: T:MNCD.Generators.RandomMultiLayerGenerator
+  fullName: MNCD.Generators.RandomMultiLayerGenerator
+  nameWithType: RandomMultiLayerGenerator
+- uid: MNCD.Generators.RandomMultiLayerGenerator.Generate(System.Int32,System.Int32,System.Double)
+  name: Generate(Int32, Int32, Double)
+  href: api/MNCD.Generators.RandomMultiLayerGenerator.html#MNCD_Generators_RandomMultiLayerGenerator_Generate_System_Int32_System_Int32_System_Double_
+  commentId: M:MNCD.Generators.RandomMultiLayerGenerator.Generate(System.Int32,System.Int32,System.Double)
+  fullName: MNCD.Generators.RandomMultiLayerGenerator.Generate(System.Int32, System.Int32, System.Double)
+  nameWithType: RandomMultiLayerGenerator.Generate(Int32, Int32, Double)
+- uid: MNCD.Generators.RandomMultiLayerGenerator.Generate*
+  name: Generate
+  href: api/MNCD.Generators.RandomMultiLayerGenerator.html#MNCD_Generators_RandomMultiLayerGenerator_Generate_
+  commentId: Overload:MNCD.Generators.RandomMultiLayerGenerator.Generate
+  isSpec: "True"
+  fullName: MNCD.Generators.RandomMultiLayerGenerator.Generate
+  nameWithType: RandomMultiLayerGenerator.Generate
+- uid: MNCD.Generators.RandomMultiLayerGenerator.GenerateSingleLayer(System.Int32,System.Double)
+  name: GenerateSingleLayer(Int32, Double)
+  href: api/MNCD.Generators.RandomMultiLayerGenerator.html#MNCD_Generators_RandomMultiLayerGenerator_GenerateSingleLayer_System_Int32_System_Double_
+  commentId: M:MNCD.Generators.RandomMultiLayerGenerator.GenerateSingleLayer(System.Int32,System.Double)
+  fullName: MNCD.Generators.RandomMultiLayerGenerator.GenerateSingleLayer(System.Int32, System.Double)
+  nameWithType: RandomMultiLayerGenerator.GenerateSingleLayer(Int32, Double)
+- uid: MNCD.Generators.RandomMultiLayerGenerator.GenerateSingleLayer*
+  name: GenerateSingleLayer
+  href: api/MNCD.Generators.RandomMultiLayerGenerator.html#MNCD_Generators_RandomMultiLayerGenerator_GenerateSingleLayer_
+  commentId: Overload:MNCD.Generators.RandomMultiLayerGenerator.GenerateSingleLayer
+  isSpec: "True"
+  fullName: MNCD.Generators.RandomMultiLayerGenerator.GenerateSingleLayer
+  nameWithType: RandomMultiLayerGenerator.GenerateSingleLayer
+- uid: MNCD.Neighbourhood
+  name: MNCD.Neighbourhood
+  href: api/MNCD.Neighbourhood.html
+  commentId: N:MNCD.Neighbourhood
+  fullName: MNCD.Neighbourhood
+  nameWithType: MNCD.Neighbourhood
+- uid: MNCD.Neighbourhood.CLECC
+  name: CLECC
+  href: api/MNCD.Neighbourhood.CLECC.html
+  commentId: T:MNCD.Neighbourhood.CLECC
+  fullName: MNCD.Neighbourhood.CLECC
+  nameWithType: CLECC
+- uid: MNCD.Neighbourhood.CLECC.GetCLECC(MNCD.Core.Network,MNCD.Core.Edge,System.Int32)
+  name: GetCLECC(Network, Edge, Int32)
+  href: api/MNCD.Neighbourhood.CLECC.html#MNCD_Neighbourhood_CLECC_GetCLECC_MNCD_Core_Network_MNCD_Core_Edge_System_Int32_
+  commentId: M:MNCD.Neighbourhood.CLECC.GetCLECC(MNCD.Core.Network,MNCD.Core.Edge,System.Int32)
+  fullName: MNCD.Neighbourhood.CLECC.GetCLECC(MNCD.Core.Network, MNCD.Core.Edge, System.Int32)
+  nameWithType: CLECC.GetCLECC(Network, Edge, Int32)
+- uid: MNCD.Neighbourhood.CLECC.GetCLECC*
+  name: GetCLECC
+  href: api/MNCD.Neighbourhood.CLECC.html#MNCD_Neighbourhood_CLECC_GetCLECC_
+  commentId: Overload:MNCD.Neighbourhood.CLECC.GetCLECC
+  isSpec: "True"
+  fullName: MNCD.Neighbourhood.CLECC.GetCLECC
+  nameWithType: CLECC.GetCLECC
+- uid: MNCD.Neighbourhood.MultiLayerNeighbourhood
+  name: MultiLayerNeighbourhood
+  href: api/MNCD.Neighbourhood.MultiLayerNeighbourhood.html
+  commentId: T:MNCD.Neighbourhood.MultiLayerNeighbourhood
+  fullName: MNCD.Neighbourhood.MultiLayerNeighbourhood
+  nameWithType: MultiLayerNeighbourhood
+- uid: MNCD.Neighbourhood.MultiLayerNeighbourhood.GetMN(MNCD.Core.Network,MNCD.Core.Actor,System.Int32)
+  name: GetMN(Network, Actor, Int32)
+  href: api/MNCD.Neighbourhood.MultiLayerNeighbourhood.html#MNCD_Neighbourhood_MultiLayerNeighbourhood_GetMN_MNCD_Core_Network_MNCD_Core_Actor_System_Int32_
+  commentId: M:MNCD.Neighbourhood.MultiLayerNeighbourhood.GetMN(MNCD.Core.Network,MNCD.Core.Actor,System.Int32)
+  fullName: MNCD.Neighbourhood.MultiLayerNeighbourhood.GetMN(MNCD.Core.Network, MNCD.Core.Actor, System.Int32)
+  nameWithType: MultiLayerNeighbourhood.GetMN(Network, Actor, Int32)
+- uid: MNCD.Neighbourhood.MultiLayerNeighbourhood.GetMN*
+  name: GetMN
+  href: api/MNCD.Neighbourhood.MultiLayerNeighbourhood.html#MNCD_Neighbourhood_MultiLayerNeighbourhood_GetMN_
+  commentId: Overload:MNCD.Neighbourhood.MultiLayerNeighbourhood.GetMN
+  isSpec: "True"
+  fullName: MNCD.Neighbourhood.MultiLayerNeighbourhood.GetMN
+  nameWithType: MultiLayerNeighbourhood.GetMN
+- uid: MNCD.Readers
+  name: MNCD.Readers
+  href: api/MNCD.Readers.html
+  commentId: N:MNCD.Readers
+  fullName: MNCD.Readers
+  nameWithType: MNCD.Readers
+- uid: MNCD.Readers.ActorCommunityListReader
+  name: ActorCommunityListReader
+  href: api/MNCD.Readers.ActorCommunityListReader.html
+  commentId: T:MNCD.Readers.ActorCommunityListReader
+  fullName: MNCD.Readers.ActorCommunityListReader
+  nameWithType: ActorCommunityListReader
+- uid: MNCD.Readers.ActorCommunityListReader.FromString(System.String)
+  name: FromString(String)
+  href: api/MNCD.Readers.ActorCommunityListReader.html#MNCD_Readers_ActorCommunityListReader_FromString_System_String_
+  commentId: M:MNCD.Readers.ActorCommunityListReader.FromString(System.String)
+  fullName: MNCD.Readers.ActorCommunityListReader.FromString(System.String)
+  nameWithType: ActorCommunityListReader.FromString(String)
+- uid: MNCD.Readers.ActorCommunityListReader.FromString*
+  name: FromString
+  href: api/MNCD.Readers.ActorCommunityListReader.html#MNCD_Readers_ActorCommunityListReader_FromString_
+  commentId: Overload:MNCD.Readers.ActorCommunityListReader.FromString
+  isSpec: "True"
+  fullName: MNCD.Readers.ActorCommunityListReader.FromString
+  nameWithType: ActorCommunityListReader.FromString
+- uid: MNCD.Readers.EdgeListReader
+  name: EdgeListReader
+  href: api/MNCD.Readers.EdgeListReader.html
+  commentId: T:MNCD.Readers.EdgeListReader
+  fullName: MNCD.Readers.EdgeListReader
+  nameWithType: EdgeListReader
+- uid: MNCD.Readers.EdgeListReader.FromString(System.String)
+  name: FromString(String)
+  href: api/MNCD.Readers.EdgeListReader.html#MNCD_Readers_EdgeListReader_FromString_System_String_
+  commentId: M:MNCD.Readers.EdgeListReader.FromString(System.String)
+  fullName: MNCD.Readers.EdgeListReader.FromString(System.String)
+  nameWithType: EdgeListReader.FromString(String)
+- uid: MNCD.Readers.EdgeListReader.FromString*
+  name: FromString
+  href: api/MNCD.Readers.EdgeListReader.html#MNCD_Readers_EdgeListReader_FromString_
+  commentId: Overload:MNCD.Readers.EdgeListReader.FromString
+  isSpec: "True"
+  fullName: MNCD.Readers.EdgeListReader.FromString
+  nameWithType: EdgeListReader.FromString
+- uid: MNCD.Readers.MpxReader
+  name: MpxReader
+  href: api/MNCD.Readers.MpxReader.html
+  commentId: T:MNCD.Readers.MpxReader
+  fullName: MNCD.Readers.MpxReader
+  nameWithType: MpxReader
+- uid: MNCD.Readers.MpxReader.FromPath(System.String)
+  name: FromPath(String)
+  href: api/MNCD.Readers.MpxReader.html#MNCD_Readers_MpxReader_FromPath_System_String_
+  commentId: M:MNCD.Readers.MpxReader.FromPath(System.String)
+  fullName: MNCD.Readers.MpxReader.FromPath(System.String)
+  nameWithType: MpxReader.FromPath(String)
+- uid: MNCD.Readers.MpxReader.FromPath*
+  name: FromPath
+  href: api/MNCD.Readers.MpxReader.html#MNCD_Readers_MpxReader_FromPath_
+  commentId: Overload:MNCD.Readers.MpxReader.FromPath
+  isSpec: "True"
+  fullName: MNCD.Readers.MpxReader.FromPath
+  nameWithType: MpxReader.FromPath
+- uid: MNCD.Readers.MpxReader.FromStream(System.IO.Stream)
+  name: FromStream(Stream)
+  href: api/MNCD.Readers.MpxReader.html#MNCD_Readers_MpxReader_FromStream_System_IO_Stream_
+  commentId: M:MNCD.Readers.MpxReader.FromStream(System.IO.Stream)
+  fullName: MNCD.Readers.MpxReader.FromStream(System.IO.Stream)
+  nameWithType: MpxReader.FromStream(Stream)
+- uid: MNCD.Readers.MpxReader.FromStream*
+  name: FromStream
+  href: api/MNCD.Readers.MpxReader.html#MNCD_Readers_MpxReader_FromStream_
+  commentId: Overload:MNCD.Readers.MpxReader.FromStream
+  isSpec: "True"
+  fullName: MNCD.Readers.MpxReader.FromStream
+  nameWithType: MpxReader.FromStream
+- uid: MNCD.Readers.MpxReader.FromString(System.String)
+  name: FromString(String)
+  href: api/MNCD.Readers.MpxReader.html#MNCD_Readers_MpxReader_FromString_System_String_
+  commentId: M:MNCD.Readers.MpxReader.FromString(System.String)
+  fullName: MNCD.Readers.MpxReader.FromString(System.String)
+  nameWithType: MpxReader.FromString(String)
+- uid: MNCD.Readers.MpxReader.FromString*
+  name: FromString
+  href: api/MNCD.Readers.MpxReader.html#MNCD_Readers_MpxReader_FromString_
+  commentId: Overload:MNCD.Readers.MpxReader.FromString
+  isSpec: "True"
+  fullName: MNCD.Readers.MpxReader.FromString
+  nameWithType: MpxReader.FromString
+- uid: MNCD.Writers
+  name: MNCD.Writers
+  href: api/MNCD.Writers.html
+  commentId: N:MNCD.Writers
+  fullName: MNCD.Writers
+  nameWithType: MNCD.Writers
+- uid: MNCD.Writers.ActorCommunityListWriter
+  name: ActorCommunityListWriter
+  href: api/MNCD.Writers.ActorCommunityListWriter.html
+  commentId: T:MNCD.Writers.ActorCommunityListWriter
+  fullName: MNCD.Writers.ActorCommunityListWriter
+  nameWithType: ActorCommunityListWriter
+- uid: MNCD.Writers.ActorCommunityListWriter.ToString(System.Collections.Generic.List{MNCD.Core.Actor},System.Collections.Generic.List{MNCD.Core.Community},System.Boolean)
+  name: ToString(List<Actor>, List<Community>, Boolean)
+  href: api/MNCD.Writers.ActorCommunityListWriter.html#MNCD_Writers_ActorCommunityListWriter_ToString_System_Collections_Generic_List_MNCD_Core_Actor__System_Collections_Generic_List_MNCD_Core_Community__System_Boolean_
+  commentId: M:MNCD.Writers.ActorCommunityListWriter.ToString(System.Collections.Generic.List{MNCD.Core.Actor},System.Collections.Generic.List{MNCD.Core.Community},System.Boolean)
+  name.vb: ToString(List(Of Actor), List(Of Community), Boolean)
+  fullName: MNCD.Writers.ActorCommunityListWriter.ToString(System.Collections.Generic.List<MNCD.Core.Actor>, System.Collections.Generic.List<MNCD.Core.Community>, System.Boolean)
+  fullName.vb: MNCD.Writers.ActorCommunityListWriter.ToString(System.Collections.Generic.List(Of MNCD.Core.Actor), System.Collections.Generic.List(Of MNCD.Core.Community), System.Boolean)
+  nameWithType: ActorCommunityListWriter.ToString(List<Actor>, List<Community>, Boolean)
+  nameWithType.vb: ActorCommunityListWriter.ToString(List(Of Actor), List(Of Community), Boolean)
+- uid: MNCD.Writers.ActorCommunityListWriter.ToString*
+  name: ToString
+  href: api/MNCD.Writers.ActorCommunityListWriter.html#MNCD_Writers_ActorCommunityListWriter_ToString_
+  commentId: Overload:MNCD.Writers.ActorCommunityListWriter.ToString
+  isSpec: "True"
+  fullName: MNCD.Writers.ActorCommunityListWriter.ToString
+  nameWithType: ActorCommunityListWriter.ToString
+- uid: MNCD.Writers.EdgeListWriter
+  name: EdgeListWriter
+  href: api/MNCD.Writers.EdgeListWriter.html
+  commentId: T:MNCD.Writers.EdgeListWriter
+  fullName: MNCD.Writers.EdgeListWriter
+  nameWithType: EdgeListWriter
+- uid: MNCD.Writers.EdgeListWriter.ToString(MNCD.Core.Network,System.Boolean)
+  name: ToString(Network, Boolean)
+  href: api/MNCD.Writers.EdgeListWriter.html#MNCD_Writers_EdgeListWriter_ToString_MNCD_Core_Network_System_Boolean_
+  commentId: M:MNCD.Writers.EdgeListWriter.ToString(MNCD.Core.Network,System.Boolean)
+  fullName: MNCD.Writers.EdgeListWriter.ToString(MNCD.Core.Network, System.Boolean)
+  nameWithType: EdgeListWriter.ToString(Network, Boolean)
+- uid: MNCD.Writers.EdgeListWriter.ToString*
+  name: ToString
+  href: api/MNCD.Writers.EdgeListWriter.html#MNCD_Writers_EdgeListWriter_ToString_
+  commentId: Overload:MNCD.Writers.EdgeListWriter.ToString
+  isSpec: "True"
+  fullName: MNCD.Writers.EdgeListWriter.ToString
+  nameWithType: EdgeListWriter.ToString
