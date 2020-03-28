@@ -6,8 +6,23 @@ using System.Linq;
 
 namespace MNCD.Flattening
 {
+    /// <summary>
+    /// Class that implements local simplification flattening method.
+    ///
+    /// 6.1.2 Local Simplification - Page 103
+    /// Multilayer Social Networks
+    /// Mark E. Dickison, Matteo Magnani and Luca Rossi.
+    /// </summary>
     public class LocalSimplification
     {
+        /// <summary>
+        /// Flattens multi-layer network based on local simplification method.
+        /// </summary>
+        /// <param name="network">Multi-layer network.</param>
+        /// <param name="layerRelevances">Relevances of individual layers.</param>
+        /// <param name="threshold">Treshold of relevance to be included.</param>
+        /// <param name="weightEdges">Include edge weights.</param>
+        /// <returns>Flattened network.</returns>
         public Network BasedOnLayerRelevance(Network network, double[] layerRelevances, double threshold, bool weightEdges = false)
         {
             var layerToIndex = network.GetLayerToIndex();

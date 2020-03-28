@@ -1,12 +1,30 @@
+using MNCD.Core;
+using MNCD.Extensions;
 using System.Collections.Generic;
 using System.Text;
-using MNCD.Core;
-using MNCD.Helpers;
 
 namespace MNCD.Writers
 {
+    /// <summary>
+    /// Class implementing conversion from network to a string representation.
+    /// </summary>
     public class EdgeListWriter
     {
+        /// <summary>
+        /// Coverts network a string representation in following format:
+        ///
+        /// actor_from layer_from actor_to layer_to weight
+        ///
+        /// Optionally can include metadata:
+        /// # Actors
+        /// actor_idx actor_name
+        /// # Layers
+        /// layer_idx layer_name
+        /// .
+        /// </summary>
+        /// <param name="network">Network to be converted.</param>
+        /// <param name="includeMetadata">Include metadata about actors and layers.</param>
+        /// <returns>String representation of network.</returns>
         public string ToString(Network network, bool includeMetadata = false)
         {
             var actorToIndex = network.Actors.ToIndexDictionary();
@@ -45,35 +63,6 @@ namespace MNCD.Writers
             return sb.ToString();
         }
 
-        public string ToString(
-            List<Actor> actors,
-            List<Community> communities,
-            bool includeMetadata = false)
-        {
-            var actorToIndex = actors.ToIndexDictionary();
-            var communityToIndex = communities.ToIndexDictionary();
-
-            var sb = new StringBuilder();
-            foreach (var c in communities)
-            {
-                foreach (var a in c.Actors)
-                {
-                    var actor = actorToIndex[a];
-                    var community = communityToIndex[c];
-
-                    sb.Append($"{actor} {community}\n");
-                }
-            }
-
-            if (includeMetadata)
-            {
-                WriteActors(sb, actors, actorToIndex);
-                WriteCommunities(sb, communities, communityToIndex);
-            }
-
-            return sb.ToString();
-        }
-
         private void WriteActors(StringBuilder sb, List<Actor> actors, Dictionary<Actor, int> actorToIndex)
         {
             if (actors.Count > 0)
@@ -98,20 +87,6 @@ namespace MNCD.Writers
                     var layer = layerToIndex[a];
                     var name = string.IsNullOrWhiteSpace(a.Name) ? "-" : a.Name;
                     sb.Append($"{layer} {name}\n");
-                }
-            }
-        }
-
-        private void WriteCommunities(StringBuilder sb, List<Community> communities, Dictionary<Community, int> communityToIndex)
-        {
-            if (communities.Count > 0)
-            {
-                sb.Append("# Communities\n");
-                foreach (var a in communities)
-                {
-                    var community = communityToIndex[a];
-                    var name = "c" + community;
-                    sb.Append($"{community} {name}\n");
                 }
             }
         }

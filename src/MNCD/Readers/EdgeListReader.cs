@@ -1,11 +1,26 @@
+using MNCD.Core;
 using System;
 using System.Collections.Generic;
-using MNCD.Core;
 
 namespace MNCD.Readers
 {
+    /// <summary>
+    /// Class implementing reading network from a string in edgelist format.
+    /// </summary>
     public class EdgeListReader
     {
+        /// <summary>
+        /// Creates network from a string in edgelist format.
+        /// Edgelist must be in following format:
+        /// actor_from layer_from actor_to layer_to weight.
+        /// It can also include metadata in following format:
+        /// # Actors
+        /// actor_idx actor_name
+        /// # Layers
+        /// layer_idx layer_name.
+        /// </summary>
+        /// <param name="input">Input string in edgelist format.</param>
+        /// <returns>Read network.</returns>
         public Network FromString(string input)
         {
             var actors = new Dictionary<string, Actor>();
@@ -75,7 +90,6 @@ namespace MNCD.Readers
                             throw new ArgumentException("Invalid edgelist layers metadata.");
                         }
 
-
                         var l = values[0];
                         var n = values[1];
 
@@ -104,7 +118,7 @@ namespace MNCD.Readers
                     var l2 = values[3];
                     var w = values[4];
 
-                    if (!double.TryParse(w, out var value))
+                    if (!double.TryParse(w, out _))
                     {
                         throw new ArgumentException("Invalid weight.");
                     }
@@ -115,7 +129,7 @@ namespace MNCD.Readers
                         Layer1 = l1,
                         Actor2 = a2,
                         Layer2 = l2,
-                        Weight = w
+                        Weight = w,
                     };
 
                     if (!actors.ContainsKey(a1))
@@ -168,7 +182,7 @@ namespace MNCD.Readers
                     {
                         From = a1,
                         To = a2,
-                        Weight = w
+                        Weight = w,
                     };
                     l1.Edges.Add(edge);
                 }
@@ -180,7 +194,7 @@ namespace MNCD.Readers
                         To = a2,
                         LayerFrom = l1,
                         LayerTo = l2,
-                        Weight = w
+                        Weight = w,
                     };
                     network.InterLayerEdges.Add(edge);
                 }
@@ -192,9 +206,13 @@ namespace MNCD.Readers
         private class EdgeListRow
         {
             public string Actor1 { get; set; }
+
             public string Layer1 { get; set; }
+
             public string Actor2 { get; set; }
+
             public string Layer2 { get; set; }
+
             public string Weight { get; set; }
         }
     }

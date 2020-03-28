@@ -27,7 +27,7 @@ namespace MNCD.Tests.Core
             };
 
             var expected = actors;
-            var actual = layer.GetActors();
+            var actual = layer.GetLayerActors();
 
 
             Assert.Equal(expected, actual);

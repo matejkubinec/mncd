@@ -1,14 +1,29 @@
+using MNCD.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MNCD.Core;
 
 namespace MNCD.Readers
 {
+    /// <summary>
+    /// Class implementing methods for reading community list.
+    /// </summary>
     public class ActorCommunityListReader
     {
+        /// <summary>
+        /// Reads a community list from a string,
+        /// input must be in following format:
+        /// actor community.
+        /// </summary>
+        /// <param name="input">Input community list.</param>
+        /// <returns>List of communities.</returns>
         public List<Community> FromString(string input)
         {
+            if (string.IsNullOrEmpty(input))
+            {
+                throw new ArgumentException("Input string must not empty or null.");
+            }
+
             var communityMap = new Dictionary<string, Community>();
             var actorMap = new Dictionary<string, Actor>();
 

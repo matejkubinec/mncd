@@ -38,7 +38,7 @@ namespace MNCD.Evaluation.SingleLayer
             return m;
         }
 
-        internal static Dictionary<Community, int> CommunityToLinkCount(
+        private static Dictionary<Community, int> CommunityToLinkCount(
             List<Edge> edges,
             List<Community> communities)
         {
@@ -58,7 +58,7 @@ namespace MNCD.Evaluation.SingleLayer
             return res;
         }
 
-        internal static Dictionary<Community, int> CommunityToDegrees(
+        private static Dictionary<Community, int> CommunityToDegrees(
             Network network,
             List<Community> communities)
         {

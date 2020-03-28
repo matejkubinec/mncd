@@ -69,6 +69,7 @@ namespace MNCD.Evaluation.MultiLayer
             {
                 res += Math.Pow(pcd - avgC, 2);
             }
+
             return Math.Sqrt(res);
         }
 
