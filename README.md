@@ -1,7 +1,55 @@
-# Multilayer Networks - Community Detection
+# MNCD | Multilayer Networks - Community Detection
 
-[![Board Status](https://dev.azure.com/mncd/c576e1dd-4ca0-46b7-8ea3-b4de73f796eb/e18c4c3d-6448-420d-b344-8d556c2f6ec6/_apis/work/boardbadge/77b24ae9-1133-46aa-9f2d-038129a03de9)](https://dev.azure.com/mncd/c576e1dd-4ca0-46b7-8ea3-b4de73f796eb/_boards/board/t/e18c4c3d-6448-420d-b344-8d556c2f6ec6/Microsoft.RequirementCategory/)
+MNCD is a .NET library written in C#, used for community detection
+in multi-layered networks.
 
-## Links
+Implemented are several approaches to apply community detection on a network.
 
-- [Azure DevOps](https://dev.azure.com/mncd/MNCD)
+## Single-Layer
+
+There are two main methods to apply single-layer community detection algorithms
+on multi-layered network.
+
+MNCD implements these single-layer community detection algorithms:
+
+- [Louvain](./src/MNCD/CommunityDetection/SingleLayer/Louvain.cs)
+- [FluidC](./src/MNCD/CommunityDetection/SingleLayer/FluidC.cs)
+- [KClique](./src/MNCD/CommunityDetection/SingleLayer/KClique.cs)
+
+### One Layer Only
+
+Community detection is applied only on one selected layer.
+
+### Flattening
+
+Network is flattened and then a single-layer community detection algorithm is
+applied.
+
+MNCD implements these flattening methods:
+
+- [Basic Flattening](./src/MNCD/Flattening/BasicFlattening.cs)
+- [Merge Flattening](./src/MNCD/Flattening/MergeFlattening.cs)
+- [Weighted Flattening](./src/MNCD/Flattening/WeightedFlattening.cs)
+- [Local Simplification](./src/MNCD/Flattening/LocalSimplification.cs)
+
+## Multi-Layer
+
+MNCD implements two multi-layer community detection algorithms:
+
+- [ABACUS](./src/MNCD/CommunityDetection/MultiLayer/ABACUS.cs)
+- [CLECC Community Detection](./src/MNCD/CommunityDetection/MultiLayer/CLECCCommunityDetection.cs)
+
+## Measures
+
+MNCD implements also measures for evaluating detected communities:
+
+- Single-Layer
+  - [Coverage](./src/MNCD/Evaluation/SingleLayer/Coverage.cs)
+  - [Performance](./src/MNCD/Evaluation/SingleLayer/Performance.cs)
+  - [Modularity](./src/MNCD/Evaluation/SingleLayer/Modularity.cs)
+- Multi-Layer
+  - [Complementarity](./src/MNCD/Evaluation/MultiLayer/Complementarity.cs)
+  - [Exclusivity](./src/MNCD/Evaluation/MultiLayer/Exclusivity.cs)
+  - [Homogenity](./src/MNCD/Evaluation/MultiLayer/Homogenity.cs)
+  - [Redundancy](./src/MNCD/Evaluation/MultiLayer/Redundancy.cs)
+  - [Variety](./src/MNCD/Evaluation/MultiLayer/Variety.cs)
