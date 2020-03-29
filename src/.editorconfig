@@ -14,3 +14,6 @@ dotnet_diagnostic.SA1309.severity = none
 
 # SA1208: System using directives should be placed before other using directives
 dotnet_diagnostic.SA1208.severity = none
+
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none

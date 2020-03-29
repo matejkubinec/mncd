@@ -15,7 +15,7 @@ namespace MNCD.CommunityDetection.SingleLayer
         /// <summary>
         /// Find k-clique communities in network using the percolation method.
         ///
-        /// A k-clique community is the union of all cliques of size k that 
+        /// A k-clique community is the union of all cliques of size k that
         /// can be reached through adjacent (sharing k-1 nodes) k-cliques.
         /// </summary>
         /// <param name="network">Network in which to find communities.</param>
@@ -61,7 +61,7 @@ namespace MNCD.CommunityDetection.SingleLayer
         {
             var percNetwork = new Network
             {
-                Actors = cliques.Select(c => cliqueToActor[c]).ToList()
+                Actors = cliques.Select(c => cliqueToActor[c]).ToList(),
             };
             percNetwork.Layers.Add(new Layer());
 
@@ -93,7 +93,7 @@ namespace MNCD.CommunityDetection.SingleLayer
         /// <summary>
         /// Creates actor to clique membership.
         /// </summary>
-        /// <param name="cliqueToActor">Clique to actor membership</param>
+        /// <param name="cliqueToActor">Clique to actor membership.</param>
         /// <returns>Mapping of actor to a clique.</returns>
         internal Dictionary<Actor, List<Actor>> GetActorToClique(
             Dictionary<List<Actor>, Actor> cliqueToActor)
