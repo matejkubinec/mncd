@@ -1,4 +1,6 @@
-# MNCD | Multilayer Networks - Community Detection
+![MNCD](./img/MNCD.png)
+
+# MNCD | Multi-layer Network Community Detection
 
 MNCD is a .NET library written in C#, used for community detection
 in multi-layered networks.
