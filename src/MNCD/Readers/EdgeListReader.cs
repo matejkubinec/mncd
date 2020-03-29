@@ -1,6 +1,8 @@
 using MNCD.Core;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace MNCD.Readers
 {
@@ -9,6 +11,36 @@ namespace MNCD.Readers
     /// </summary>
     public class EdgeListReader
     {
+        /// <summary>
+        /// Downloads a edgelist from supplied url a converts it into a network.
+        /// </summary>
+        /// <param name="url">Datasets url.</param>
+        /// <returns>Created network.</returns>
+        public async Task<Network> FromUrl(string url)
+        {
+            if (Uri.TryCreate(url, UriKind.Absolute, out var uri))
+            {
+                if (uri.Scheme == Uri.UriSchemeHttp || uri.Scheme == Uri.UriSchemeHttps)
+                {
+                    var client = new HttpClient();
+
+                    var response = await client.GetAsync(uri);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        return FromString(content);
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Request was not successful, reason: " + response.ReasonPhrase);
+                    }
+                }
+            }
+
+            throw new ArgumentException("Url is not valid.");
+        }
+
         /// <summary>
         /// Creates network from a string in edgelist format.
         /// Edgelist must be in following format:
