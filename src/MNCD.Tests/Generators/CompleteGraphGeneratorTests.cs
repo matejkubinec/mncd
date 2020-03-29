@@ -12,7 +12,9 @@ namespace MNCD.Tests.Generators
         {
             var network = _generator.Generate(1);
 
-            Assert.Equal(1, network.Actors.Count);
+            Assert.Collection(network.Actors,
+                a => Assert.Equal(network.Actors[0], a)
+            );
             Assert.Collection(network.Actors, a => Assert.NotNull(a));
             Assert.Collection(network.Layers, l => Assert.Empty(l.Edges));
         }
@@ -62,8 +64,12 @@ namespace MNCD.Tests.Generators
         {
             var network = _generator.GenerateMultiLayer(1, 1);
 
-            Assert.Equal(1, network.Actors.Count);
-            Assert.Equal(1, network.Layers.Count);
+            Assert.Collection(network.Actors,
+                a => Assert.Equal(network.Actors[0], a)
+            );
+            Assert.Collection(network.Layers,
+                l => Assert.Equal(network.Layers[0], l)
+            );
             Assert.Empty(network.Layers[0].Edges);
         }
 

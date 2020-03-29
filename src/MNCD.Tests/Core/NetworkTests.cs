@@ -41,7 +41,7 @@ namespace MNCD.Tests.Core
         public void LayerToAdjencyMatrixTests()
         {
             var network = new CompleteGraphGenerator().Generate(3);
-            var adj = network.LayerToAdjencyMatrix(0);
+            var adj = network.LayerToAdjacencyMatrix(0);
 
             Assert.Equal(adj, new double[,]
                 {
