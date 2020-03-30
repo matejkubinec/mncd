@@ -6,13 +6,17 @@
     <TreatWarningAsErrors>true</TreatWarningAsErrors>
     <PackageId>MNCD</PackageId>
     <Owner>matejkubinec</Owner>
-    <Description>Multilayer Network Community Detection</Description>
+    <Description>Multi-layer Network Community Detection</Description>
     <Authors>Matej Kubinec</Authors>
-    <PackageProjectUrl>https://github.com/matejkubinec/MN-CD</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/matejkubinec/MN-CD</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/matejkubinec/mncd</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/matejkubinec/mncd</RepositoryUrl>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
   <PropertyGroup>
     <VersionPrefix>0.0.1</VersionPrefix>
+    <ApplicationIcon></ApplicationIcon>
+    <PackageIcon>icon.png</PackageIcon>
+    <Version>1.0.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <VersionSuffix>pre-$([System.DateTime]::UtcNow.ToString(yyyy-MM-dd-HH-mm))</VersionSuffix>
@@ -21,6 +25,10 @@
     <Compile Remove="Helpers\**" />
     <EmbeddedResource Remove="Helpers\**" />
     <None Remove="Helpers\**" />
+    <None Include="..\..\img\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Combinatorics" Version="1.1.0.19" />
@@ -37,5 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\license.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
   </ItemGroup>
 </Project>
