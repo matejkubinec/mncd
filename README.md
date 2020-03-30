@@ -3,6 +3,20 @@
 MNCD is a .NET library written in C#, used for community detection
 in multi-layered networks.
 
+## Installation
+
+MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
+
+## Exampels
+
+- [network creation](./examples/network.ipynb)
+- [flattening](./examples/flattening.ipynb)
+- [single-layer](./examples/single-layer.ipynb)
+- [multi-layer](./examples/multi-layer.ipynb)
+- [evaluation](./examples/evaluation.ipynb)
+
+## Overview
+
 Implemented are several approaches to apply community detection on a network.
 
 ## Single-Layer
