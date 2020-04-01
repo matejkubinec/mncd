@@ -5,9 +5,9 @@ in multi-layered networks.
 
 ## Installation
 
-MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
+> MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
 
-## Exampels
+## Examples
 
 - [network creation](./examples/network.ipynb)
 - [flattening](./examples/flattening.ipynb)
