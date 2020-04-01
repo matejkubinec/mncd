@@ -55,10 +55,10 @@ namespace MNCD.Evaluation.MultiLayer
 
             if (sigmaCMax == 0)
             {
-                return 1;
+                return 1.0;
             }
 
-            return 1 - (sigmaC / sigmaCMax);
+            return 1.0 - (sigmaC / sigmaCMax);
         }
 
         private static double GetSigmaC(List<double> pcds, int d)
