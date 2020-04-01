@@ -5,7 +5,7 @@ in multi-layered networks.
 
 ## Installation
 
-> MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
+MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
 
 ## Examples
 
