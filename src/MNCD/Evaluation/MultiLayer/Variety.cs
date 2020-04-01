@@ -47,7 +47,7 @@ namespace MNCD.Evaluation.MultiLayer
                 }
             }
 
-            return (dc - 1) / (d - 1);
+            return (dc - 1) / (double)(d - 1);
         }
     }
 }

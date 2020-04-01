@@ -77,7 +77,7 @@ namespace MNCD.Evaluation.MultiLayer
                 return 0;
             }
 
-            return exclusiveConnections / totalConnections;
+            return exclusiveConnections / (double)totalConnections;
         }
     }
 }
