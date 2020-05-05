@@ -85,18 +85,36 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
             var network = new Network(layer, actors);
             var communities = _labelPropagation.GetCommunities(network);
 
-            Assert.Collection(communities.OrderBy(c => c.Actors.First().Name),
-                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
-                    a => Assert.Equal(actors[0], a),
-                    a => Assert.Equal(actors[1], a),
-                    a => Assert.Equal(actors[2], a)
-                ),
-                c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
-                    a => Assert.Equal(actors[3], a),
-                    a => Assert.Equal(actors[4], a),
-                    a => Assert.Equal(actors[5], a)
-                )
-            );
+            // Label propagation creates either a community from all nodes or
+            // two three-node communities
+            if (communities.Count == 1)
+            {
+                Assert.Collection(communities.OrderBy(c => c.Actors.First().Name),
+                    c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                        a => Assert.Equal(actors[0], a),
+                        a => Assert.Equal(actors[1], a),
+                        a => Assert.Equal(actors[2], a),
+                        a => Assert.Equal(actors[3], a),
+                        a => Assert.Equal(actors[4], a),
+                        a => Assert.Equal(actors[5], a)
+                    )
+                );
+            }
+            else
+            {
+                Assert.Collection(communities.OrderBy(c => c.Actors.First().Name),
+                    c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                        a => Assert.Equal(actors[0], a),
+                        a => Assert.Equal(actors[1], a),
+                        a => Assert.Equal(actors[2], a)
+                    ),
+                    c => Assert.Collection(c.Actors.OrderBy(a => a.Name),
+                        a => Assert.Equal(actors[3], a),
+                        a => Assert.Equal(actors[4], a),
+                        a => Assert.Equal(actors[5], a)
+                    )
+                );
+            }
         }
 
         [Fact]
