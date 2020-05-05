@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>MNCD</title>
+    <style>
+      * {
+        font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI",
+          -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(237, 235, 233);
+      }
+
+      .header {
+        display: flex;
+      }
+
+      .content {
+        margin: 2em;
+        padding: 1em;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.133) 0px 6.4px 14.4px 0px,
+          rgba(0, 0, 0, 0.11) 0px 1.2px 3.6px 0px;
+        background: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        <img width="75" height="75" src="icon.png" />
+        <h1>
+          MNCD - Multi-layer Community Detection
+        </h1>
+      </div>
+      <hr />
+      <p>
+        MNCD is a .NET library written in C#, used for community detection in
+        multi-layered networks.
+      </p>
+      <p>
+        This library implements multiple single and multi-layer algorithms for
+        community detection and various methods for evaluating resulting
+        communities.
+      </p>
+      <p>
+        <a href="https://github.com/matejkubinec/mncd/blob/master/license.txt">
+          MIT License </a
+        >, available on
+        <a href="https://www.nuget.org/packages/MNCD/"> Nuget </a>.
+      </p>
+      <hr />
+      <div>
+        <h3>Web Applications</h3>
+        <h4>MNCD APP</h4>
+        <p>
+          Can be viewed
+          <a href="http://mncd.azurewebsites.net/">here (Azure Websites)</a>.
+        </p>
+        <h4>MNCD VIZ</h4>
+        <p>
+          Can be viewed
+          <a href="http://mncd-viz.azurewebsites.net/">here (Azure Websites)</a>
+          or <a href="http://mncd-viz.herokuapp.com/">here (Heroku)</a>.
+        </p>
+      </div>
+      <hr />
+      <div>
+        <h3>Github (Source Code)</h3>
+        <ul>
+          <li>
+            <a href="https://github.com/matejkubinec/mncd">MNCD</a> - .NET
+            library.
+          </li>
+          <li>
+            <a href="https://github.com/matejkubinec/mncd-app">MNCD APP</a> -
+            web aplication written in .NET Core 3.1 and React, used for
+            multi-layer community detection.
+          </li>
+          <li>
+            <a href="https://github.com/matejkubinec/mncd-viz">MNCD VIZ</a> -
+            web api written in flask (python) for visualizing data in MNCD APP.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

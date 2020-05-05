@@ -11,11 +11,11 @@ MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
 
 ## Examples
 
-- [network creation](./examples/network.ipynb)
-- [flattening](./examples/flattening.ipynb)
-- [single-layer](./examples/single-layer.ipynb)
-- [multi-layer](./examples/multi-layer.ipynb)
-- [evaluation](./examples/evaluation.ipynb)
+- [Network Creation](./examples/network.ipynb)
+- [Flattening](./examples/flattening.ipynb)
+- [Single Layer](./examples/single-layer.ipynb)
+- [Multi Layer](./examples/multi-layer.ipynb)
+- [Evaluation](./examples/evaluation.ipynb)
 
 ## Overview
 
@@ -31,6 +31,7 @@ MNCD implements these single-layer community detection algorithms:
 - [Louvain](./src/MNCD/CommunityDetection/SingleLayer/Louvain.cs)
 - [FluidC](./src/MNCD/CommunityDetection/SingleLayer/FluidC.cs)
 - [KClique](./src/MNCD/CommunityDetection/SingleLayer/KClique.cs)
+- [Label Propagation](./src/MNCD/CommunityDetection/SingleLayer/LabelPropagation.cs)
 
 ### One Layer Only
 
