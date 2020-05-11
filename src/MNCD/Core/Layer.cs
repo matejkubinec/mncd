@@ -84,5 +84,14 @@ namespace MNCD.Core
 
             return dict.ToDictionary(d => d.Key, d => d.Value.ToList());
         }
+
+        /// <summary>
+        /// Creates a new network from layer.
+        /// </summary>
+        /// <returns>New network with this layer.</returns>
+        public Network ToNetwork()
+        {
+            return new Network(this, GetLayerActors());
+        }
     }
 }
