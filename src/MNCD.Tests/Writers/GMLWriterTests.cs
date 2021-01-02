@@ -322,8 +322,6 @@ namespace MNCD.Tests.Writers
                 .AppendLine("]")
                 .ToString();
 
-            System.IO.File.WriteAllText("network.gml", gml);
-
             Assert.Equal(gml, expected);
         }
     }
