@@ -51,7 +51,7 @@ namespace MNCD.Writers
 
         private void AppendNodes(StringBuilder sb, Network network, List<Community> communities)
         {
-            var communityIdCounter = 0;
+            var communityIdCounter = 1;
             var communityToId = communities.ToDictionary(c => c, c => communityIdCounter++);
             var actorToCommunity = network.Actors
                     .ToDictionary(a => a, a => communities.FirstOrDefault(c => c.Actors.Contains(a)));
@@ -75,12 +75,12 @@ namespace MNCD.Writers
 
         private void AppendEdges(StringBuilder sb, Network network)
         {
-            int layerIdCounter = 0;
+            int layerIdCounter = 1;
             var layerToId = network.Layers.ToDictionary(l => l, l => layerIdCounter++);
 
             foreach (var layer in network.Layers)
             {
-                var layerId = layerToId[layer];
+                var layerId = $"{layerToId[layer]}.0";
 
                 foreach (var edge in layer.Edges)
                 {
