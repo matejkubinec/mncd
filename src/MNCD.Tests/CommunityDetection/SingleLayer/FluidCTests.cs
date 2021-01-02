@@ -42,7 +42,7 @@ namespace MNCD.Tests.CommunityDetection.SingleLayer
         [Fact]
         public void TestSingleActor()
         {
-            var actor = new Actor("a0");
+            var actor = new Actor(0, "a0");
             var network = new Network();
             network.Actors.Add(actor);
             network.Layers.Add(new Layer());

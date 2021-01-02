@@ -123,7 +123,7 @@ namespace MNCD.Generators
 
         private List<Actor> InitActors(int n) => Enumerable
             .Range(0, n)
-            .Select(a => new Actor($"a{a}"))
+            .Select(a => new Actor(a, $"a{a}"))
             .ToList();
 
         private List<Layer> InitLayers(int l) => Enumerable

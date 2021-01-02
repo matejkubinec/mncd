@@ -79,6 +79,7 @@ namespace MNCD.Readers
         /// <returns>Network.</returns>
         public Network FromString(string content)
         {
+            var idCounter = 1;
             var network = new Network();
             var lines = Regex.Split(content, "\r\n|\r|\n");
             var type = string.Empty;
@@ -151,7 +152,7 @@ namespace MNCD.Readers
             foreach (var actor in actors)
             {
                 var actorInfo = actor.Split(",");
-                var parsedActor = new Actor(actorInfo[0]);
+                var parsedActor = new Actor(idCounter++, actorInfo[0]);
                 network.Actors.Add(parsedActor);
             }
 

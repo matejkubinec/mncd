@@ -55,6 +55,7 @@ namespace MNCD.Readers
         /// <returns>Read network.</returns>
         public Network FromString(string input)
         {
+            var idCounter = 1;
             var actors = new Dictionary<string, Actor>();
             var layers = new Dictionary<string, Layer>();
             var rows = new List<EdgeListRow>();
@@ -98,7 +99,7 @@ namespace MNCD.Readers
                         }
                         else
                         {
-                            actors.Add(a, new Actor(n));
+                            actors.Add(a, new Actor(idCounter++, n));
                         }
                     }
 
