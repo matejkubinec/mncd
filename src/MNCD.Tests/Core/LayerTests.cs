@@ -12,10 +12,10 @@ namespace MNCD.Tests.Core
         {
             var actors = new List<Actor>()
             {
-                new Actor("a0"),
-                new Actor("a1"),
-                new Actor("a2"),
-                new Actor("a3")
+                new Actor(0, "a0"),
+                new Actor(1, "a1"),
+                new Actor(2, "a2"),
+                new Actor(3, "a3")
             };
             var layer = new Layer
             {
@@ -38,10 +38,10 @@ namespace MNCD.Tests.Core
         {
             var actors = new List<Actor>()
             {
-                new Actor("a0"),
-                new Actor("a1"),
-                new Actor("a2"),
-                new Actor("a3")
+                new Actor(0, "a0"),
+                new Actor(1, "a1"),
+                new Actor(2, "a2"),
+                new Actor(3, "a3")
             };
             var layer = new Layer
             {

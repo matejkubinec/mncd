@@ -115,7 +115,11 @@ namespace MNCD.CommunityDetection.SingleLayer
         internal Dictionary<List<Actor>, Actor> GetCliqueToActor(List<List<Actor>> cliques)
         {
             var i = 0;
-            return cliques.ToDictionary(c => c, c => new Actor("c" + i++));
+            return cliques.ToDictionary(c => c, c =>
+            {
+                var id = i++;
+                return new Actor(id, "c" + id);
+            });
         }
 
         /// <summary>

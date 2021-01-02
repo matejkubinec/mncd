@@ -15,9 +15,11 @@ namespace MNCD.Core
         /// <summary>
         /// Initializes a new instance of the <see cref="Actor"/> class with supplied name.
         /// </summary>
+        /// <param name="id">ID of the actor.</param>
         /// <param name="name">Name of the actor.</param>
-        public Actor(string name)
+        public Actor(int id, string name)
         {
+            Id = id;
             Name = name;
         }
 
@@ -25,5 +27,10 @@ namespace MNCD.Core
         /// Gets or sets actors name.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets actors id.
+        /// </summary>
+        public int Id { get; set; }
     }
 }

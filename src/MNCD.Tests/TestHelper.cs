@@ -5,9 +5,9 @@ namespace MNCD.Tests
 {
     public static class TestHelper
     {
-        public readonly static Actor A1 = new Actor("A1");
-        public readonly static Actor A2 = new Actor("A2");
-        public readonly static Actor A3 = new Actor("A3");
+        public readonly static Actor A1 = new Actor(1, "A1");
+        public readonly static Actor A2 = new Actor(2, "A2");
+        public readonly static Actor A3 = new Actor(3, "A3");
 
         public static List<Actor> Actors3 = new List<Actor> { A1, A2, A3 };
 

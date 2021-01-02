@@ -25,7 +25,7 @@ namespace MNCD.Generators
 
             var actors = Enumerable
                 .Range(0, n)
-                .Select(i => new Actor(i.ToString()))
+                .Select(i => new Actor(i, i.ToString()))
                 .ToList();
             var network = new Network(new Layer(), actors);
 
@@ -110,7 +110,7 @@ namespace MNCD.Generators
 
         private List<Actor> InitActors(int n) => Enumerable
             .Range(0, n)
-            .Select(i => new Actor(i.ToString()))
+            .Select(i => new Actor(i, i.ToString()))
             .ToList();
 
         private List<Layer> InitLayers(int l) => Enumerable

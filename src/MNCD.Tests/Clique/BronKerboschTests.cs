@@ -14,9 +14,9 @@ namespace MNCD.Tests.Clique
             {
                 Actors = new List<Actor>
                 {
-                    new Actor("a0"),
-                    new Actor("a1"),
-                    new Actor("a2")
+                    new Actor(0, "a0"),
+                    new Actor(1, "a1"),
+                    new Actor(2, "a2")
                 }
             };
 
@@ -30,9 +30,9 @@ namespace MNCD.Tests.Clique
         {
             var actors = new List<Actor>
             {
-                new Actor("a0"),
-                new Actor("a1"),
-                new Actor("a2")
+                new Actor(0, "a0"),
+                new Actor(1, "a1"),
+                new Actor(2, "a2")
             };
             var network = new Network()
             {
@@ -68,8 +68,8 @@ namespace MNCD.Tests.Clique
         {
             var actors = new List<Actor>
             {
-                new Actor("a0"),
-                new Actor("a1")
+                new Actor(0, "a0"),
+                new Actor(1, "a1")
             };
             var network = new Network()
             {
@@ -96,9 +96,9 @@ namespace MNCD.Tests.Clique
         {
             var actors = new List<Actor>
             {
-                new Actor("a0"),
-                new Actor("a1"),
-                new Actor("a2"),
+                new Actor(0, "a0"),
+                new Actor(1, "a1"),
+                new Actor(2, "a2"),
             };
             var network = new Network()
             {
@@ -127,11 +127,11 @@ namespace MNCD.Tests.Clique
         {
             var actors = new List<Actor>
             {
-                new Actor("a0"),
-                new Actor("a1"),
-                new Actor("a2"),
-                new Actor("a3"),
-                new Actor("a4"),
+                new Actor(0, "a0"),
+                new Actor(1, "a1"),
+                new Actor(2, "a2"),
+                new Actor(3, "a3"),
+                new Actor(4, "a4"),
             };
             var network = new Network()
             {

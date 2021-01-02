@@ -12,10 +12,10 @@ namespace MNCD.Tests.Evaluation.MultiLayer
         {
             var actors = new List<Actor>
             {
-                new Actor("a1"),
-                new Actor("a2"),
-                new Actor("a3"),
-                new Actor("a4")
+                new Actor(1, "a1"),
+                new Actor(2, "a2"),
+                new Actor(3, "a3"),
+                new Actor(4, "a4")
             };
             var network = new Network
             {
@@ -48,8 +48,8 @@ namespace MNCD.Tests.Evaluation.MultiLayer
         {
             var actors = new List<Actor>
             {
-                new Actor("a1"),
-                new Actor("a2")
+                new Actor(1, "a1"),
+                new Actor(2, "a2")
             };
             var network = new Network
             {

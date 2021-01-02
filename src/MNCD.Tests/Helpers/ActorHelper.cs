@@ -8,14 +8,14 @@ namespace MNCD.Tests.Helpers
     {
         public static List<Actor> ActorsFrom(params string[] names)
         {
-            return names.Select(n => new Actor(n)).ToList();
+            return names.Select((name, i) => new Actor(i, name)).ToList();
         }
 
         public static List<Actor> Get(int count)
         {
             return Enumerable
                 .Range(0, count)
-                .Select(n => new Actor("a" + n))
+                .Select(n => new Actor(n, "a" + n))
                 .ToList();
         }
     }

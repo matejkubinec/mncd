@@ -177,7 +177,11 @@ namespace MNCD.CommunityDetection.SingleLayer
             var i = 0;
             var newCommunityToActor = communities
                 .Where(c => c.Size > 0)
-                .ToDictionary(c => c, c => new Actor("a" + i++));
+                .ToDictionary(c => c, c =>
+                {
+                    var id = i++;
+                    return new Actor(id, "a");
+                });
             var newEdges = new Dictionary<(Actor f, Actor t), double>();
 
             foreach (var edge in network.FirstLayer.Edges)

@@ -24,6 +24,7 @@ namespace MNCD.Readers
                 throw new ArgumentException("Input string must not empty or null.");
             }
 
+            var idCounter = 1;
             var communityMap = new Dictionary<string, Community>();
             var actorMap = new Dictionary<string, Actor>();
 
@@ -36,7 +37,7 @@ namespace MNCD.Readers
                     throw new ArgumentException("Invalid community list.");
                 }
 
-                var actor = GetActor(values[0], actorMap);
+                var actor = GetActor(idCounter, values[0], actorMap);
                 var community = GetCommunity(values[1], communityMap);
 
                 community.Actors.Add(actor);
@@ -45,11 +46,11 @@ namespace MNCD.Readers
             return communityMap.Values.ToList();
         }
 
-        private Actor GetActor(string actorName, Dictionary<string, Actor> actorMap)
+        private Actor GetActor(int idCounter, string actorName, Dictionary<string, Actor> actorMap)
         {
             if (!actorMap.ContainsKey(actorName))
             {
-                actorMap.Add(actorName, new Actor(actorName));
+                actorMap.Add(actorName, new Actor(idCounter, actorName));
             }
 
             return actorMap[actorName];
