@@ -66,7 +66,7 @@ namespace MNCD.Writers
                 if (community != null)
                 {
                     var communityId = communityToId[community];
-                    sb.AppendLine($"    community \"{communityId}\"");
+                    sb.AppendLine($"    community {communityId}");
                 }
 
                 sb.AppendLine($"  ]");
