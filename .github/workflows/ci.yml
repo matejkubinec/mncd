@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
-          cache: true
 
       - name: Test
         run: dotnet test src/MNCD.sln
@@ -35,7 +34,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
-          cache: true
 
       - name: Build
         run: dotnet build src/MNCD.sln
