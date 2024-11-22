@@ -5,9 +5,15 @@
 MNCD is a .NET library written in C#, used for community detection
 in multi-layered networks.
 
+Licensed under [MIT](./license.txt).
+
 ## Installation
 
-MNCD is available through [nuget](https://www.nuget.org/packages/mncd).
+MNCD is available through [nuget.org](https://www.nuget.org/packages/mncd).
+
+## Development
+
+[.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## Examples
 

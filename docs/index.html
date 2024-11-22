@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="https://raw.githubusercontent.com/matejkubinec/mncd/master/docs/favicon.ico"
-    />
-    <title>MNCD</title>
-    <style>
-      * {
-        font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI",
-          -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
-          sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
 
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        background-color: rgb(237, 235, 233);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/matejkubinec/mncd/master/docs/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <title>MNCD</title>
+  <style>
+    :root {
+      font-family: "Noto Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      .header {
-        display: flex;
-      }
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(237, 235, 233);
+    }
 
-      .content {
-        margin: 2em;
-        padding: 1em;
-        border-radius: 2px;
-        box-shadow: rgba(0, 0, 0, 0.133) 0px 6.4px 14.4px 0px,
-          rgba(0, 0, 0, 0.11) 0px 1.2px 3.6px 0px;
-        background: rgb(255, 255, 255);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="content">
-      <div class="header">
-        <img
-          width="75"
-          height="75"
-          src="https://raw.githubusercontent.com/matejkubinec/mncd/master/docs/icon.png"
-        />
-        <h1>
-          MNCD - Multi-layer Community Detection
-        </h1>
+    .header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .header h1,
+    .header h2 {
+      margin: 0;
+    }
+
+    .header h2 {
+      font-weight: 300;
+    }
+
+    .content {
+      margin: 2em;
+      padding: 1em;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 4px;
+      border-color: rgb(213, 211, 209);
+      background: rgb(255, 255, 255);
+    }
+
+    hr {
+      border-width: 0.5px;
+      border-color: rgb(213, 211, 209);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <img width="75" height="75" src="https://raw.githubusercontent.com/matejkubinec/mncd/master/docs/icon.png" />
+      <div>
+        <h1>MNCD</h1>
+        <h2>Multi-layer Community Detection</h2>
       </div>
-      <hr />
+    </div>
+    <hr />
+    <section>
       <p>
         MNCD is a .NET library written in C#, used for community detection in
         multi-layered networks.
@@ -60,45 +77,31 @@
         communities.
       </p>
       <p>
-        <a href="https://github.com/matejkubinec/mncd/blob/master/license.txt">
-          MIT License </a
-        >, available on
-        <a href="https://www.nuget.org/packages/MNCD/"> Nuget </a>.
+        Licensed under <a href="https://github.com/matejkubinec/mncd/blob/master/license.txt" target="_blank">MIT</a>,
+        available on
+        <a href="https://www.nuget.org/packages/MNCD/" target="_blank">nuget.org</a>.
       </p>
-      <hr />
-      <div>
-        <h3>Web Applications</h3>
-        <h4>MNCD APP</h4>
-        <p>
-          Can be viewed
-          <a href="http://mncd.azurewebsites.net/">here (Azure Websites)</a>.
-        </p>
-        <h4>MNCD VIZ</h4>
-        <p>
-          Can be viewed
-          <a href="http://mncd-viz.azurewebsites.net/">here (Azure Websites)</a>
-          or <a href="http://mncd-viz.herokuapp.com/">here (Heroku)</a>.
-        </p>
-      </div>
-      <hr />
-      <div>
-        <h3>Github (Source Code)</h3>
-        <ul>
-          <li>
-            <a href="https://github.com/matejkubinec/mncd">MNCD</a> - .NET
-            library.
-          </li>
-          <li>
-            <a href="https://github.com/matejkubinec/mncd-app">MNCD APP</a> -
-            web aplication written in .NET Core 3.1 and React, used for
-            multi-layer community detection.
-          </li>
-          <li>
-            <a href="https://github.com/matejkubinec/mncd-viz">MNCD VIZ</a> -
-            web api written in flask (python) for visualizing data in MNCD APP.
-          </li>
-        </ul>
-      </div>
-    </div>
-  </body>
+    </section>
+    <hr />
+    <section>
+      <h3>Github (Source Code)</h3>
+      <ul>
+        <li>
+          <a href="https://github.com/matejkubinec/mncd" target="_blank">MNCD</a> - .NET
+          library.
+        </li>
+        <li>
+          <a href="https://github.com/matejkubinec/mncd-app" target="_blank">MNCD APP</a> -
+          web aplication written in dotnet and react, used for analyzing
+          multi-layer networks and communities within them.
+        </li>
+        <li>
+          <a href="https://github.com/matejkubinec/mncd-viz" target="_blank">MNCD VIZ</a> -
+          web api written in python for visualizing data in MNCD APP.
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>
+
 </html>
