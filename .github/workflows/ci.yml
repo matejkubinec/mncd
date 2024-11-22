@@ -20,6 +20,7 @@ jobs:
           global-json-file: global.json
 
       - name: Test
+        timeout-minutes: 5
         run: dotnet test src/MNCD.sln
 
   build:
