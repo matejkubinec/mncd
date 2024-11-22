@@ -332,3 +332,6 @@ ASALocalRun/
 .vscode
 
 examples/.ipynb_checkpoints
+
+# MacOS
+.DS_Store
