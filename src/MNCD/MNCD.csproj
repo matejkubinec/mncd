@@ -10,6 +10,7 @@
     <Authors>Matej Kubinec</Authors>
     <PackageProjectUrl>https://github.com/matejkubinec/mncd</PackageProjectUrl>
     <RepositoryUrl>https://github.com/matejkubinec/mncd</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,6 +47,7 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\license.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
+    <None Include="..\..\license.txt" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
